@@ -1,5 +1,6 @@
 import { Esencia } from "@/componentes/secciones/esencia/Esencia";
 import { Historia } from "@/componentes/secciones/historia/Historia";
+import { Mezcal } from "@/componentes/secciones/mezcal/Mezcal";
 import { Portada } from "@/componentes/secciones/portada/Portada";
 
 export default function Inicio() {
@@ -8,6 +9,7 @@ export default function Inicio() {
       <Portada />
       <Esencia />
       <Historia />
+      <Mezcal />
     </main>
   );
 }
