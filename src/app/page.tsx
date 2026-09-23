@@ -3,6 +3,7 @@ import { Historia } from "@/componentes/secciones/historia/Historia";
 import { Mezcal } from "@/componentes/secciones/mezcal/Mezcal";
 import { Portada } from "@/componentes/secciones/portada/Portada";
 import { Proceso } from "@/componentes/secciones/proceso/Proceso";
+import { PiePagina } from "@/componentes/estructura/pie-pagina/PiePagina";
 
 export default function Inicio() {
   return (
@@ -12,6 +13,7 @@ export default function Inicio() {
       <Historia />
       <Mezcal />
       <Proceso/>
+      <PiePagina/>
     </main>
   );
 }
