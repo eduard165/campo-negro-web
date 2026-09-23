@@ -4,20 +4,18 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 
-  min-height: 620px;
+  min-height: 720px;
 
-  background: #f3eadf;
+  background: #f4f1e8;
+
+  overflow: hidden;
 }
-
-/* =========================
-   IMAGEN
-========================= */
 
 .imagenContenedor {
   position: relative;
 
   width: 100%;
-  min-height: 620px;
+  min-height: 720px;
 
   overflow: hidden;
 }
@@ -25,11 +23,13 @@
 .imagen {
   object-fit: cover;
   object-position: center;
+
+  transition: transform 0.6s ease;
 }
 
-/* =========================
-   INFORMACIÓN
-========================= */
+.imagenContenedor:hover .imagen {
+  transform: scale(1.015);
+}
 
 .informacion {
   position: relative;
@@ -38,9 +38,9 @@
   align-items: center;
   justify-content: center;
 
-  padding: 80px 7%;
+  padding: 80px 8%;
 
-  border-left: 1px solid rgba(155, 99, 56, 0.45);
+  border-left: 1px solid rgba(198, 156, 69, 0.45);
 }
 
 .contenido {
@@ -51,97 +51,111 @@
   flex-direction: column;
   align-items: flex-start;
 
-  transform: translateY(-15px);
+  transform: translateY(-10px);
 }
-
-/* =========================
-   SUBTÍTULO
-========================= */
 
 .subtitulo {
   margin: 0 0 24px;
 
   font-family: var(--fuente-principal), sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
 
-  letter-spacing: 6px;
+  letter-spacing: 7px;
 
-  color: #9a6137;
+  color: #a76532;
 }
-
-/* =========================
-   TÍTULO
-========================= */
 
 .titulo {
   margin: 0;
 
-  max-width: 560px;
+  max-width: 590px;
 
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(50px, 4vw, 66px);
+  font-size: clamp(54px, 4.3vw, 78px);
   font-weight: 400;
 
-  line-height: 0.96;
+  line-height: 0.94;
+  letter-spacing: -1px;
 
   color: #3b2d24;
 }
 
-/* =========================
-   LÍNEA DECORATIVA
-========================= */
-
 .linea {
-  width: 62px;
+  width: 78px;
   height: 3px;
 
-  margin: 30px 0 28px;
+  margin: 32px 0 30px;
 
-  background: #9a6137;
+  background: #c69c45;
 }
 
-/* =========================
-   TEXTO PRINCIPAL
-========================= */
-
 .texto {
-  max-width: 560px;
+  width: 100%;
+  max-width: 590px;
 
   margin: 0;
 
   font-family: var(--fuente-principal), sans-serif;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 400;
 
-  line-height: 1.7;
+  line-height: 1.75;
 
-  color: #5a4a40;
+  color: #55463c;
 }
-
-/* =========================
-   FRASE FINAL
-========================= */
 
 .fraseFinal {
   margin: 34px 0 0;
 
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 27px;
+  font-family: var(--fuente-manuscrita), cursive;
+  font-size: clamp(42px, 3vw, 58px);
   font-weight: 400;
 
-  line-height: 1.2;
+  line-height: 1;
 
-  color: #9a6137;
+  color: #a76532;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+@media (max-width: 1250px) {
+  .historia {
+    min-height: 650px;
+  }
 
-@media (max-width: 1100px) {
+  .imagenContenedor {
+    min-height: 650px;
+  }
+
+  .informacion {
+    padding: 70px 7%;
+  }
+
+  .contenido {
+    max-width: 560px;
+  }
+
+  .titulo {
+    max-width: 540px;
+
+    font-size: 60px;
+  }
+
+  .texto {
+    max-width: 540px;
+
+    font-size: 17px;
+  }
+
+  .fraseFinal {
+    font-size: 46px;
+  }
+}
+
+@media (max-width: 1000px) {
   .historia {
     grid-template-columns: 1fr;
+
+    min-height: auto;
   }
 
   .imagenContenedor {
@@ -149,10 +163,10 @@
   }
 
   .informacion {
-    border-left: none;
-    border-top: 1px solid rgba(155, 99, 56, 0.4);
-
     padding: 70px 8%;
+
+    border-left: none;
+    border-top: 1px solid rgba(198, 156, 69, 0.4);
   }
 
   .contenido {
@@ -163,52 +177,22 @@
 
   .titulo {
     max-width: 620px;
+
+    font-size: 62px;
   }
 
   .texto {
     max-width: 620px;
   }
-}
-
-@media (max-width: 800px) {
-  .imagenContenedor {
-    min-height: 440px;
-  }
-
-  .informacion {
-    padding: 60px 7%;
-  }
-
-  .subtitulo {
-    margin-bottom: 20px;
-
-    font-size: 13px;
-    letter-spacing: 5px;
-  }
-
-  .titulo {
-    font-size: 50px;
-  }
-
-  .linea {
-    margin: 26px 0 24px;
-  }
-
-  .texto {
-    font-size: 16px;
-    line-height: 1.65;
-  }
 
   .fraseFinal {
-    margin-top: 30px;
-
-    font-size: 25px;
+    font-size: 50px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .imagenContenedor {
-    min-height: 360px;
+    min-height: 420px;
   }
 
   .imagen {
@@ -216,34 +200,71 @@
   }
 
   .informacion {
-    padding: 50px 6%;
+    padding: 58px 7%;
   }
 
   .subtitulo {
+    margin-bottom: 20px;
+
     font-size: 12px;
+
+    letter-spacing: 5px;
+  }
+
+  .titulo {
+    font-size: 48px;
+
+    line-height: 0.96;
+  }
+
+  .linea {
+    width: 62px;
+    height: 2px;
+
+    margin: 26px 0;
+  }
+
+  .texto {
+    font-size: 16px;
+
+    line-height: 1.7;
+  }
+
+  .fraseFinal {
+    margin-top: 30px;
+
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 480px) {
+  .imagenContenedor {
+    min-height: 340px;
+  }
+
+  .informacion {
+    padding: 48px 6%;
+  }
+
+  .subtitulo {
+    font-size: 11px;
+
     letter-spacing: 4px;
   }
 
   .titulo {
-    font-size: 42px;
-    line-height: 0.98;
-  }
-
-  .linea {
-    width: 50px;
-    height: 2px;
-
-    margin: 24px 0;
+    font-size: 40px;
   }
 
   .texto {
     font-size: 15px;
-    line-height: 1.6;
+
+    line-height: 1.65;
   }
 
   .fraseFinal {
     margin-top: 28px;
 
-    font-size: 22px;
+    font-size: 36px;
   }
 }

@@ -159,15 +159,59 @@ src/datos/navegacion.ts
 
 ---
 
-## ✦ Sistema visual
+## ✦ Identidad visual
 
-La interfaz utiliza una paleta inspirada en tierra, maguey y mezcal.
+La interfaz toma como base los lineamientos gráficos de Campo Negro 1430, manteniendo una estética sobria, artesanal y editorial.
+
+### Tipografías
+
+| Tipografía | Uso |
+|---|---|
+| **Gill Sans MT Condensed** | Titulares y encabezados principales. |
+| **Myriad Pro** | Bloques de texto, párrafos y contenido informativo. |
+| **Luxurious Script Regular** | Frases destacadas, palabras de acento y textos breves. |
+
+La combinación tipográfica busca mantener contraste entre titulares de carácter editorial, bloques de lectura limpios y acentos caligráficos de uso puntual.
+
+### Paleta de color
+
+| Color | Hex | RGB | Uso sugerido |
+|---|---|---|---|
+| **Tierra Oaxaqueña** | `#938a7f` | `147, 138, 127` | Tonos secundarios, iconografía y detalles suaves. |
+| **Cal** | `#f4f1e8` | `244, 241, 232` | Fondos claros y áreas de descanso visual. |
+| **Oro de Maguey** | `#c69c45` | `198, 156, 69` | Acentos, líneas decorativas y elementos destacados. |
+| **Brasa** | `#79170e` | `121, 23, 14` | Acentos cálidos y elementos de identidad. |
+| **Ceniza** | `#2e2d2c` | `46, 45, 44` | Texto oscuro, fondos profundos y contraste. |
 
 ```css
---color-oro-maguey: #c69c45;
+:root {
+  --color-tierra-oaxaquena: #938a7f;
+  --color-cal: #f4f1e8;
+  --color-oro-maguey: #c69c45;
+  --color-brasa: #79170e;
+  --color-ceniza: #2e2d2c;
+}
 ```
 
-El diseño combina tonos crema, marrones profundos, blanco, negro y acentos dorados.
+---
+
+## ✦ Sistema visual
+
+El diseño combina:
+
+- tonos crema y tierra;
+- marrones profundos;
+- blanco y negro;
+- acentos dorados;
+- tipografía condensada para titulares;
+- tipografía sans serif para lectura;
+- caligrafía para frases cortas y momentos de énfasis.
+
+Los recursos oficiales de marca se almacenan dentro de:
+
+```text
+public/imagenes/
+```
 
 ---
 
@@ -216,6 +260,8 @@ git push
 - [x] Contacto y pie de página
 - [x] Recursos visuales locales
 - [x] Microinteracciones
+- [x] Identidad tipográfica documentada
+- [x] Paleta cromática documentada
 
 ### Siguiente etapa
 
