@@ -8,16 +8,16 @@ export const enlacesNavegacion = [
     destino: "#esencia",
   },
   {
-    etiqueta: "Proceso",
-    destino: "#proceso",
+    etiqueta: "Nuestra Historia",
+    destino: "#historia",
   },
   {
     etiqueta: "Nuestro Mezcal",
     destino: "#mezcal",
   },
   {
-    etiqueta: "Galería",
-    destino: "#galeria",
+    etiqueta: "Proceso",
+    destino: "#proceso",
   },
   {
     etiqueta: "Contacto",
