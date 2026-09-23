@@ -1,0 +1,339 @@
+.esencia {
+  width: 100%;
+  min-height: 760px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 80px 0;
+
+  background: #f3eadf;
+
+  color: #3b2d24;
+}
+
+.contenedor {
+  width: min(90%, 1500px);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns:
+    minmax(360px, 1fr)
+    minmax(420px, 1.1fr)
+    minmax(220px, 0.55fr);
+
+  align-items: center;
+
+  gap: 56px;
+}
+
+/* =========================
+   INFORMACIÓN
+========================= */
+
+.informacion {
+  max-width: 520px;
+}
+
+.subtitulo {
+  margin: 0 0 14px;
+
+  font-family: var(--fuente-principal), sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+
+  letter-spacing: 5px;
+
+  color: #9a6137;
+}
+
+.titulo {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(50px, 4vw, 72px);
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  color: #34271f;
+}
+
+.linea {
+  width: 100%;
+  max-width: 340px;
+  height: 2px;
+
+  margin: 26px 0;
+
+  background: #965c33;
+}
+
+.texto {
+  margin: 0 0 20px;
+
+  max-width: 500px;
+
+  font-family: var(--fuente-principal), sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+
+  line-height: 1.65;
+
+  color: #4d4037;
+}
+
+.fraseFinal {
+  margin: 28px 0 0;
+
+  font-family: var(--fuente-manuscrita), cursive;
+  font-size: 52px;
+  font-weight: 400;
+
+  line-height: 1;
+
+  color: #a46333;
+}
+
+/* =========================
+   ILUSTRACIÓN CENTRAL
+========================= */
+
+.ilustracion {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 560px;
+}
+
+.imagen {
+  width: 100%;
+  max-width: 540px;
+  height: auto;
+
+  object-fit: contain;
+
+  opacity: 0.66;
+}
+
+/* =========================
+   VALORES / ICONOS
+========================= */
+
+.valores {
+  min-height: 560px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-left: 42px;
+
+  border-left: 1px solid rgba(70, 53, 42, 0.45);
+}
+
+.valor {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 10px;
+
+  text-align: center;
+}
+
+.valor p {
+  margin: 0;
+
+  font-family: var(--fuente-principal), sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+
+  color: #4d3c31;
+}
+
+.marco {
+  width: 160px;
+  height: 128px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border: 2px solid rgba(89, 68, 54, 0.55);
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.valor:hover .marco {
+  transform: translateY(-4px);
+
+  border-color: rgba(89, 68, 54, 0.8);
+
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.iconoValor {
+  width: 105px;
+  height: 105px;
+
+  object-fit: contain;
+
+  opacity: 0.85;
+
+  transform: scale(1.15);
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.valor:hover .iconoValor {
+  transform: scale(1.22);
+  opacity: 1;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1250px) {
+  .contenedor {
+    grid-template-columns:
+      minmax(340px, 1fr)
+      minmax(360px, 1fr);
+
+    gap: 44px;
+  }
+
+  .valores {
+    grid-column: 1 / -1;
+
+    min-height: auto;
+
+    flex-direction: row;
+
+    padding: 40px 0 0;
+
+    border-left: none;
+    border-top: 1px solid rgba(70, 53, 42, 0.35);
+  }
+
+  .valor {
+    flex: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .esencia {
+    padding: 70px 0;
+  }
+
+  .contenedor {
+    width: 88%;
+
+    grid-template-columns: 1fr;
+
+    gap: 48px;
+  }
+
+  .informacion {
+    max-width: none;
+  }
+
+  .titulo {
+    font-size: 52px;
+  }
+
+  .linea {
+    max-width: 260px;
+  }
+
+  .texto {
+    max-width: none;
+  }
+
+  .ilustracion {
+    min-height: auto;
+  }
+
+  .imagen {
+    max-width: 460px;
+  }
+
+  .valores {
+    grid-column: auto;
+
+    flex-direction: column;
+
+    gap: 34px;
+
+    padding-top: 36px;
+  }
+
+  .fraseFinal {
+    font-size: 46px;
+  }
+}
+
+@media (max-width: 600px) {
+  .esencia {
+    padding: 56px 0;
+  }
+
+  .contenedor {
+    width: 90%;
+
+    gap: 38px;
+  }
+
+  .subtitulo {
+    font-size: 12px;
+    letter-spacing: 4px;
+  }
+
+  .titulo {
+    font-size: 44px;
+  }
+
+  .texto {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .fraseFinal {
+    font-size: 40px;
+  }
+
+  .imagen {
+    max-width: 360px;
+  }
+
+  .marco {
+    width: 112px;
+    height: 90px;
+  }
+
+  .iconoValor {
+    width: 64px;
+    height: 64px;
+  }
+
+  .valor p {
+    font-size: 13px;
+  }
+}

@@ -4,8 +4,8 @@ export const enlacesNavegacion = [
     destino: "#inicio",
   },
   {
-    etiqueta: "Nuestra Historia",
-    destino: "#historia",
+    etiqueta: "Nuestra Esencia",
+    destino: "#esencia",
   },
   {
     etiqueta: "Proceso",
