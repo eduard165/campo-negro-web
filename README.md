@@ -213,37 +213,6 @@ Los recursos oficiales de marca se almacenan dentro de:
 public/imagenes/
 ```
 
----
-
-## ✦ Flujo de trabajo con Git
-
-```text
-main
-│
-├── feature/nuestra-historia
-├── feature/nuestro-mezcal
-├── feature/proceso
-└── feature/contacto
-```
-
-Ejemplo:
-
-```bash
-git switch -c feature/nombre-seccion
-git add .
-git commit -m "feat: agregar nueva seccion"
-git push -u origin feature/nombre-seccion
-```
-
-Después:
-
-```bash
-git switch main
-git merge feature/nombre-seccion
-git push
-```
-
----
 
 ## ✦ Estado del proyecto
 
