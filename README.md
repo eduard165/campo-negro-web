@@ -213,38 +213,6 @@ Los recursos oficiales de marca se almacenan dentro de:
 public/imagenes/
 ```
 
-
-## ✦ Estado del proyecto
-
-### Implementado
-
-- [x] Estructura base con Next.js
-- [x] Arquitectura modular
-- [x] Portada principal
-- [x] Encabezado y navegación interna
-- [x] Nuestra Esencia
-- [x] Nuestra Historia
-- [x] Nuestro Mezcal
-- [x] Proceso
-- [x] Contacto y pie de página
-- [x] Recursos visuales locales
-- [x] Microinteracciones
-- [x] Identidad tipográfica documentada
-- [x] Paleta cromática documentada
-
-### Siguiente etapa
-
-- [ ] Revisión responsive completa
-- [ ] Ajustes finales de accesibilidad
-- [ ] Enlaces reales de redes sociales
-- [ ] WhatsApp de contacto
-- [ ] Optimización final de imágenes
-- [ ] Revisión SEO
-- [ ] Auditoría Lighthouse
-- [ ] Despliegue de producción
-
----
-
 ## ✦ Repositorio
 
 <div align="center">
