@@ -27,9 +27,6 @@
   gap: 56px;
 }
 
-/* =========================
-   INFORMACIÓN
-========================= */
 
 .informacion {
   max-width: 520px;
@@ -95,9 +92,6 @@
   color: #a46333;
 }
 
-/* =========================
-   ILUSTRACIÓN CENTRAL
-========================= */
 
 .ilustracion {
   position: relative;
@@ -119,9 +113,6 @@
   opacity: 0.66;
 }
 
-/* =========================
-   VALORES / ICONOS
-========================= */
 
 .valores {
   min-height: 560px;
@@ -207,9 +198,7 @@
   opacity: 1;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+
 
 @media (max-width: 1250px) {
   .contenedor {
