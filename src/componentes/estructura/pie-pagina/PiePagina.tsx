@@ -3,13 +3,34 @@ import Image from "next/image";
 export function PiePagina() {
   return (
     <footer id="contacto" className="w-full">
-      <div className="relative flex min-h-[290px] items-center overflow-hidden bg-[url('/imagenes/pie-pagina/fondo-pie-pagina.png')] bg-cover bg-center text-white">
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(18,10,6,0.72),rgba(25,14,8,0.48),rgba(25,14,8,0.30))]" />
+      <div
+        className="
+          relative
+          flex
+          min-h-[290px]
+          items-center
+          overflow-hidden
+          bg-[url('/imagenes/pie-pagina/fondo-pie-pagina.png')]
+          bg-cover
+          bg-center
+          text-white
+        "
+      >
+        <div
+          className="
+            absolute
+            inset-0
+            bg-[linear-gradient(90deg,rgba(18,10,6,0.72),rgba(25,14,8,0.48),rgba(25,14,8,0.30))]
+          "
+        />
 
         <div
           className="
-            relative z-10 mx-auto
-            grid w-[88%]
+            relative
+            z-10
+            mx-auto
+            grid
+            w-[88%]
             grid-cols-1
             items-center
             gap-9
@@ -27,7 +48,8 @@ export function PiePagina() {
         >
           <div
             className="
-              flex flex-col
+              flex
+              flex-col
               items-center
 
               lg:justify-self-start
@@ -72,25 +94,55 @@ export function PiePagina() {
             />
           </div>
 
-          <div className="flex items-center justify-center lg:justify-self-center">
-            <div className="flex items-center justify-center gap-7 lg:gap-[30px]">
+          <div
+            className="
+              relative
+              z-20
+              flex
+              w-full
+              items-center
+              justify-center
+              py-2
+
+              lg:w-auto
+              lg:justify-self-center
+              lg:py-0
+            "
+          >
+            <div
+              className="
+                flex
+                items-center
+                justify-center
+                gap-8
+
+                sm:gap-10
+
+                lg:gap-[30px]
+              "
+            >
               <a
                 href="#"
                 aria-label="Instagram de Campo Negro"
                 className="
-                  flex h-[25px] w-[25px]
-                  items-center justify-center
-                  text-white/90
+                  flex
+                  h-7
+                  w-7
+                  items-center
+                  justify-center
+                  text-white
                   transition
                   duration-300
 
-                  hover:-translate-y-[3px]
-                  hover:scale-105
-                  hover:text-white
+                  hover:-translate-y-1
+                  hover:scale-110
 
                   focus-visible:outline-2
                   focus-visible:outline-offset-4
                   focus-visible:outline-white
+
+                  lg:h-[26px]
+                  lg:w-[26px]
                 "
               >
                 <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -127,19 +179,24 @@ export function PiePagina() {
                 href="#"
                 aria-label="WhatsApp de Campo Negro"
                 className="
-                  flex h-[25px] w-[25px]
-                  items-center justify-center
-                  text-white/90
+                  flex
+                  h-7
+                  w-7
+                  items-center
+                  justify-center
+                  text-white
                   transition
                   duration-300
 
-                  hover:-translate-y-[3px]
-                  hover:scale-105
-                  hover:text-white
+                  hover:-translate-y-1
+                  hover:scale-110
 
                   focus-visible:outline-2
                   focus-visible:outline-offset-4
                   focus-visible:outline-white
+
+                  lg:h-[26px]
+                  lg:w-[26px]
                 "
               >
                 <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -154,19 +211,24 @@ export function PiePagina() {
                 href="#"
                 aria-label="Facebook de Campo Negro"
                 className="
-                  flex h-[25px] w-[25px]
-                  items-center justify-center
-                  text-white/90
+                  flex
+                  h-7
+                  w-7
+                  items-center
+                  justify-center
+                  text-white
                   transition
                   duration-300
 
-                  hover:-translate-y-[3px]
-                  hover:scale-105
-                  hover:text-white
+                  hover:-translate-y-1
+                  hover:scale-110
 
                   focus-visible:outline-2
                   focus-visible:outline-offset-4
                   focus-visible:outline-white
+
+                  lg:h-[26px]
+                  lg:w-[26px]
                 "
               >
                 <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -220,7 +282,7 @@ export function PiePagina() {
             />
 
             <Image
-              src="/imagenes/marca/logo-c.png"
+              src="/imagenes/marca/logo-principal.png"
               alt="Campo Negro 1430"
               width={130}
               height={130}
@@ -239,11 +301,22 @@ export function PiePagina() {
         </div>
       </div>
 
-      <div className="flex w-full items-center border-t border-[#c69c45]/20 bg-[#0c0806] py-2">
+      <div
+        className="
+          flex
+          w-full
+          items-center
+          border-t
+          border-[#c69c45]/20
+          bg-[#0c0806]
+          py-2
+        "
+      >
         <div
           className="
             mx-auto
-            grid w-[92%]
+            grid
+            w-[92%]
             grid-cols-[auto_1fr]
             items-center
             gap-x-3
@@ -261,7 +334,11 @@ export function PiePagina() {
             alt="Campo Negro"
             width={38}
             height={38}
-            className="h-7 w-7 object-contain"
+            className="
+              h-7
+              w-7
+              object-contain
+            "
           />
 
           <p
