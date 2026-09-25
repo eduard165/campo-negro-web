@@ -244,10 +244,12 @@ export function PiePagina() {
           <div
             className="
               flex
+              flex-col
               items-center
               justify-center
               gap-4
 
+              lg:flex-row
               lg:justify-self-end
               lg:gap-7
             "
@@ -255,48 +257,60 @@ export function PiePagina() {
             <div
               aria-hidden="true"
               className="
-                h-[70px]
-                w-px
+                h-px
+                w-[120px]
                 shrink-0
                 bg-white/55
 
                 lg:h-[130px]
+                lg:w-px
               "
             />
 
-            <Image
-              src="/imagenes/marca/ivan-betancourt.png"
-              alt="Iván Betancourt"
-              width={260}
-              height={110}
+            <div
               className="
-                h-auto
-                w-[135px]
-                shrink-0
-                object-contain
+                flex
+                items-center
+                justify-center
+                gap-4
 
-                sm:w-[165px]
-
-                lg:w-[250px]
+                lg:gap-7
               "
-            />
+            >
+              <Image
+                src="/imagenes/marca/ivan-betancourt.png"
+                alt="Iván Betancourt"
+                width={260}
+                height={110}
+                className="
+                  h-auto
+                  w-[135px]
+                  shrink-0
+                  object-contain
 
-            <Image
-              src="/imagenes/marca/logo-principal.png"
-              alt="Campo Negro 1430"
-              width={130}
-              height={130}
-              className="
-                h-auto
-                w-[70px]
-                shrink-0
-                object-contain
+                  sm:w-[165px]
 
-                sm:w-[85px]
+                  lg:w-[250px]
+                "
+              />
 
-                lg:w-[130px]
-              "
-            />
+              <Image
+                src="/imagenes/marca/logo-principal.png"
+                alt="Campo Negro 1430"
+                width={130}
+                height={130}
+                className="
+                  h-auto
+                  w-[70px]
+                  shrink-0
+                  object-contain
+
+                  sm:w-[85px]
+
+                  lg:w-[130px]
+                "
+              />
+            </div>
           </div>
         </div>
       </div>
