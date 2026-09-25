@@ -1,16 +1,57 @@
 import Image from "next/image";
 
-import estilos from "./PiePagina.module.css";
-
 export function PiePagina() {
   return (
-    <footer id="contacto" className={estilos.piePagina}>
-      <div className={estilos.contacto}>
-        <div className={estilos.oscurecimiento} />
+    <footer id="contacto" className="w-full">
+      <div className="relative flex min-h-[290px] items-center overflow-hidden bg-[url('/imagenes/pie-pagina/fondo-pie-pagina.png')] bg-cover bg-center text-white">
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(18,10,6,0.72),rgba(25,14,8,0.48),rgba(25,14,8,0.30))]" />
 
-        <div className={estilos.contenedorContacto}>
-          <div className={estilos.mensaje}>
-            <h2 className={estilos.titulo}>
+        <div
+          className="
+            relative z-10 mx-auto
+            grid w-[88%]
+            grid-cols-1
+            items-center
+            gap-9
+            py-12
+
+            md:w-[90%]
+            md:py-14
+
+            lg:w-[92%]
+            lg:max-w-[1700px]
+            lg:grid-cols-[1fr_auto_1fr]
+            lg:gap-[70px]
+            lg:py-0
+          "
+        >
+          <div
+            className="
+              flex flex-col
+              items-center
+
+              lg:justify-self-start
+              lg:items-start
+            "
+          >
+            <h2
+              className="
+                m-0
+                max-w-[300px]
+                text-center
+                font-serif
+                text-[34px]
+                font-normal
+                leading-[0.96]
+
+                sm:text-[40px]
+
+                lg:max-w-[430px]
+                lg:text-left
+                lg:text-[clamp(38px,3.2vw,58px)]
+                lg:leading-[0.94]
+              "
+            >
               EL MEZCAL
               <br />
               TAMBIÉN ES
@@ -18,18 +59,39 @@ export function PiePagina() {
               ENCUENTRO
             </h2>
 
-            <div className={estilos.lineaTitulo} />
+            <div
+              className="
+                mt-5
+                h-[3px]
+                w-[55px]
+                bg-[var(--color-oro-maguey)]
+
+                lg:mt-[22px]
+                lg:w-[60px]
+              "
+            />
           </div>
 
-          <div className={estilos.centro}>
-
-            <div className={estilos.lineaRedes} />
-
-            <div className={estilos.redes}>
+          <div className="flex items-center justify-center lg:justify-self-center">
+            <div className="flex items-center justify-center gap-7 lg:gap-[30px]">
               <a
                 href="#"
                 aria-label="Instagram de Campo Negro"
-                className={estilos.redSocial}
+                className="
+                  flex h-[25px] w-[25px]
+                  items-center justify-center
+                  text-white/90
+                  transition
+                  duration-300
+
+                  hover:-translate-y-[3px]
+                  hover:scale-105
+                  hover:text-white
+
+                  focus-visible:outline-2
+                  focus-visible:outline-offset-4
+                  focus-visible:outline-white
+                "
               >
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <rect
@@ -64,7 +126,21 @@ export function PiePagina() {
               <a
                 href="#"
                 aria-label="WhatsApp de Campo Negro"
-                className={estilos.redSocial}
+                className="
+                  flex h-[25px] w-[25px]
+                  items-center justify-center
+                  text-white/90
+                  transition
+                  duration-300
+
+                  hover:-translate-y-[3px]
+                  hover:scale-105
+                  hover:text-white
+
+                  focus-visible:outline-2
+                  focus-visible:outline-offset-4
+                  focus-visible:outline-white
+                "
               >
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -77,7 +153,21 @@ export function PiePagina() {
               <a
                 href="#"
                 aria-label="Facebook de Campo Negro"
-                className={estilos.redSocial}
+                className="
+                  flex h-[25px] w-[25px]
+                  items-center justify-center
+                  text-white/90
+                  transition
+                  duration-300
+
+                  hover:-translate-y-[3px]
+                  hover:scale-105
+                  hover:text-white
+
+                  focus-visible:outline-2
+                  focus-visible:outline-offset-4
+                  focus-visible:outline-white
+                "
               >
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -89,10 +179,27 @@ export function PiePagina() {
             </div>
           </div>
 
-          <div className={estilos.marcas}>
+          <div
+            className="
+              flex
+              items-center
+              justify-center
+              gap-4
+
+              lg:justify-self-end
+              lg:gap-7
+            "
+          >
             <div
-              className={estilos.divisorVertical}
               aria-hidden="true"
+              className="
+                h-[70px]
+                w-px
+                shrink-0
+                bg-white/55
+
+                lg:h-[130px]
+              "
             />
 
             <Image
@@ -100,35 +207,92 @@ export function PiePagina() {
               alt="Iván Betancourt"
               width={260}
               height={110}
-              className={estilos.imagenIvan}
+              className="
+                h-auto
+                w-[135px]
+                shrink-0
+                object-contain
+
+                sm:w-[165px]
+
+                lg:w-[250px]
+              "
             />
 
             <Image
-              src="/imagenes/marca/logo-principal.png"
+              src="/imagenes/marca/logo-c.png"
               alt="Campo Negro 1430"
               width={130}
               height={130}
-              className={estilos.logoFinal}
+              className="
+                h-auto
+                w-[70px]
+                shrink-0
+                object-contain
+
+                sm:w-[85px]
+
+                lg:w-[130px]
+              "
             />
           </div>
         </div>
       </div>
 
-      <div className={estilos.inferior}>
-        <div className={estilos.contenedorInferior}>
+      <div className="flex w-full items-center border-t border-[#c69c45]/20 bg-[#0c0806] py-2">
+        <div
+          className="
+            mx-auto
+            grid w-[92%]
+            grid-cols-[auto_1fr]
+            items-center
+            gap-x-3
+            gap-y-1
+
+            sm:grid-cols-[auto_1fr_auto]
+
+            lg:w-[96%]
+            lg:max-w-[1760px]
+            lg:gap-[14px]
+          "
+        >
           <Image
             src="/imagenes/marca/logo-principal.png"
             alt="Campo Negro"
             width={38}
             height={38}
-            className={estilos.logoInferior}
+            className="h-7 w-7 object-contain"
           />
 
-          <p className={estilos.derechos}>
+          <p
+            className="
+              m-0
+              text-[10px]
+              leading-none
+              text-white/60
+
+              lg:text-[11px]
+            "
+          >
             © {new Date().getFullYear()} Campo Negro 1430
           </p>
 
-          <p className={estilos.descripcionInferior}>
+          <p
+            className="
+              col-span-2
+              m-0
+              text-center
+              text-[9px]
+              leading-none
+              text-white/50
+
+              sm:col-span-1
+              sm:text-right
+
+              lg:text-[11px]
+              lg:text-white/60
+            "
+          >
             Mezcal artesanal · Oaxaca, México
           </p>
         </div>
