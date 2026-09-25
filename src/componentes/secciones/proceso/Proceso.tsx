@@ -5,14 +5,14 @@ const etapasProceso = [
     nombre: "Cocimiento",
     descripcion:
       "Horno de pozo recubierto con piedra, leña de guamúchil y encino.",
-    imagen: "/imagenes/iconos/cocimiento.png",
+    imagen: "/imagenes/iconos/Cocimiento.png",
     alt: "Cocimiento del agave en horno de pozo",
   },
   {
     nombre: "Molienda",
     descripcion:
       "Tahona de cantera jalada por caballo.",
-    imagen: "/imagenes/iconos/molienda.png",
+    imagen: "/imagenes/iconos/Molienda.png",
     alt: "Molienda en tahona de cantera",
   },
   {
