@@ -5,7 +5,7 @@ const etapasProceso = [
     nombre: "Cocimiento",
     descripcion:
       "Horno de pozo recubierto con piedra, leña de guamúchil y encino.",
-    imagen: "/imagenes/iconos/Cocimiento.png",
+    imagen: "/imagenes/iconos/Destilacion2.png",
     alt: "Cocimiento del agave en horno de pozo",
   },
   {
@@ -19,7 +19,7 @@ const etapasProceso = [
     nombre: "Destilación",
     descripcion:
       "Doble en alambique de cobre.",
-    imagen: "/imagenes/iconos/Destilacion2.png",
+    imagen: "/imagenes/iconos/Cocimiento.png",
     alt: "Destilación en alambique de cobre",
   },
 ];

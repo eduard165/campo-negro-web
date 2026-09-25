@@ -26,7 +26,7 @@ export function Mezcal() {
         bg-center
 
         lg:min-h-[700px]
-        lg:bg-[url('/imagenes/mezcal/mezcal3.png')]
+        lg:bg-[url('/imagenes/mezcal/mezcal4.png')]
         lg:bg-center
       "
     >
@@ -87,6 +87,7 @@ export function Mezcal() {
           <p
             className="
               mb-5
+              [font-family:var(--fuente-texto)]
               text-[11px]
               font-medium
               uppercase
@@ -142,8 +143,10 @@ export function Mezcal() {
             className="
               m-0
               max-w-[680px]
+              [font-family:var(--fuente-texto)]
               text-justify
               text-[15px]
+              font-normal
               leading-[1.75]
               text-white/95
 
@@ -187,7 +190,7 @@ export function Mezcal() {
                 <p
                   className="
                     m-0
-                    [font-family:var(--fuente-condensada)]
+                    [font-family:var(--fuente-texto)]
                     text-[16px]
                     font-normal
                     uppercase
