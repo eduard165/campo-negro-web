@@ -2,16 +2,14 @@ import Image from "next/image";
 
 import { enlacesNavegacion } from "@/datos/navegacion";
 
-import estilos from "./Encabezado.module.css";
-
 export function Encabezado() {
   return (
-    <header className={estilos.encabezado}>
-      <div className={estilos.contenedor}>
+    <header className="absolute left-0 top-0 z-50 w-full">
+      <div className="mx-auto flex w-[92%] max-w-[1700px] items-center justify-between py-5">
         <a
           href="#inicio"
-          className={estilos.marca}
           aria-label="Ir al inicio de Campo Negro"
+          className="flex shrink-0 items-center"
         >
           <Image
             src="/imagenes/marca/logo-blanco.png"
@@ -19,30 +17,30 @@ export function Encabezado() {
             width={120}
             height={90}
             priority
-            className={estilos.logo}
+            className="h-auto w-[105px] lg:w-[120px]"
           />
         </a>
 
         <nav
-          className={estilos.navegacion}
           aria-label="Navegación principal"
+          className="hidden items-center gap-8 lg:flex xl:gap-10"
         >
           {enlacesNavegacion.map((enlace) => (
-         <a
-          key={enlace.destino}
-          href={enlace.destino}
-          className={estilos.enlace}
-        >
-          {enlace.etiqueta}
-        </a>
-        ))}
+            <a
+              key={enlace.destino}
+              href={enlace.destino}
+              className="relative text-[11px] font-medium uppercase tracking-[0.18em] text-white/85 transition-colors duration-300 hover:text-white after:absolute after:-bottom-2 after:left-0 after:h-px after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+            >
+              {enlace.etiqueta}
+            </a>
+          ))}
         </nav>
 
-        <div className={estilos.acciones}>
+        <div className="flex items-center gap-4 lg:gap-5">
           <a
             href="#"
-            className={estilos.redSocial}
             aria-label="Instagram de Campo Negro"
+            className="hidden h-5 w-5 items-center justify-center text-white/90 transition duration-300 hover:-translate-y-0.5 hover:text-white lg:flex"
           >
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <rect
@@ -71,8 +69,8 @@ export function Encabezado() {
 
           <a
             href="#"
-            className={estilos.redSocial}
             aria-label="Facebook de Campo Negro"
+            className="hidden h-5 w-5 items-center justify-center text-white/90 transition duration-300 hover:-translate-y-0.5 hover:text-white lg:flex"
           >
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path
@@ -84,10 +82,13 @@ export function Encabezado() {
 
           <a
             href="#contacto"
-            className={estilos.botonContacto}
+            className="group flex h-[42px] min-w-[138px] items-center justify-center gap-3 border border-white/70 px-4 text-[9px] font-medium uppercase tracking-[0.18em] text-white transition duration-300 hover:bg-white hover:text-black sm:h-[46px] sm:min-w-[155px] sm:px-5 sm:text-[10px] lg:h-[48px] lg:min-w-[170px]"
           >
             CONTÁCTANOS
-            <span className={estilos.flecha}>→</span>
+
+            <span className="transition-transform duration-300 group-hover:translate-x-1">
+              →
+            </span>
           </a>
         </div>
       </div>
