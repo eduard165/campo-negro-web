@@ -1,23 +1,5 @@
 import Image from "next/image";
 
-const valoresEsencia = [
-  {
-    titulo: "Tierra",
-    icono: "/imagenes/iconos/agave.png",
-    alt: "Agave",
-  },
-  {
-    titulo: "Manos que inspiran",
-    icono: "/imagenes/iconos/montana.png",
-    alt: "Montañas de Oaxaca",
-  },
-  {
-    titulo: "Momentos que unen",
-    icono: "/imagenes/iconos/copas.png",
-    alt: "Copas de mezcal",
-  },
-];
-
 export function Esencia() {
   return (
     <section
@@ -33,43 +15,45 @@ export function Esencia() {
         className="
           mx-auto
           grid
-          w-[88%]
-          max-w-[1700px]
+          w-[90%]
+          max-w-[1600px]
           grid-cols-1
           items-center
           gap-10
-          py-16
+          py-10
 
-          md:w-[90%]
-          md:py-20
+          md:w-[92%]
+          md:py-12
 
-          lg:w-[92%]
-          lg:grid-cols-[1.05fr_1fr_0.8fr]
-          lg:gap-12
-          lg:py-24
+          lg:grid-cols-[1.05fr_0.95fr]
+          lg:gap-10
+          lg:py-14
 
-          xl:gap-16
+          xl:gap-12
+          xl:py-16
         "
       >
         <div
           className="
-            order-1
             flex
+            w-full
             flex-col
             items-start
+
+            lg:max-w-[760px]
           "
         >
           <p
             className="
-              mb-5
+              mb-4
               text-[11px]
               font-medium
+              uppercase
               tracking-[0.38em]
               text-[#a76532]
 
               md:text-[12px]
 
-              lg:mb-6
               lg:text-[13px]
               lg:tracking-[0.45em]
             "
@@ -80,18 +64,21 @@ export function Esencia() {
           <h2
             className="
               m-0
-              [font-family:Georgia,Times_New_Roman,serif]
-              text-[44px]
+              [font-family:var(--fuente-condensada)]
+              text-[46px]
               font-normal
-              leading-[0.94]
-              tracking-[-0.02em]
+              uppercase
+              leading-[0.9]
+              tracking-[-0.01em]
               text-[#3b2d24]
 
-              sm:text-[52px]
+              sm:text-[54px]
 
               md:text-[60px]
 
-              lg:text-[clamp(56px,4.2vw,78px)]
+              lg:text-[68px]
+
+              xl:text-[72px]
             "
           >
             RAÍCES QUE
@@ -101,20 +88,27 @@ export function Esencia() {
 
           <div
             className="
-              my-7
+              my-6
               h-[3px]
               w-[64px]
               bg-[var(--color-oro-maguey)]
 
-              lg:my-8
-              lg:w-[76px]
+              lg:w-[72px]
             "
           />
 
-          <div className="max-w-[600px] space-y-5">
+          <div
+            className="
+              w-full
+              max-w-[730px]
+              space-y-5
+            "
+          >
             <p
               className="
                 m-0
+                w-full
+                text-justify
                 text-[15px]
                 leading-[1.7]
                 text-[#55463c]
@@ -135,6 +129,8 @@ export function Esencia() {
             <p
               className="
                 m-0
+                w-full
+                text-justify
                 text-[15px]
                 leading-[1.7]
                 text-[#55463c]
@@ -155,14 +151,14 @@ export function Esencia() {
               mt-7
               mb-0
               [font-family:var(--fuente-manuscrita)]
-              text-[38px]
+              text-[36px]
               leading-none
               text-[#a76532]
 
-              sm:text-[44px]
+              sm:text-[42px]
 
-              lg:mt-9
-              lg:text-[52px]
+              lg:mt-8
+              lg:text-[48px]
             "
           >
             Oaxaca vive en cada sorbo.
@@ -171,143 +167,35 @@ export function Esencia() {
 
         <div
           className="
-            order-2
             flex
+            w-full
             items-center
             justify-center
+            py-4
+
+            lg:py-0
           "
         >
           <Image
-            src="/imagenes/esencia/esencia.png"
-            alt="Ilustración de agave de Campo Negro"
-            width={600}
-            height={700}
+            src="/imagenes/esencia/ilustracion.png"
+            alt="Ilustración de la esencia de Campo Negro"
+            width={900}
+            height={900}
             className="
               h-auto
               w-full
-              max-w-[350px]
+              max-w-[320px]
               object-contain
 
-              sm:max-w-[430px]
+              sm:max-w-[360px]
 
-              md:max-w-[500px]
+              md:max-w-[400px]
 
-              lg:max-w-[540px]
+              lg:max-w-[440px]
 
-              xl:max-w-[600px]
+              xl:max-w-[470px]
             "
           />
-        </div>
-
-        <div
-          className="
-            order-3
-            grid
-            grid-cols-3
-            items-start
-            gap-3
-
-            sm:gap-5
-
-            lg:flex
-            lg:flex-col
-            lg:items-center
-            lg:justify-center
-            lg:gap-9
-          "
-        >
-          {valoresEsencia.map((valor) => (
-            <div
-              key={valor.titulo}
-              className="
-                group
-                flex
-                flex-col
-                items-center
-                text-center
-              "
-            >
-              <div
-                className="
-                  flex
-                  h-[82px]
-                  w-full
-                  max-w-[95px]
-                  items-center
-                  justify-center
-                  overflow-hidden
-                  rounded-[18px]
-                  border
-                  border-[#938a7f]/50
-
-                  transition
-                  duration-300
-
-                  group-hover:border-[var(--color-oro-maguey)]
-
-                  sm:h-[100px]
-                  sm:max-w-[115px]
-
-                  lg:h-[128px]
-                  lg:w-[160px]
-                  lg:max-w-none
-                  lg:rounded-[24px]
-                  lg:border-2
-                "
-              >
-                <Image
-                  src={valor.icono}
-                  alt={valor.alt}
-                  width={90}
-                  height={90}
-                  className="
-                    h-[58px]
-                    w-[58px]
-                    object-contain
-                    opacity-80
-
-                    transition
-                    duration-300
-
-                    group-hover:scale-110
-                    group-hover:opacity-100
-
-                    sm:h-[72px]
-                    sm:w-[72px]
-
-                    lg:h-[105px]
-                    lg:w-[105px]
-                    lg:scale-[1.08]
-
-                    lg:group-hover:scale-[1.15]
-                  "
-                />
-              </div>
-
-              <p
-                className="
-                  mt-3
-                  mb-0
-                  max-w-[110px]
-                  text-[10px]
-                  font-medium
-                  uppercase
-                  leading-[1.3]
-                  tracking-[0.1em]
-                  text-[#55463c]
-
-                  sm:text-[11px]
-
-                  lg:mt-4
-                  lg:max-w-[170px]
-                  lg:text-[12px]
-                  lg:tracking-[0.14em]
-                "
-              >
-                {valor.titulo}
-              </p>
-            </div>
-          ))}
         </div>
       </div>
     </section>

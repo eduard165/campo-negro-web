@@ -1,4 +1,11 @@
-import Image from "next/image";
+const datosMezcal = [
+  "ARTESANAL",
+  "CONT. NETO. 750 ML",
+  "ALC. VOL. 45%",
+  "100% AGAVE",
+  "DENOMINACIÓN DE ORIGEN",
+  "PRODUCTO MEXICANO",
+];
 
 export function Mezcal() {
   return (
@@ -6,38 +13,45 @@ export function Mezcal() {
       id="mezcal"
       className="
         relative
+        isolate
         flex
-        min-h-[580px]
+        min-h-[620px]
         w-full
         items-center
         overflow-hidden
         text-white
 
-        md:min-h-[640px]
+        bg-[url('/imagenes/mezcal/mezcal-movil4.png')]
+        bg-cover
+        bg-center
 
-        lg:min-h-[680px]
+        lg:min-h-[700px]
+        lg:bg-[url('/imagenes/mezcal/mezcal3.png')]
+        lg:bg-center
       "
     >
-      <Image
-        src="/imagenes/mezcal/mezcal.png"
-        alt="Mezcal Campo Negro Espadín Joven"
-        fill
-        sizes="100vw"
-        className="
-          object-cover
-          object-[66%_center]
-
-          md:object-[62%_center]
-
-          lg:object-center
-        "
-      />
-
       <div
         className="
           absolute
           inset-0
-          bg-[linear-gradient(90deg,rgba(10,7,5,0.82)_0%,rgba(15,10,7,0.68)_38%,rgba(15,10,7,0.28)_68%,rgba(15,10,7,0.08)_100%)]
+
+          bg-[linear-gradient(
+            180deg,
+            rgba(16,8,4,0.22)_0%,
+            rgba(16,8,4,0.42)_45%,
+            rgba(16,8,4,0.88)_100%
+          )]
+
+          lg:bg-[linear-gradient(
+            90deg,
+            rgba(16,8,4,0.92)_0%,
+            rgba(16,8,4,0.86)_20%,
+            rgba(16,8,4,0.72)_32%,
+            rgba(16,8,4,0.46)_43%,
+            rgba(16,8,4,0.18)_53%,
+            rgba(16,8,4,0.04)_62%,
+            rgba(16,8,4,0)_72%
+          )]
         "
       />
 
@@ -47,32 +61,27 @@ export function Mezcal() {
           z-10
           mx-auto
           flex
-          min-h-[580px]
-          w-[88%]
+          min-h-[620px]
+          w-[90%]
           max-w-[1700px]
           items-end
-          py-12
+          pb-12
+          pt-28
 
-          sm:py-14
-
-          md:min-h-[640px]
-          md:w-[90%]
           md:items-center
-          md:py-16
+          md:pb-14
+          md:pt-20
 
-          lg:min-h-[680px]
+          lg:min-h-[700px]
           lg:w-[92%]
+          lg:items-center
           lg:py-20
         "
       >
         <div
           className="
             w-full
-            max-w-[520px]
-
-            md:max-w-[560px]
-
-            lg:max-w-[620px]
+            max-w-[720px]
           "
         >
           <p
@@ -82,11 +91,12 @@ export function Mezcal() {
               font-medium
               uppercase
               tracking-[0.38em]
-              text-white/80
+              text-white
 
-              sm:text-[12px]
+              [text-shadow:0_2px_4px_rgba(0,0,0,1),0_6px_12px_rgba(0,0,0,0.85)]
 
-              lg:mb-6
+              md:text-[12px]
+
               lg:text-[13px]
               lg:tracking-[0.45em]
             "
@@ -97,17 +107,20 @@ export function Mezcal() {
           <h2
             className="
               m-0
-              [font-family:Georgia,Times_New_Roman,serif]
-              text-[48px]
+              [font-family:var(--fuente-condensada)]
+              text-[52px]
               font-normal
-              leading-[0.92]
-              tracking-[-0.02em]
+              uppercase
+              leading-[0.9]
+              text-white
 
-              sm:text-[56px]
+              [text-shadow:0_3px_6px_rgba(0,0,0,1),0_10px_22px_rgba(0,0,0,0.78)]
 
-              md:text-[68px]
+              sm:text-[60px]
 
-              lg:text-[clamp(68px,5vw,92px)]
+              md:text-[70px]
+
+              lg:text-[82px]
             "
           >
             ESPADÍN
@@ -118,124 +131,79 @@ export function Mezcal() {
           <div
             className="
               my-7
-              h-[2px]
-              w-[64px]
+              h-[3px]
+              w-[72px]
               bg-[var(--color-oro-maguey)]
-
-              lg:my-8
-              lg:h-[3px]
-              lg:w-[78px]
+              shadow-[0_2px_8px_rgba(0,0,0,0.8)]
             "
           />
 
           <p
             className="
               m-0
-              max-w-[560px]
-              text-[14px]
-              leading-[1.6]
-              text-white/85
+              max-w-[680px]
+              text-justify
+              text-[15px]
+              leading-[1.75]
+              text-white/95
 
-              sm:text-[15px]
+              [text-shadow:0_2px_4px_rgba(0,0,0,0.95),0_6px_12px_rgba(0,0,0,0.68)]
 
               md:text-[16px]
 
-              lg:text-[18px]
-              lg:leading-[1.7]
+              lg:text-[17px]
+              lg:leading-[1.8]
             "
           >
-            Un mezcal artesanal que refleja la esencia de
-            Ejutla de Crespo, Oaxaca. Elaborado con agave
-            Espadín (A. angustifolia), nuestro mezcal es el
-            resultado de un proceso cuidadoso y tradicional
+            Un mezcal artesanal que refleja la esencia de Ejutla de Crespo,
+            Oaxaca. Elaborado con agave Espadín (A. angustifolia), nuestro
+            mezcal es el resultado de un proceso cuidadoso y tradicional
             que honra la tierra y a su gente.
           </p>
 
           <div
             className="
-              mt-7
-              flex
-              items-center
-              gap-5
+              mt-9
+              grid
+              max-w-[720px]
+              grid-cols-2
+              gap-x-6
+              gap-y-6
 
-              sm:gap-6
+              sm:grid-cols-3
 
-              lg:mt-8
-              lg:gap-8
+              lg:gap-x-8
             "
           >
-            <div className="flex flex-col">
-              <span
+            {datosMezcal.map((dato) => (
+              <div
+                key={dato}
                 className="
-                  mb-1
-                  text-[12px]
-                  uppercase
-                  tracking-[0.16em]
-                  text-white/60
-
-                  lg:text-[13px]
+                  border-l
+                  border-white/35
+                  pl-4
                 "
               >
-                Cont.
-              </span>
+                <p
+                  className="
+                    m-0
+                    [font-family:var(--fuente-condensada)]
+                    text-[16px]
+                    font-normal
+                    uppercase
+                    leading-[1.25]
+                    tracking-[0.04em]
+                    text-white
 
-              <strong
-                className="
-                  text-[20px]
-                  font-medium
-                  leading-none
-                  text-white
+                    [text-shadow:0_2px_4px_rgba(0,0,0,1),0_5px_12px_rgba(0,0,0,0.82)]
 
-                  sm:text-[22px]
-
-                  lg:text-[26px]
-                "
-              >
-                Neto 750ml
-              </strong>
-            </div>
-
-            <div
-              className="
-                h-[48px]
-                w-px
-                bg-white/35
-
-                lg:h-[56px]
-              "
-            />
-
-            <div className="flex flex-col">
-              <span
-                className="
-                  mb-1
-                  text-[20px]
-                  font-medium
-                  leading-none
-                  text-white
-
-                  sm:text-[22px]
-
-                  lg:text-[26px]
-                "
-              >
-                45%
-              </span>
-
-              <strong
-                className="
-                  text-[12px]
-                  font-normal
-                  uppercase
-                  tracking-[0.16em]
-                  text-white/60
-
-                  lg:text-[13px]
-                "
-              >
-                Alc. Vol.
-              </strong>
-            </div>
+                    lg:text-[18px]
+                  "
+                >
+                  {dato}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

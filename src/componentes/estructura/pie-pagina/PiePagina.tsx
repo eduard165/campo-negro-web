@@ -7,7 +7,7 @@ export function PiePagina() {
         className="
           relative
           flex
-          min-h-[290px]
+          min-h-[300px]
           items-center
           overflow-hidden
           bg-[url('/imagenes/pie-pagina/fondo-pie-pagina.png')]
@@ -20,7 +20,12 @@ export function PiePagina() {
           className="
             absolute
             inset-0
-            bg-[linear-gradient(90deg,rgba(18,10,6,0.72),rgba(25,14,8,0.48),rgba(25,14,8,0.30))]
+            bg-[linear-gradient(
+              90deg,
+              rgba(18,10,6,0.82)_0%,
+              rgba(25,14,8,0.62)_45%,
+              rgba(25,14,8,0.38)_100%
+            )]
           "
         />
 
@@ -37,41 +42,42 @@ export function PiePagina() {
             py-12
 
             md:w-[90%]
-            md:py-14
 
             lg:w-[92%]
             lg:max-w-[1700px]
-            lg:grid-cols-[1fr_auto_1fr]
-            lg:gap-[70px]
-            lg:py-0
+            lg:grid-cols-[1.1fr_0.8fr_1.1fr]
+            lg:gap-10
+            lg:py-12
           "
         >
+          {/* TEXTO IZQUIERDO */}
           <div
             className="
               flex
               flex-col
               items-center
+              text-center
 
-              lg:justify-self-start
               lg:items-start
+              lg:text-left
             "
           >
             <h2
               className="
                 m-0
-                max-w-[300px]
-                text-center
-                font-serif
-                text-[34px]
+                [font-family:var(--fuente-condensada)]
+                text-[44px]
                 font-normal
-                leading-[0.96]
+                uppercase
+                leading-[0.88]
+                tracking-[-0.01em]
+                text-white
 
-                sm:text-[40px]
+                sm:text-[50px]
 
-                lg:max-w-[430px]
-                lg:text-left
-                lg:text-[clamp(38px,3.2vw,58px)]
-                lg:leading-[0.94]
+                md:text-[54px]
+
+                lg:text-[60px]
               "
             >
               EL MEZCAL
@@ -85,28 +91,18 @@ export function PiePagina() {
               className="
                 mt-5
                 h-[3px]
-                w-[55px]
+                w-[60px]
                 bg-[var(--color-oro-maguey)]
-
-                lg:mt-[22px]
-                lg:w-[60px]
               "
             />
           </div>
 
+          {/* REDES SOCIALES */}
           <div
             className="
-              relative
-              z-20
               flex
-              w-full
               items-center
               justify-center
-              py-2
-
-              lg:w-auto
-              lg:justify-self-center
-              lg:py-0
             "
           >
             <div
@@ -118,7 +114,7 @@ export function PiePagina() {
 
                 sm:gap-10
 
-                lg:gap-[30px]
+                lg:gap-8
               "
             >
               <a
@@ -135,14 +131,7 @@ export function PiePagina() {
                   duration-300
 
                   hover:-translate-y-1
-                  hover:scale-110
-
-                  focus-visible:outline-2
-                  focus-visible:outline-offset-4
-                  focus-visible:outline-white
-
-                  lg:h-[26px]
-                  lg:w-[26px]
+                  hover:text-[var(--color-oro-maguey)]
                 "
               >
                 <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -189,14 +178,7 @@ export function PiePagina() {
                   duration-300
 
                   hover:-translate-y-1
-                  hover:scale-110
-
-                  focus-visible:outline-2
-                  focus-visible:outline-offset-4
-                  focus-visible:outline-white
-
-                  lg:h-[26px]
-                  lg:w-[26px]
+                  hover:text-[var(--color-oro-maguey)]
                 "
               >
                 <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -221,14 +203,7 @@ export function PiePagina() {
                   duration-300
 
                   hover:-translate-y-1
-                  hover:scale-110
-
-                  focus-visible:outline-2
-                  focus-visible:outline-offset-4
-                  focus-visible:outline-white
-
-                  lg:h-[26px]
-                  lg:w-[26px]
+                  hover:text-[var(--color-oro-maguey)]
                 "
               >
                 <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -241,29 +216,25 @@ export function PiePagina() {
             </div>
           </div>
 
+          {/* SELLOS DERECHA */}
           <div
             className="
               flex
               flex-col
               items-center
               justify-center
-              gap-4
 
-              lg:flex-row
-              lg:justify-self-end
-              lg:gap-7
+              lg:items-end
             "
           >
             <div
-              aria-hidden="true"
               className="
+                mb-5
                 h-px
                 w-[120px]
-                shrink-0
-                bg-white/55
+                bg-white/50
 
-                lg:h-[130px]
-                lg:w-px
+                lg:hidden
               "
             />
 
@@ -272,42 +243,52 @@ export function PiePagina() {
                 flex
                 items-center
                 justify-center
-                gap-4
+                gap-6
 
-                lg:gap-7
+                lg:justify-end
               "
             >
-              <Image
-                src="/imagenes/marca/ivan-betancourt.png"
-                alt="Iván Betancourt"
-                width={260}
-                height={110}
+              <div
+                aria-hidden="true"
                 className="
-                  h-auto
-                  w-[135px]
-                  shrink-0
-                  object-contain
+                  hidden
+                  h-[120px]
+                  w-px
+                  bg-white/50
 
-                  sm:w-[165px]
-
-                  lg:w-[250px]
+                  lg:block
                 "
               />
 
               <Image
-                src="/imagenes/marca/logo-principal.png"
-                alt="Campo Negro 1430"
-                width={130}
-                height={130}
+                src="/imagenes/marca/sello_oaxaca2.png"
+                alt="Oaxaca México"
+                width={150}
+                height={150}
                 className="
                   h-auto
-                  w-[70px]
-                  shrink-0
+                  w-[90px]
                   object-contain
 
-                  sm:w-[85px]
+                  sm:w-[105px]
 
-                  lg:w-[130px]
+                  lg:w-[120px]
+                "
+              />
+
+              <Image
+                src="/imagenes/marca/logo-c.png"
+                alt="Campo Negro 1430"
+                width={150}
+                height={150}
+                className="
+                  h-auto
+                  w-[90px]
+                  object-contain
+
+                  sm:w-[105px]
+
+                  lg:w-[125px]
                 "
               />
             </div>
@@ -315,6 +296,7 @@ export function PiePagina() {
         </div>
       </div>
 
+      {/* BARRA INFERIOR */}
       <div
         className="
           flex
@@ -329,56 +311,64 @@ export function PiePagina() {
         <div
           className="
             mx-auto
-            grid
-            w-[92%]
-            grid-cols-[auto_1fr]
+            flex
+            w-[94%]
             items-center
-            gap-x-3
-            gap-y-1
+            justify-between
+            gap-3
 
-            sm:grid-cols-[auto_1fr_auto]
-
-            lg:w-[96%]
-            lg:max-w-[1760px]
-            lg:gap-[14px]
+            lg:w-[92%]
+            lg:max-w-[1700px]
           "
         >
-          <Image
-            src="/imagenes/marca/logo-principal.png"
-            alt="Campo Negro"
-            width={38}
-            height={38}
+          <div
             className="
-              h-7
-              w-7
-              object-contain
-            "
-          />
-
-          <p
-            className="
-              m-0
-              text-[10px]
-              leading-none
-              text-white/60
-
-              lg:text-[11px]
+              flex
+              min-w-0
+              items-center
+              gap-2
             "
           >
-            © {new Date().getFullYear()} Campo Negro 1430
-          </p>
+            <Image
+              src="/imagenes/marca/logo-c.png"
+              alt="Campo Negro"
+              width={38}
+              height={38}
+              className="
+                h-7
+                w-7
+                shrink-0
+                object-contain
+              "
+            />
+
+            <p
+              className="
+                m-0
+                whitespace-nowrap
+                text-[9px]
+                leading-none
+                text-white/60
+
+                sm:text-[10px]
+
+                lg:text-[11px]
+              "
+            >
+              © {new Date().getFullYear()} Campo Negro 1430
+            </p>
+          </div>
 
           <p
             className="
-              col-span-2
               m-0
-              text-center
-              text-[9px]
+              whitespace-nowrap
+              text-right
+              text-[8px]
               leading-none
               text-white/50
 
-              sm:col-span-1
-              sm:text-right
+              sm:text-[9px]
 
               lg:text-[11px]
               lg:text-white/60

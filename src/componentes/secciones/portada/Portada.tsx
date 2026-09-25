@@ -11,25 +11,21 @@ export function Portada() {
         min-h-[100svh]
         w-full
         overflow-hidden
-        bg-[url('/imagenes/portada/fondo-portada.png')]
-        bg-cover
-        bg-[66%_center]
 
+        bg-[url('/imagenes/portada/fondo-portada-movil2.png')]
+        bg-cover
+        bg-center
+
+        md:bg-[url('/imagenes/portada/fondo-portada.png')]
         md:bg-[62%_center]
 
         lg:bg-center
       "
     >
-      <div
-        className="
-          absolute
-          inset-0
-          bg-[linear-gradient(90deg,rgba(10,7,5,0.72)_0%,rgba(10,7,5,0.50)_42%,rgba(10,7,5,0.20)_72%,rgba(10,7,5,0.08)_100%)]
-        "
-      />
-
+      {/* El encabezado se mantiene exactamente como ya está */}
       <Encabezado />
 
+      {/* CONTENIDO DE LA PORTADA */}
       <div
         className="
           relative
@@ -39,55 +35,70 @@ export function Portada() {
           min-h-[100svh]
           w-[88%]
           max-w-[1700px]
-          items-end
-          pb-14
+          items-center
+          justify-start
+          pb-12
           pt-32
 
-          sm:pb-16
-
           md:w-[90%]
-          md:items-center
-          md:py-28
+          md:pb-16
+          md:pt-36
 
           lg:w-[92%]
-          lg:py-32
+          lg:pb-20
+          lg:pt-40
         "
       >
         <div
           className="
             flex
             w-full
-            max-w-[520px]
+            max-w-[420px]
             flex-col
-            items-start
+            items-center
+            text-center
 
-            md:max-w-[600px]
+            sm:max-w-[460px]
 
-            lg:max-w-[680px]
+            md:max-w-[500px]
+
+            lg:ml-[2%]
+            lg:max-w-[500px]
+
+            xl:ml-[4%]
           "
         >
+          {/* LOGO PRINCIPAL */}
           <div
             className="
               mb-6
-              w-[210px]
+              w-[170px]
 
-              sm:w-[245px]
+              sm:w-[190px]
 
-              md:w-[290px]
+              md:w-[210px]
 
-              lg:w-[350px]
+              lg:w-[220px]
             "
           >
             <Image
-              src="/imagenes/marca/logo-blanco.png"
-              alt="Campo Negro"
+              src="/imagenes/marca/logo-vertical-blanco.png"
+              alt="Campo Negro 1430"
               width={500}
               height={500}
               priority
-              className="h-auto w-full object-contain"
+              className="
+                h-auto
+                w-full
+                object-contain
+
+                drop-shadow-[0_3px_3px_rgba(0,0,0,0.95)]
+                drop-shadow-[0_8px_14px_rgba(0,0,0,0.75)]
+              "
             />
           </div>
 
+          {/* MEZCAL ARTESANAL */}
           <p
             className="
               m-0
@@ -95,7 +106,9 @@ export function Portada() {
               font-medium
               uppercase
               tracking-[0.42em]
-              text-white/85
+              text-white
+
+              [text-shadow:0_2px_4px_rgba(0,0,0,1),0_5px_12px_rgba(0,0,0,0.9)]
 
               sm:text-[11px]
 
@@ -108,60 +121,51 @@ export function Portada() {
             MEZCAL ARTESANAL
           </p>
 
+          {/* LÍNEA */}
           <div
             className="
               my-5
               h-px
               w-[52px]
-              bg-white/50
+              bg-white
+
+              shadow-[0_2px_6px_rgba(0,0,0,0.9)]
 
               md:my-6
               md:w-[60px]
             "
           />
 
-          <p
+          {/* MOMENTOS QUE MERECEN SER RECORDADOS */}
+          <div
             className="
-              m-0
-              max-w-[310px]
-              text-[22px]
-              font-medium
-              uppercase
-              leading-[1.08]
-              tracking-[0.04em]
-              text-white
+              w-full
+              max-w-[330px]
 
-              sm:text-[24px]
+              sm:max-w-[360px]
 
-              md:max-w-[420px]
-              md:text-[30px]
+              md:max-w-[400px]
 
-              lg:max-w-[520px]
-              lg:text-[36px]
+              lg:max-w-[430px]
             "
           >
-            MOMENTOS QUE MERECEN SER
-          </p>
+            <Image
+              src="/imagenes/portada/Momentos.png"
+              alt="Momentos que merecen ser recordados"
+              width={1600}
+              height={1000}
+              className="
+                h-auto
+                w-full
+                object-contain
 
-          <p
-            className="
-              mt-1
-              mb-0
-              [font-family:var(--fuente-manuscrita)]
-              text-[52px]
-              leading-none
-              text-white
+                drop-shadow-[0_3px_3px_rgba(0,0,0,1)]
+                drop-shadow-[0_8px_16px_rgba(0,0,0,0.9)]
+              "
+            />
+          </div>
 
-              sm:text-[60px]
-
-              md:text-[72px]
-
-              lg:text-[88px]
-            "
-          >
-            recordados
-          </p>
-
+          {/* BOTÓN */}
           <a
             href="#mezcal"
             className="
@@ -172,29 +176,39 @@ export function Portada() {
               max-w-[320px]
               items-center
               justify-between
+
               border
-              border-white/70
+              border-white/80
+
+              bg-black/10
+
               px-5
               py-4
+
               text-[10px]
               font-medium
               uppercase
               tracking-[0.16em]
               text-white
+
+              [text-shadow:0_2px_4px_rgba(0,0,0,1),0_4px_10px_rgba(0,0,0,0.85)]
+
+              shadow-[0_6px_18px_rgba(0,0,0,0.35)]
+
               transition
               duration-300
 
               hover:bg-white
               hover:text-black
+              hover:[text-shadow:none]
 
               sm:max-w-[350px]
               sm:px-6
 
               md:mt-9
-              md:w-auto
-              md:min-w-[360px]
+              md:max-w-[370px]
 
-              lg:min-w-[390px]
+              lg:max-w-[390px]
               lg:px-7
               lg:py-[18px]
               lg:text-[11px]

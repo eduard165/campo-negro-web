@@ -2,29 +2,25 @@ import Image from "next/image";
 
 const etapasProceso = [
   {
-    nombre: "Agave",
-    icono: "/imagenes/iconos/agave.png",
-    alt: "Agave",
-  },
-  {
     nombre: "Cocimiento",
-    icono: "/imagenes/iconos/arbol.png",
-    alt: "Cocimiento del agave",
+    descripcion:
+      "Horno de pozo recubierto con piedra, leña de guamúchil y encino.",
+    imagen: "/imagenes/iconos/cocimiento.png",
+    alt: "Cocimiento del agave en horno de pozo",
   },
   {
     nombre: "Molienda",
-    icono: "/imagenes/iconos/copas.png",
-    alt: "Molienda del agave",
+    descripcion:
+      "Tahona de cantera jalada por caballo.",
+    imagen: "/imagenes/iconos/molienda.png",
+    alt: "Molienda en tahona de cantera",
   },
   {
     nombre: "Destilación",
-    icono: "/imagenes/iconos/montana.png",
-    alt: "Destilación del mezcal",
-  },
-  {
-    nombre: "Campo Negro",
-    icono: "/imagenes/iconos/limones.png",
-    alt: "Mezcal Campo Negro",
+    descripcion:
+      "Doble en alambique de cobre.",
+    imagen: "/imagenes/iconos/Destilacion2.png",
+    alt: "Destilación en alambique de cobre",
   },
 ];
 
@@ -36,29 +32,30 @@ export function Proceso() {
         w-full
         overflow-hidden
         bg-[var(--color-cal)]
-        py-14
         text-[#3b2d24]
-
-        md:py-16
-
-        lg:py-[90px]
       "
     >
       <div
         className="
           mx-auto
-          flex
-          w-[88%]
-          max-w-[1700px]
-          flex-col
-          items-center
+          w-[90%]
+          max-w-[1600px]
+          py-14
 
-          md:w-[90%]
+          md:w-[92%]
+          md:py-16
 
-          lg:w-[92%]
+          lg:py-20
         "
       >
-        <div className="flex flex-col items-center text-center">
+        <div
+          className="
+            flex
+            flex-col
+            items-center
+            text-center
+          "
+        >
           <p
             className="
               mb-4
@@ -79,149 +76,163 @@ export function Proceso() {
 
           <h2
             className="
-              relative
               m-0
-              [font-family:Georgia,Times_New_Roman,serif]
-              text-[38px]
+              [font-family:var(--fuente-condensada)]
+              text-[46px]
               font-normal
-              leading-[0.96]
-              tracking-[-0.02em]
+              uppercase
+              leading-[0.9]
+              text-[#3b2d24]
 
-              after:absolute
-              after:left-1/2
-              after:top-[calc(100%+22px)]
-              after:h-[3px]
-              after:w-[64px]
-              after:-translate-x-1/2
-              after:bg-[var(--color-oro-maguey)]
+              sm:text-[54px]
 
-              sm:text-[44px]
+              md:text-[62px]
 
-              md:text-[50px]
-
-              lg:text-[58px]
+              lg:text-[72px]
             "
           >
             TRADICIÓN
             <br />
             EN CADA ETAPA
           </h2>
+
+          <div
+            className="
+              mt-6
+              h-[3px]
+              w-[72px]
+              bg-[var(--color-oro-maguey)]
+            "
+          />
         </div>
 
         <div
           className="
-            mt-16
-            flex
-            w-full
-            flex-col
-            items-center
+            mx-auto
+            mt-14
+            grid
+            max-w-[1200px]
+            grid-cols-1
+            gap-14
 
-            md:mt-20
+            md:grid-cols-3
+            md:gap-8
 
-            lg:mt-[88px]
-            lg:flex-row
-            lg:justify-between
+            lg:mt-16
+            lg:gap-12
           "
         >
           {etapasProceso.map((etapa, indice) => (
             <div
               key={etapa.nombre}
               className="
+                group
+                relative
                 flex
                 flex-col
                 items-center
-
-                lg:flex-1
-                lg:flex-row
+                text-center
               "
             >
               <div
                 className="
-                  group
                   flex
-                  flex-col
+                  h-[170px]
+                  w-[190px]
                   items-center
-                  text-center
+                  justify-center
+                  rounded-[26px]
+                  border
+                  border-[#938a7f]/45
+
+                  transition-all
+                  duration-300
+                  ease-out
+
+                  group-hover:border-[var(--color-oro-maguey)]
+                  group-hover:shadow-[0_8px_24px_rgba(198,156,69,0.14)]
+
+                  sm:h-[185px]
+                  sm:w-[205px]
+
+                  lg:h-[200px]
+                  lg:w-[220px]
                 "
               >
-                <div
+                <Image
+                  src={etapa.imagen}
+                  alt={etapa.alt}
+                  width={320}
+                  height={320}
                   className="
-                    flex
-                    h-[92px]
-                    w-[110px]
-                    items-center
-                    justify-center
-                    overflow-hidden
-                    rounded-[20px]
-                    border
-                    border-[#938a7f]/50
+                    h-[125px]
+                    w-[145px]
+                    object-contain
 
-                    transition
+                    transition-transform
                     duration-300
+                    ease-out
 
-                    group-hover:border-[var(--color-oro-maguey)]
+                    group-hover:-translate-y-1
+                    group-hover:scale-[1.03]
 
-                    sm:h-[102px]
-                    sm:w-[122px]
+                    sm:h-[135px]
+                    sm:w-[155px]
 
-                    lg:h-[118px]
-                    lg:w-[140px]
-                    lg:rounded-[24px]
-                    lg:border-2
+                    lg:h-[145px]
+                    lg:w-[170px]
                   "
-                >
-                  <Image
-                    src={etapa.icono}
-                    alt={etapa.alt}
-                    width={100}
-                    height={100}
-                    className="
-                      h-[68px]
-                      w-[68px]
-                      object-contain
-                      opacity-80
-
-                      transition
-                      duration-300
-
-                      group-hover:scale-110
-                      group-hover:opacity-100
-
-                      sm:h-[76px]
-                      sm:w-[76px]
-
-                      lg:h-[100px]
-                      lg:w-[100px]
-                    "
-                  />
-                </div>
-
-                <p
-                  className="
-                    mt-3
-                    mb-0
-                    text-[13px]
-                    font-medium
-                    uppercase
-                    tracking-[0.12em]
-                    text-[#55463c]
-
-                    lg:mt-4
-                    lg:text-[15px]
-                  "
-                >
-                  {etapa.nombre}
-                </p>
+                />
               </div>
+
+              <h3
+                className="
+                  mt-5
+                  mb-0
+                  [font-family:var(--fuente-condensada)]
+                  text-[28px]
+                  font-normal
+                  uppercase
+                  leading-none
+                  text-[#3b2d24]
+
+                  transition-colors
+                  duration-300
+
+                  group-hover:text-[var(--color-oro-maguey)]
+
+                  lg:text-[32px]
+                "
+              >
+                {etapa.nombre}
+              </h3>
+
+              <p
+                className="
+                  mt-3
+                  mb-0
+                  max-w-[300px]
+                  text-center
+                  text-[14px]
+                  leading-[1.6]
+                  text-[#55463c]
+
+                  lg:text-[15px]
+                "
+              >
+                {etapa.descripcion}
+              </p>
 
               {indice < etapasProceso.length - 1 && (
                 <div
                   aria-hidden="true"
                   className="
-                    relative
-                    my-4
+                    absolute
+                    -bottom-9
+                    left-1/2
                     h-[28px]
                     w-px
+                    -translate-x-1/2
                     bg-[#938a7f]/50
 
                     after:absolute
@@ -231,30 +242,85 @@ export function Proceso() {
                     after:w-[7px]
                     after:-translate-x-1/2
                     after:rotate-[135deg]
-                    after:border-t
                     after:border-r
+                    after:border-t
                     after:border-[#938a7f]/70
 
-                    sm:h-[34px]
+                    md:-right-6
+                    md:bottom-auto
+                    md:left-auto
+                    md:top-[100px]
+                    md:h-px
+                    md:w-[48px]
+                    md:translate-x-0
 
-                    lg:mx-5
-                    lg:my-0
-                    lg:h-px
-                    lg:flex-1
-                    lg:bg-[#938a7f]/50
-
-                    lg:after:bottom-auto
-                    lg:after:left-auto
-                    lg:after:right-0
-                    lg:after:top-1/2
-                    lg:after:-translate-y-1/2
-                    lg:after:translate-x-0
-                    lg:after:rotate-45
+                    md:after:bottom-auto
+                    md:after:left-auto
+                    md:after:right-0
+                    md:after:top-1/2
+                    md:after:-translate-y-1/2
+                    md:after:translate-x-0
+                    md:after:rotate-45
                   "
                 />
               )}
             </div>
           ))}
+        </div>
+
+        <div
+          className="
+            mx-auto
+            mt-16
+            flex
+            max-w-[720px]
+            flex-col
+            items-center
+            border-t
+            border-[#938a7f]/30
+            pt-10
+            text-center
+
+            md:mt-20
+            md:pt-12
+          "
+        >
+          <p
+            className="
+              mb-5
+              text-[11px]
+              font-medium
+              uppercase
+              tracking-[0.4em]
+              text-[#a76532]
+
+              md:text-[12px]
+            "
+          >
+            MAESTRO MEZCALERO
+          </p>
+
+          <Image
+            src="/imagenes/marca/ivan-betancourt.png"
+            alt="Iván Betancourt, maestro mezcalero"
+            width={360}
+            height={140}
+            className="
+              h-auto
+              w-[200px]
+              object-contain
+
+              transition-transform
+              duration-300
+              ease-out
+
+              hover:scale-[1.03]
+
+              sm:w-[230px]
+
+              md:w-[260px]
+            "
+          />
         </div>
       </div>
     </section>

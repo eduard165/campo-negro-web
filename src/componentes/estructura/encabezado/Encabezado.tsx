@@ -5,7 +5,19 @@ import { enlacesNavegacion } from "@/datos/navegacion";
 export function Encabezado() {
   return (
     <header className="absolute left-0 top-0 z-50 w-full">
-      <div className="mx-auto flex w-[92%] max-w-[1700px] items-center justify-between py-5">
+      <div
+        className="
+          mx-auto
+          flex
+          w-[92%]
+          max-w-[1700px]
+          items-center
+          justify-between
+          py-4
+
+          lg:py-5
+        "
+      >
         <a
           href="#inicio"
           aria-label="Ir al inicio de Campo Negro"
@@ -17,19 +29,57 @@ export function Encabezado() {
             width={120}
             height={90}
             priority
-            className="h-auto w-[105px] lg:w-[120px]"
+            className="
+              h-auto
+              w-[72px]
+
+              sm:w-[78px]
+
+              md:w-[84px]
+
+              lg:w-[90px]
+            "
           />
         </a>
 
         <nav
           aria-label="Navegación principal"
-          className="hidden items-center gap-8 lg:flex xl:gap-10"
+          className="
+            hidden
+            items-center
+            gap-8
+
+            lg:flex
+
+            xl:gap-10
+          "
         >
           {enlacesNavegacion.map((enlace) => (
             <a
               key={enlace.destino}
               href={enlace.destino}
-              className="relative text-[11px] font-medium uppercase tracking-[0.18em] text-white/85 transition-colors duration-300 hover:text-white after:absolute after:-bottom-2 after:left-0 after:h-px after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+              className="
+                relative
+                text-[11px]
+                font-medium
+                uppercase
+                tracking-[0.18em]
+                text-white/85
+                transition-colors
+                duration-300
+
+                after:absolute
+                after:-bottom-2
+                after:left-0
+                after:h-px
+                after:w-0
+                after:bg-white
+                after:transition-all
+                after:duration-300
+
+                hover:text-white
+                hover:after:w-full
+              "
             >
               {enlace.etiqueta}
             </a>
@@ -40,7 +90,21 @@ export function Encabezado() {
           <a
             href="#"
             aria-label="Instagram de Campo Negro"
-            className="hidden h-5 w-5 items-center justify-center text-white/90 transition duration-300 hover:-translate-y-0.5 hover:text-white lg:flex"
+            className="
+              hidden
+              h-5
+              w-5
+              items-center
+              justify-center
+              text-white/90
+              transition
+              duration-300
+
+              hover:-translate-y-0.5
+              hover:text-white
+
+              lg:flex
+            "
           >
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <rect
@@ -63,14 +127,33 @@ export function Encabezado() {
                 strokeWidth="1.8"
               />
 
-              <circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" />
+              <circle
+                cx="17.5"
+                cy="6.5"
+                r="1.1"
+                fill="currentColor"
+              />
             </svg>
           </a>
 
           <a
             href="#"
             aria-label="Facebook de Campo Negro"
-            className="hidden h-5 w-5 items-center justify-center text-white/90 transition duration-300 hover:-translate-y-0.5 hover:text-white lg:flex"
+            className="
+              hidden
+              h-5
+              w-5
+              items-center
+              justify-center
+              text-white/90
+              transition
+              duration-300
+
+              hover:-translate-y-0.5
+              hover:text-white
+
+              lg:flex
+            "
           >
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path
@@ -82,11 +165,49 @@ export function Encabezado() {
 
           <a
             href="#contacto"
-            className="group flex h-[42px] min-w-[138px] items-center justify-center gap-3 border border-white/70 px-4 text-[9px] font-medium uppercase tracking-[0.18em] text-white transition duration-300 hover:bg-white hover:text-black sm:h-[46px] sm:min-w-[155px] sm:px-5 sm:text-[10px] lg:h-[48px] lg:min-w-[170px]"
+            className="
+              group
+              flex
+              h-[40px]
+              min-w-[130px]
+              items-center
+              justify-center
+              gap-3
+              bg-[var(--color-oro-maguey)]
+              px-4
+              text-[9px]
+              font-medium
+              uppercase
+              tracking-[0.18em]
+              text-white
+              transition
+              duration-300
+
+              hover:bg-[#b58b3d]
+
+              sm:h-[42px]
+              sm:min-w-[140px]
+              sm:text-[9px]
+
+              md:h-[44px]
+              md:min-w-[150px]
+
+              lg:h-[46px]
+              lg:min-w-[160px]
+              lg:px-5
+              lg:text-[10px]
+            "
           >
             CONTÁCTANOS
 
-            <span className="transition-transform duration-300 group-hover:translate-x-1">
+            <span
+              className="
+                transition-transform
+                duration-300
+
+                group-hover:translate-x-1
+              "
+            >
               →
             </span>
           </a>
