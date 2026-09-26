@@ -3,24 +3,45 @@ import Image from "next/image";
 export function PiePagina() {
   return (
     <footer id="contacto" className="w-full">
+      {/* BLOQUE PRINCIPAL */}
       <div
         className="
           relative
           flex
-          min-h-[300px]
+          min-h-[500px]
           items-center
           overflow-hidden
+
           bg-[url('/imagenes/pie-pagina/fondo-pie-pagina.png')]
-          bg-cover
+          bg-[length:auto_190%]
           bg-center
+          bg-no-repeat
+
           text-white
+
+          sm:bg-[length:auto_175%]
+
+          md:bg-[length:auto_160%]
+
+          lg:min-h-[300px]
+          lg:bg-cover
+          lg:bg-center
         "
       >
+        {/* OVERLAY */}
         <div
           className="
             absolute
             inset-0
+
             bg-[linear-gradient(
+              180deg,
+              rgba(18,10,6,0.38)_0%,
+              rgba(18,10,6,0.18)_45%,
+              rgba(18,10,6,0.42)_100%
+            )]
+
+            lg:bg-[linear-gradient(
               90deg,
               rgba(18,10,6,0.82)_0%,
               rgba(25,14,8,0.62)_45%,
@@ -73,6 +94,8 @@ export function PiePagina() {
                 tracking-[-0.01em]
                 text-white
 
+                [text-shadow:0_2px_6px_rgba(0,0,0,0.9)]
+
                 sm:text-[50px]
 
                 md:text-[54px]
@@ -117,6 +140,7 @@ export function PiePagina() {
                 lg:gap-8
               "
             >
+              {/* INSTAGRAM */}
               <a
                 href="#"
                 aria-label="Instagram de Campo Negro"
@@ -127,6 +151,9 @@ export function PiePagina() {
                   items-center
                   justify-center
                   text-white
+
+                  drop-shadow-[0_2px_4px_rgba(0,0,0,1)]
+
                   transition
                   duration-300
 
@@ -164,6 +191,7 @@ export function PiePagina() {
                 </svg>
               </a>
 
+              {/* WHATSAPP */}
               <a
                 href="#"
                 aria-label="WhatsApp de Campo Negro"
@@ -174,6 +202,9 @@ export function PiePagina() {
                   items-center
                   justify-center
                   text-white
+
+                  drop-shadow-[0_2px_4px_rgba(0,0,0,1)]
+
                   transition
                   duration-300
 
@@ -189,6 +220,7 @@ export function PiePagina() {
                 </svg>
               </a>
 
+              {/* FACEBOOK */}
               <a
                 href="#"
                 aria-label="Facebook de Campo Negro"
@@ -199,6 +231,9 @@ export function PiePagina() {
                   items-center
                   justify-center
                   text-white
+
+                  drop-shadow-[0_2px_4px_rgba(0,0,0,1)]
+
                   transition
                   duration-300
 
@@ -270,6 +305,8 @@ export function PiePagina() {
                   w-[90px]
                   object-contain
 
+                  drop-shadow-[0_3px_6px_rgba(0,0,0,0.8)]
+
                   sm:w-[105px]
 
                   lg:w-[120px]
@@ -286,6 +323,8 @@ export function PiePagina() {
                   w-[90px]
                   object-contain
 
+                  drop-shadow-[0_3px_6px_rgba(0,0,0,0.8)]
+
                   sm:w-[105px]
 
                   lg:w-[125px]
@@ -296,7 +335,7 @@ export function PiePagina() {
         </div>
       </div>
 
-      {/* BARRA INFERIOR */}
+      {/* BARRA INFERIOR - SE CONSERVA */}
       <div
         className="
           flex

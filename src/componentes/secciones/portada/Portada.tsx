@@ -107,7 +107,7 @@ export function Portada() {
               uppercase
               tracking-[0.42em]
               text-white
-
+               
               [text-shadow:0_2px_4px_rgba(0,0,0,1),0_5px_12px_rgba(0,0,0,0.9)]
 
               sm:text-[11px]
@@ -120,7 +120,7 @@ export function Portada() {
           >
             MEZCAL ARTESANAL
           </p>
-
+             
           {/* LÍNEA */}
           <div
             className="
@@ -177,30 +177,23 @@ export function Portada() {
               items-center
               justify-between
 
-              border
-              border-white/80
-
-              bg-black/10
+              bg-[var(--color-oro-maguey)]
 
               px-5
               py-4
 
               text-[10px]
-              font-medium
+              font-semibold
               uppercase
               tracking-[0.16em]
               text-white
-
-              [text-shadow:0_2px_4px_rgba(0,0,0,1),0_4px_10px_rgba(0,0,0,0.85)]
 
               shadow-[0_6px_18px_rgba(0,0,0,0.35)]
 
               transition
               duration-300
 
-              hover:bg-white
-              hover:text-black
-              hover:[text-shadow:none]
+              hover:brightness-105
 
               sm:max-w-[350px]
               sm:px-6

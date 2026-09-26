@@ -127,7 +127,7 @@ export function Historia() {
               m-0
               [font-family:var(--fuente-condensada)]
               text-[46px]
-              font-normal
+              font-bold
               uppercase
               leading-[0.9]
               tracking-[-0.01em]

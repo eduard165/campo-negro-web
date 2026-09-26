@@ -46,6 +46,7 @@ export function Esencia() {
           <p
             className="
               mb-4
+              [font-family:var(--fuente-texto)]
               text-[11px]
               font-medium
               uppercase
@@ -66,7 +67,7 @@ export function Esencia() {
               m-0
               [font-family:var(--fuente-condensada)]
               text-[46px]
-              font-normal
+              font-bold
               uppercase
               leading-[0.9]
               tracking-[-0.01em]
@@ -108,8 +109,10 @@ export function Esencia() {
               className="
                 m-0
                 w-full
+                [font-family:var(--fuente-texto)]
                 text-justify
                 text-[15px]
+                font-normal
                 leading-[1.7]
                 text-[#55463c]
 
@@ -130,8 +133,10 @@ export function Esencia() {
               className="
                 m-0
                 w-full
+                [font-family:var(--fuente-texto)]
                 text-justify
                 text-[15px]
+                font-normal
                 leading-[1.7]
                 text-[#55463c]
 
@@ -148,10 +153,11 @@ export function Esencia() {
 
           <p
             className="
-              mt-7
               mb-0
+              mt-7
               [font-family:var(--fuente-manuscrita)]
               text-[36px]
+              font-normal
               leading-none
               text-[#a76532]
 
