@@ -233,10 +233,10 @@ export function Portada() {
         >
           <div
             className="
-              w-[190%]
+              w-[200%]
               max-w-none
 
-              sm:w-[175%]
+              sm:w-[205%]
             "
           >
             <Image
