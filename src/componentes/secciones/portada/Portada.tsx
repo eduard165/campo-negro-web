@@ -61,7 +61,7 @@ export function Portada() {
           z-[2]
 
           w-[100%]
-          max-w-[500px]
+          max-w-[450px]
 
           sm:right-[-30%]
           sm:w-[82%]
