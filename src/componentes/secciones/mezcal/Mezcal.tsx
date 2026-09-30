@@ -147,9 +147,10 @@ export function Mezcal() {
               m-0
               [font-family:var(--fuente-condensada)]
               text-[52px]
-              font-semibold
+              font-normal
               uppercase
-              leading-[0.9]
+              leading-[0.88]
+              tracking-[0.01em]
               text-white
 
               sm:text-[60px]

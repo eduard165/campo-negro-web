@@ -59,6 +59,7 @@ export function Proceso() {
           <p
             className="
               mb-4
+              [font-family:var(--fuente-texto)]
               text-[11px]
               font-medium
               uppercase
@@ -81,7 +82,8 @@ export function Proceso() {
               text-[46px]
               font-normal
               uppercase
-              leading-[0.9]
+              leading-[0.88]
+              tracking-[0.01em]
               text-[#3b2d24]
 
               sm:text-[54px]
@@ -193,7 +195,8 @@ export function Proceso() {
                   text-[28px]
                   font-normal
                   uppercase
-                  leading-none
+                  leading-[0.92]
+                  tracking-[0.01em]
                   text-[#3b2d24]
 
                   transition-colors
@@ -212,8 +215,10 @@ export function Proceso() {
                   mt-3
                   mb-0
                   max-w-[300px]
+                  [font-family:var(--fuente-texto)]
                   text-center
                   text-[14px]
+                  font-normal
                   leading-[1.6]
                   text-[#55463c]
 
@@ -288,6 +293,7 @@ export function Proceso() {
           <p
             className="
               mb-5
+              [font-family:var(--fuente-texto)]
               text-[11px]
               font-medium
               uppercase

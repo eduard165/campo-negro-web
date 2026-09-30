@@ -8,7 +8,7 @@ export function Historia() {
         relative
         w-full
         overflow-hidden
-        bg-black
+        bg-[var(--color-tierra-oaxaquena)]
         text-white
 
         lg:min-h-[620px]
@@ -77,14 +77,14 @@ export function Historia() {
           max-w-[1600px]
           justify-center
 
-          pt-10
           pb-12
+          pt-10
 
           sm:pt-12
 
           md:w-[92%]
-          md:pt-14
           md:pb-14
+          md:pt-14
 
           lg:min-h-[620px]
           lg:justify-end
@@ -107,6 +107,7 @@ export function Historia() {
           <p
             className="
               mb-4
+              [font-family:var(--fuente-texto)]
               text-[11px]
               font-medium
               uppercase
@@ -127,10 +128,10 @@ export function Historia() {
               m-0
               [font-family:var(--fuente-condensada)]
               text-[46px]
-              font-bold
+              font-normal
               uppercase
-              leading-[0.9]
-              tracking-[-0.01em]
+              leading-[0.88]
+              tracking-[0.01em]
               text-white
 
               sm:text-[54px]
@@ -165,10 +166,12 @@ export function Historia() {
               m-0
               w-full
               max-w-[610px]
+              [font-family:var(--fuente-texto)]
               text-justify
               text-[15px]
+              font-normal
               leading-[1.75]
-              text-white/85
+              text-white/90
 
               md:text-[16px]
 

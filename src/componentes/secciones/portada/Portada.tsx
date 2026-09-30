@@ -14,7 +14,10 @@ export function Portada() {
 
         bg-[url('/imagenes/portada/fondo-portada-movil2.png')]
         bg-cover
-        bg-center
+        bg-[position:88%_center]
+        bg-no-repeat
+
+        sm:bg-[position:86%_center]
 
         md:bg-[url('/imagenes/portada/fondo-portada.png')]
         md:bg-[62%_center]
@@ -22,10 +25,34 @@ export function Portada() {
         lg:bg-center
       "
     >
-      {/* El encabezado se mantiene exactamente como ya está */}
+      <div
+        className="
+          absolute
+          inset-0
+
+          bg-[linear-gradient(
+            90deg,
+            rgba(8,5,3,0.54)_0%,
+            rgba(8,5,3,0.38)_28%,
+            rgba(8,5,3,0.18)_48%,
+            rgba(8,5,3,0.04)_65%,
+            rgba(8,5,3,0)_78%
+          )]
+
+          md:bg-[linear-gradient(
+            90deg,
+            rgba(8,5,3,0.48)_0%,
+            rgba(8,5,3,0.28)_38%,
+            rgba(8,5,3,0.08)_62%,
+            rgba(8,5,3,0)_78%
+          )]
+
+          lg:bg-transparent
+        "
+      />
+
       <Encabezado />
 
-      {/* CONTENIDO DE LA PORTADA */}
       <div
         className="
           relative
@@ -33,12 +60,14 @@ export function Portada() {
           mx-auto
           flex
           min-h-[100svh]
-          w-[88%]
+          w-[90%]
           max-w-[1700px]
           items-center
           justify-start
-          pb-12
-          pt-32
+          pb-10
+          pt-28
+
+          sm:w-[88%]
 
           md:w-[90%]
           md:pb-16
@@ -53,14 +82,14 @@ export function Portada() {
           className="
             flex
             w-full
-            max-w-[420px]
+            max-w-[280px]
             flex-col
             items-center
             text-center
 
-            sm:max-w-[460px]
+            sm:max-w-[310px]
 
-            md:max-w-[500px]
+            md:max-w-[360px]
 
             lg:ml-[2%]
             lg:max-w-[500px]
@@ -71,48 +100,57 @@ export function Portada() {
           {/* LOGO PRINCIPAL */}
           <div
             className="
-              mb-6
-              w-[170px]
-
-              sm:w-[190px]
-
-              md:w-[210px]
-
-              lg:w-[220px]
+              mb-5
+              flex
+              w-full
+              justify-center
             "
           >
-            <Image
-              src="/imagenes/marca/logo-vertical-blanco.png"
-              alt="Campo Negro 1430"
-              width={500}
-              height={500}
-              priority
+            <div
               className="
-                h-auto
-                w-full
-                object-contain
+                w-[145px]
 
-                drop-shadow-[0_3px_3px_rgba(0,0,0,0.95)]
-                drop-shadow-[0_8px_14px_rgba(0,0,0,0.75)]
+                sm:w-[160px]
+
+                md:w-[185px]
+
+                lg:w-[220px]
               "
-            />
+            >
+              <Image
+                src="/imagenes/marca/logo-vertical-blanco.png"
+                alt="Campo Negro 1430"
+                width={500}
+                height={500}
+                priority
+                className="
+                  h-auto
+                  w-full
+                  object-contain
+
+                  drop-shadow-[0_3px_3px_rgba(0,0,0,0.95)]
+                  drop-shadow-[0_8px_14px_rgba(0,0,0,0.75)]
+                "
+              />
+            </div>
           </div>
 
           {/* MEZCAL ARTESANAL */}
           <p
             className="
               m-0
-              text-[10px]
+              [font-family:var(--fuente-texto)]
+              text-[9px]
               font-medium
               uppercase
-              tracking-[0.42em]
+              tracking-[0.38em]
               text-white
-               
+
               [text-shadow:0_2px_4px_rgba(0,0,0,1),0_5px_12px_rgba(0,0,0,0.9)]
 
-              sm:text-[11px]
+              sm:text-[10px]
 
-              md:text-[12px]
+              md:text-[11px]
 
               lg:text-[13px]
               lg:tracking-[0.48em]
@@ -120,49 +158,60 @@ export function Portada() {
           >
             MEZCAL ARTESANAL
           </p>
-             
+
           {/* LÍNEA */}
           <div
             className="
-              my-5
+              my-4
               h-px
-              w-[52px]
+              w-[48px]
               bg-white
 
               shadow-[0_2px_6px_rgba(0,0,0,0.9)]
 
-              md:my-6
-              md:w-[60px]
+              md:my-5
+              md:w-[54px]
+
+              lg:my-6
+              lg:w-[60px]
             "
           />
 
-          {/* MOMENTOS QUE MERECEN SER RECORDADOS */}
+          {/* MOMENTOS */}
           <div
             className="
+              flex
               w-full
-              max-w-[330px]
-
-              sm:max-w-[360px]
-
-              md:max-w-[400px]
-
-              lg:max-w-[430px]
+              justify-center
             "
           >
-            <Image
-              src="/imagenes/portada/Momentos.png"
-              alt="Momentos que merecen ser recordados"
-              width={1600}
-              height={1000}
+            <div
               className="
-                h-auto
                 w-full
-                object-contain
+                max-w-[245px]
 
-                drop-shadow-[0_3px_3px_rgba(0,0,0,1)]
-                drop-shadow-[0_8px_16px_rgba(0,0,0,0.9)]
+                sm:max-w-[270px]
+
+                md:max-w-[310px]
+
+                lg:max-w-[430px]
               "
-            />
+            >
+              <Image
+                src="/imagenes/portada/Momentos.png"
+                alt="Momentos que merecen ser recordados"
+                width={1600}
+                height={1000}
+                className="
+                  h-auto
+                  w-full
+                  object-contain
+
+                  drop-shadow-[0_3px_3px_rgba(0,0,0,1)]
+                  drop-shadow-[0_8px_16px_rgba(0,0,0,0.9)]
+                "
+              />
+            </div>
           </div>
 
           {/* BOTÓN */}
@@ -170,10 +219,10 @@ export function Portada() {
             href="#mezcal"
             className="
               group
-              mt-8
+              mt-7
               flex
               w-full
-              max-w-[320px]
+              max-w-[245px]
               items-center
               justify-between
 
@@ -182,10 +231,11 @@ export function Portada() {
               px-5
               py-4
 
-              text-[10px]
+              [font-family:var(--fuente-texto)]
+              text-[9px]
               font-semibold
               uppercase
-              tracking-[0.16em]
+              tracking-[0.14em]
               text-white
 
               shadow-[0_6px_18px_rgba(0,0,0,0.35)]
@@ -195,12 +245,13 @@ export function Portada() {
 
               hover:brightness-105
 
-              sm:max-w-[350px]
+              sm:max-w-[270px]
               sm:px-6
 
-              md:mt-9
-              md:max-w-[370px]
+              md:mt-8
+              md:max-w-[310px]
 
+              lg:mt-9
               lg:max-w-[390px]
               lg:px-7
               lg:py-[18px]
@@ -211,8 +262,9 @@ export function Portada() {
 
             <span
               className="
-                ml-5
+                ml-4
                 text-base
+
                 transition-transform
                 duration-300
 

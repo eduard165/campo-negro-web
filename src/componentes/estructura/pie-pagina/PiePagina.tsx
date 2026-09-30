@@ -84,31 +84,34 @@ export function PiePagina() {
             "
           >
             <h2
-              className="
-                m-0
-                [font-family:var(--fuente-condensada)]
-                text-[44px]
-                font-normal
-                uppercase
-                leading-[0.88]
-                tracking-[-0.01em]
-                text-white
+  className="
+    m-0
+    [font-family:var(--fuente-condensada)]
+    text-[40px]
+    font-normal
+    uppercase
+    leading-[0.98]
+    tracking-[0.01em]
+    text-white
 
-                [text-shadow:0_2px_6px_rgba(0,0,0,0.9)]
+    [text-shadow:0_2px_6px_rgba(0,0,0,0.9)]
 
-                sm:text-[50px]
+    sm:text-[46px]
+    sm:leading-[0.94]
 
-                md:text-[54px]
+    md:text-[52px]
+    md:leading-[0.9]
 
-                lg:text-[60px]
-              "
-            >
-              EL MEZCAL
-              <br />
-              TAMBIÉN ES
-              <br />
-              ENCUENTRO
-            </h2>
+    lg:text-[60px]
+    lg:leading-[0.88]
+  "
+>
+  EL MEZCAL
+  <br />
+  TAMBIÉN ES
+  <br />
+  ENCUENTRO
+</h2>
 
             <div
               className="
@@ -384,8 +387,10 @@ export function PiePagina() {
             <p
               className="
                 m-0
+                [font-family:var(--fuente-texto)]
                 whitespace-nowrap
                 text-[9px]
+                font-normal
                 leading-none
                 text-white/60
 
@@ -401,9 +406,11 @@ export function PiePagina() {
           <p
             className="
               m-0
+              [font-family:var(--fuente-texto)]
               whitespace-nowrap
               text-right
               text-[8px]
+              font-normal
               leading-none
               text-white/50
 

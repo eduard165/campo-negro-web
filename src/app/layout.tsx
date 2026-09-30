@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import {
-  Barlow_Condensed,
   Luxurious_Script,
   Montserrat,
 } from "next/font/google";
@@ -10,12 +9,6 @@ import "./globals.css";
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--fuente-principal",
-});
-
-const barlowCondensed = Barlow_Condensed({
-  subsets: ["latin"],
-  weight: ["300", "400", "500"],
-  variable: "--fuente-condensada",
 });
 
 const luxuriousScript = Luxurious_Script({
@@ -39,7 +32,6 @@ export default function DisenoRaiz({
       lang="es"
       className={`
         ${montserrat.variable}
-        ${barlowCondensed.variable}
         ${luxuriousScript.variable}
       `}
     >

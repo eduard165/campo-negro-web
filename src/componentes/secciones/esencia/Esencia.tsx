@@ -65,12 +65,14 @@ export function Esencia() {
           <h2
             className="
               m-0
-              [font-family:var(--fuente-condensada)]
+
+              [font-family:'Gill_Sans_MT_Condensed',var(--fuente-condensada),sans-serif]
+
               text-[46px]
-              font-bold
+              font-normal
               uppercase
-              leading-[0.9]
-              tracking-[-0.01em]
+              leading-[0.88]
+              tracking-[0.01em]
               text-[#3b2d24]
 
               sm:text-[54px]
