@@ -16,7 +16,7 @@ export function Mezcal() {
         isolate
         w-full
         overflow-hidden
-        bg-[#120804]
+        bg-[var(--color-tierra-oaxaquena)]
         text-white
 
         lg:flex
@@ -26,7 +26,7 @@ export function Mezcal() {
     >
       {/* =========================
           IMAGEN
-          ========================= */}
+      ========================= */}
       <div
         className="
           relative
@@ -92,7 +92,7 @@ export function Mezcal() {
 
       {/* =========================
           CONTENIDO
-          ========================= */}
+      ========================= */}
       <div
         className="
           relative

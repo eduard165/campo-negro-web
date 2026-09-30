@@ -13,13 +13,11 @@ export function Portada() {
         overflow-hidden
 
         bg-[url('/imagenes/portada/fondo-portada-movil-sin-botella.png')]
-        bg-contain
-        bg-top
+        bg-cover
+        bg-center
         bg-no-repeat
-        bg-[#0c0806]
 
         md:bg-[url('/imagenes/portada/fondo-portada.png')]
-        md:bg-cover
         md:bg-[62%_center]
 
         lg:bg-center
@@ -235,10 +233,10 @@ export function Portada() {
         >
           <div
             className="
-              w-[175%]
+              w-[190%]
               max-w-none
 
-              sm:w-[160%]
+              sm:w-[175%]
             "
           >
             <Image
