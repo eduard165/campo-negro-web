@@ -233,27 +233,33 @@ export function Portada() {
         >
           <div
             className="
-              w-[200%]
+              w-[250%]
               max-w-none
 
-              sm:w-[205%]
+              sm:w-[300%]
             "
           >
             <Image
-              src="/imagenes/portada/botella-portada.png"
-              alt="Botella de Mezcal Campo Negro"
-              width={900}
-              height={1600}
-              priority
-              className="
-                h-auto
-                w-full
-                object-contain
-                object-bottom
+  src="/imagenes/portada/botella-portada.png"
+  alt="Botella de Mezcal Campo Negro"
+  width={900}
+  height={1600}
+  priority
+  className="
+    h-auto
+    w-full
+    origin-bottom-right
+    translate-x-12
+    scale-[1.45]
+    object-contain
+    object-bottom
 
-                drop-shadow-[-8px_4px_18px_rgba(0,0,0,0.24)]
-              "
-            />
+    sm:translate-x-6
+    sm:scale-[1.30]
+
+    drop-shadow-[-8px_4px_18px_rgba(0,0,0,0.24)]
+  "
+/>
           </div>
         </div>
       </div>
