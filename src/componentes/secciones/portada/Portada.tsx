@@ -14,7 +14,7 @@ export function Portada() {
 
         bg-[url('/imagenes/portada/fondo-portada-movil2.png')]
         bg-cover
-        bg-[position:58%_center]
+        bg-[position:55%_center]
         bg-no-repeat
 
         sm:bg-[position:86%_center]
@@ -78,18 +78,19 @@ export function Portada() {
           lg:pt-40
         "
       >
+        {/* COLUMNA GENERAL */}
         <div
           className="
             flex
             w-full
-            max-w-[280px]
+            max-w-[245px]
             flex-col
             items-center
             text-center
 
-            sm:max-w-[310px]
+            sm:max-w-[270px]
 
-            md:max-w-[360px]
+            md:max-w-[310px]
 
             lg:ml-[2%]
             lg:max-w-[500px]
@@ -185,10 +186,19 @@ export function Portada() {
               justify-center
             "
           >
-            <div
+            <Image
+              src="/imagenes/portada/Momentos.png"
+              alt="Momentos que merecen ser recordados"
+              width={1600}
+              height={1000}
               className="
+                h-auto
                 w-full
                 max-w-[245px]
+                object-contain
+
+                drop-shadow-[0_3px_3px_rgba(0,0,0,1)]
+                drop-shadow-[0_8px_16px_rgba(0,0,0,0.9)]
 
                 sm:max-w-[270px]
 
@@ -196,22 +206,7 @@ export function Portada() {
 
                 lg:max-w-[430px]
               "
-            >
-              <Image
-                src="/imagenes/portada/Momentos.png"
-                alt="Momentos que merecen ser recordados"
-                width={1600}
-                height={1000}
-                className="
-                  h-auto
-                  w-full
-                  object-contain
-
-                  drop-shadow-[0_3px_3px_rgba(0,0,0,1)]
-                  drop-shadow-[0_8px_16px_rgba(0,0,0,0.9)]
-                "
-              />
-            </div>
+            />
           </div>
 
           {/* BOTÓN */}
@@ -264,7 +259,6 @@ export function Portada() {
               className="
                 ml-4
                 text-base
-
                 transition-transform
                 duration-300
 
