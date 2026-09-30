@@ -14,7 +14,7 @@ export function Portada() {
 
         bg-[url('/imagenes/portada/fondo-portada-movil2.png')]
         bg-cover
-        bg-[position:88%_center]
+        bg-[position:58%_center]
         bg-no-repeat
 
         sm:bg-[position:86%_center]
