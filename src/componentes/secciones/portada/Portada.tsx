@@ -12,12 +12,10 @@ export function Portada() {
         w-full
         overflow-hidden
 
-        bg-[url('/imagenes/portada/fondo-portada-movil2.png')]
+        bg-[url('/imagenes/portada/fondo-portada-movil-sin-botella.png')]
         bg-cover
-        bg-[position:55%_center]
+        bg-center
         bg-no-repeat
-
-        sm:bg-[position:86%_center]
 
         md:bg-[url('/imagenes/portada/fondo-portada.png')]
         md:bg-[62%_center]
@@ -25,18 +23,20 @@ export function Portada() {
         lg:bg-center
       "
     >
+      {/* OVERLAY */}
       <div
         className="
           absolute
           inset-0
+          z-[1]
 
           bg-[linear-gradient(
             90deg,
-            rgba(8,5,3,0.54)_0%,
-            rgba(8,5,3,0.38)_28%,
+            rgba(8,5,3,0.52)_0%,
+            rgba(8,5,3,0.38)_30%,
             rgba(8,5,3,0.18)_48%,
-            rgba(8,5,3,0.04)_65%,
-            rgba(8,5,3,0)_78%
+            rgba(8,5,3,0.05)_64%,
+            rgba(8,5,3,0)_80%
           )]
 
           md:bg-[linear-gradient(
@@ -51,8 +51,45 @@ export function Portada() {
         "
       />
 
+      {/* BOTELLA - SOLO MÓVIL */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          bottom-[8%]
+          right-[-20%]
+          z-[2]
+
+          w-[100%]
+          max-w-[500px]
+
+          sm:right-[-30%]
+          sm:w-[82%]
+          sm:max-w-[470px]
+
+          md:hidden
+        "
+      >
+        <Image
+          src="/imagenes/portada/botella-portada.png"
+          alt=""
+          width={900}
+          height={1600}
+          priority
+          className="
+            h-auto
+            w-full
+            object-contain
+            object-bottom
+
+            drop-shadow-[-8px_4px_18px_rgba(0,0,0,0.24)]
+          "
+        />
+      </div>
+
       <Encabezado />
 
+      {/* CONTENIDO */}
       <div
         className="
           relative
@@ -78,19 +115,19 @@ export function Portada() {
           lg:pt-40
         "
       >
-        {/* COLUMNA GENERAL */}
+        {/* COLUMNA IZQUIERDA */}
         <div
           className="
             flex
             w-full
-            max-w-[245px]
+            max-w-[225px]
             flex-col
             items-center
             text-center
-
+            translate-x-[-5%]
             sm:max-w-[270px]
 
-            md:max-w-[310px]
+            md:max-w-[340px]
 
             lg:ml-[2%]
             lg:max-w-[500px]
@@ -98,7 +135,7 @@ export function Portada() {
             xl:ml-[4%]
           "
         >
-          {/* LOGO PRINCIPAL */}
+          {/* LOGO */}
           <div
             className="
               mb-5
@@ -109,11 +146,11 @@ export function Portada() {
           >
             <div
               className="
-                w-[145px]
+                w-[175px]
 
-                sm:w-[160px]
+                sm:w-[190px]
 
-                md:w-[185px]
+                md:w-[205px]
 
                 lg:w-[220px]
               "
@@ -144,14 +181,14 @@ export function Portada() {
               text-[9px]
               font-medium
               uppercase
-              tracking-[0.38em]
+              tracking-[0.34em]
               text-white
 
               [text-shadow:0_2px_4px_rgba(0,0,0,1),0_5px_12px_rgba(0,0,0,0.9)]
 
               sm:text-[10px]
 
-              md:text-[11px]
+              md:text-[12px]
 
               lg:text-[13px]
               lg:tracking-[0.48em]
@@ -165,13 +202,13 @@ export function Portada() {
             className="
               my-4
               h-px
-              w-[48px]
+              w-[50px]
               bg-white
 
               shadow-[0_2px_6px_rgba(0,0,0,0.9)]
 
               md:my-5
-              md:w-[54px]
+              md:w-[58px]
 
               lg:my-6
               lg:w-[60px]
@@ -194,7 +231,7 @@ export function Portada() {
               className="
                 h-auto
                 w-full
-                max-w-[245px]
+                max-w-[225px]
                 object-contain
 
                 drop-shadow-[0_3px_3px_rgba(0,0,0,1)]
@@ -202,7 +239,7 @@ export function Portada() {
 
                 sm:max-w-[270px]
 
-                md:max-w-[310px]
+                md:max-w-[330px]
 
                 lg:max-w-[430px]
               "
@@ -217,7 +254,7 @@ export function Portada() {
               mt-7
               flex
               w-full
-              max-w-[245px]
+              max-w-[225px]
               items-center
               justify-between
 
@@ -227,10 +264,10 @@ export function Portada() {
               py-4
 
               [font-family:var(--fuente-texto)]
-              text-[9px]
+              text-[8px]
               font-semibold
               uppercase
-              tracking-[0.14em]
+              tracking-[0.11em]
               text-white
 
               shadow-[0_6px_18px_rgba(0,0,0,0.35)]
@@ -242,9 +279,10 @@ export function Portada() {
 
               sm:max-w-[270px]
               sm:px-6
+              sm:text-[9px]
 
               md:mt-8
-              md:max-w-[310px]
+              md:max-w-[330px]
 
               lg:mt-9
               lg:max-w-[390px]
@@ -257,7 +295,7 @@ export function Portada() {
 
             <span
               className="
-                ml-4
+                ml-3
                 text-base
                 transition-transform
                 duration-300
