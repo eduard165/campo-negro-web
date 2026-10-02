@@ -48,6 +48,26 @@ export function Proceso() {
           lg:py-20
         "
       >
+        {/* =========================
+            DIVISOR ENTRE BLOQUES
+        ========================= */}
+        <div
+          aria-hidden="true"
+          className="
+            mb-12
+            h-px
+            w-full
+            bg-[var(--color-oro-maguey)]
+
+            md:mb-14
+
+            lg:mb-16
+          "
+        />
+
+        {/* =========================
+            ENCABEZADO
+        ========================= */}
         <div
           className="
             flex
@@ -98,6 +118,7 @@ export function Proceso() {
             EN CADA ETAPA
           </h2>
 
+          {/* LÍNEA ORIGINAL DEL TÍTULO */}
           <div
             className="
               mt-6
@@ -108,6 +129,9 @@ export function Proceso() {
           />
         </div>
 
+        {/* =========================
+            ETAPAS
+        ========================= */}
         <div
           className="
             mx-auto
@@ -273,6 +297,9 @@ export function Proceso() {
           ))}
         </div>
 
+        {/* =========================
+            MAESTRO MEZCALERO
+        ========================= */}
         <div
           className="
             mx-auto

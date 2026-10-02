@@ -16,12 +16,13 @@ export function Mezcal() {
         isolate
         w-full
         overflow-hidden
-        bg-[var(--color-tierra-oaxaquena)]
-        text-white
+        bg-[var(--color-cal)]
+        text-[var(--color-ceniza)]
 
         lg:flex
         lg:min-h-[700px]
         lg:items-center
+        lg:text-white
       "
     >
       {/* =========================
@@ -34,7 +35,7 @@ export function Mezcal() {
           w-full
           shrink-0
 
-          bg-[url('/imagenes/mezcal/mezcal5.png')]
+          bg-[url('/imagenes/mezcal/mezcal6.png')]
           bg-cover
           bg-[position:88%_center]
           bg-no-repeat
@@ -128,12 +129,13 @@ export function Mezcal() {
               font-medium
               uppercase
               tracking-[0.38em]
-              text-white
+              text-[var(--color-ceniza)]
 
               md:text-[12px]
 
               lg:text-[13px]
               lg:tracking-[0.45em]
+              lg:text-white
 
               lg:[text-shadow:0_2px_4px_rgba(0,0,0,1),0_6px_12px_rgba(0,0,0,0.85)]
             "
@@ -151,13 +153,14 @@ export function Mezcal() {
               uppercase
               leading-[0.88]
               tracking-[0.01em]
-              text-white
+              text-[var(--color-ceniza)]
 
               sm:text-[60px]
 
               md:text-[70px]
 
               lg:text-[82px]
+              lg:text-white
 
               lg:[text-shadow:0_3px_6px_rgba(0,0,0,1),0_10px_22px_rgba(0,0,0,0.78)]
             "
@@ -189,7 +192,7 @@ export function Mezcal() {
               text-[15px]
               font-normal
               leading-[1.75]
-              text-white/90
+              text-[var(--color-ceniza)]
 
               md:text-[16px]
 
@@ -229,7 +232,7 @@ export function Mezcal() {
                 key={dato}
                 className="
                   border-l
-                  border-white/30
+                  border-[var(--color-ceniza)]/30
                   pl-4
 
                   lg:border-white/35
@@ -244,7 +247,7 @@ export function Mezcal() {
                     uppercase
                     leading-[1.3]
                     tracking-[0.04em]
-                    text-white/90
+                    text-[var(--color-ceniza)]
 
                     sm:text-[14px]
 

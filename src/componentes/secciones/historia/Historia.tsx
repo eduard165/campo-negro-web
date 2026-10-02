@@ -8,10 +8,11 @@ export function Historia() {
         relative
         w-full
         overflow-hidden
-        bg-[var(--color-tierra-oaxaquena)]
-        text-white
+        bg-[var(--color-cal)]
+        text-[var(--color-ceniza)]
 
         lg:min-h-[620px]
+        lg:text-white
       "
     >
       <div
@@ -132,13 +133,14 @@ export function Historia() {
               uppercase
               leading-[0.88]
               tracking-[0.01em]
-              text-white
+              text-[var(--color-ceniza)]
 
               sm:text-[54px]
 
               md:text-[62px]
 
               lg:text-[68px]
+              lg:text-white
 
               xl:text-[74px]
             "
@@ -171,12 +173,13 @@ export function Historia() {
               text-[15px]
               font-normal
               leading-[1.75]
-              text-white/90
+              text-[var(--color-ceniza)]
 
               md:text-[16px]
 
               lg:text-[17px]
               lg:leading-[1.8]
+              lg:text-white/90
             "
           >
             El mezcal nace con la premisa de acompañar a cada familia
