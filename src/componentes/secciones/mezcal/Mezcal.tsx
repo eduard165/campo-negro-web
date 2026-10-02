@@ -34,7 +34,7 @@ export function Mezcal() {
           w-full
           shrink-0
 
-          bg-[url('/imagenes/mezcal/mezcal4.png')]
+          bg-[url('/imagenes/mezcal/mezcal5.png')]
           bg-cover
           bg-[position:88%_center]
           bg-no-repeat

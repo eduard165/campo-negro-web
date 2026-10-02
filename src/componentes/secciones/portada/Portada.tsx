@@ -17,7 +17,7 @@ export function Portada() {
         bg-center
         bg-no-repeat
 
-        md:bg-[url('/imagenes/portada/fondo-portada.png')]
+        md:bg-[url('/imagenes/portada/fondo-portada2.png')]
         md:bg-[62%_center]
 
         lg:bg-center
@@ -236,30 +236,30 @@ export function Portada() {
               w-[250%]
               max-w-none
 
-              sm:w-[300%]
+              sm:w-[350%]
             "
           >
             <Image
-  src="/imagenes/portada/botella-portada.png"
-  alt="Botella de Mezcal Campo Negro"
-  width={900}
-  height={1600}
-  priority
-  className="
-    h-auto
-    w-full
-    origin-bottom-right
-    translate-x-12
-    scale-[1.45]
-    object-contain
-    object-bottom
+              src="/imagenes/portada/botella-portada2.png"
+              alt="Botella de Mezcal Campo Negro"
+              width={900}
+              height={1600}
+              priority
+              className="
+                h-auto
+                w-full
+                origin-bottom-right
+                translate-x-12
+                scale-[1.45]
+                object-contain
+                object-bottom
 
-    sm:translate-x-6
-    sm:scale-[1.30]
+                sm:translate-x-6
+                sm:scale-[1.30]
 
-    drop-shadow-[-8px_4px_18px_rgba(0,0,0,0.24)]
-  "
-/>
+                drop-shadow-[-8px_4px_18px_rgba(0,0,0,0.24)]
+              "
+            />
           </div>
         </div>
       </div>
