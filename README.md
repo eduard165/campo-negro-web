@@ -1,247 +1,48 @@
-<div align="center">
+# Campo Negro 1430 — rediseño web
 
-<img src="public/imagenes/marca/logo-principal.png" alt="Campo Negro 1430" width="180" />
+Sitio web de una sola página para Campo Negro, realizado en **Next.js 16**, **React 19** y **TypeScript**, siguiendo la nueva propuesta visual `CN_Web.pdf` (9 láminas).
 
-# Campo Negro 1430
-
-### Landing page oficial · Mezcal artesanal de Oaxaca
-
-Una experiencia web desarrollada para transmitir la identidad, historia y tradición de **Campo Negro 1430**, combinando una estética editorial con una arquitectura limpia, modular y escalable.
-
-<br />
-
-[![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-19-20232A?style=for-the-badge&logo=react)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![Estado](https://img.shields.io/badge/Estado-En_desarrollo-C69C45?style=for-the-badge)](#estado-del-proyecto)
-
-</div>
-
----
-
-## ✦ Sobre el proyecto
-
-**Campo Negro 1430** es una landing page enfocada en presentar la esencia de una marca de mezcal artesanal originaria de Oaxaca.
-
-El proyecto fue reconstruido desde cero tomando como referencia una propuesta visual previa, priorizando:
-
-- una estructura clara y mantenible;
-- componentes separados por responsabilidad;
-- navegación interna para una experiencia tipo *one page*;
-- diseño adaptable a diferentes tamaños de pantalla;
-- recursos visuales organizados localmente;
-- buenas prácticas con Git y control de versiones;
-- una base preparada para futuras ampliaciones.
-
----
-
-## ✦ Secciones
-
-| Sección | Descripción |
-|---|---|
-| **Inicio** | Portada principal con identidad visual y navegación. |
-| **Nuestra Esencia** | Filosofía, raíces y valores de Campo Negro. |
-| **Nuestra Historia** | Historia de la marca y vínculo con Ejutla de Crespo. |
-| **Nuestro Mezcal** | Presentación del Espadín Joven y sus características. |
-| **Proceso** | Etapas principales del proceso artesanal. |
-| **Contacto** | Redes sociales, identidad de marca y cierre del sitio. |
-
----
-
-## ✦ Tecnologías
-
-```text
-Next.js
-React
-TypeScript
-Tailwind CSS
-CSS Modules
-next/font
-next/image
-Git
-GitHub
-```
-
----
-
-## ✦ Estructura del proyecto
-
-```text
-campo-negro-web/
-│
-├── public/
-│   └── imagenes/
-│       ├── esencia/
-│       ├── historia/
-│       ├── iconos/
-│       ├── marca/
-│       ├── mezcal/
-│       ├── pie-pagina/
-│       ├── portada/
-│       └── proceso/
-│
-├── src/
-│   ├── app/
-│   │   ├── globals.css
-│   │   ├── layout.tsx
-│   │   └── page.tsx
-│   │
-│   ├── componentes/
-│   │   ├── estructura/
-│   │   │   ├── encabezado/
-│   │   │   └── pie-pagina/
-│   │   ├── secciones/
-│   │   │   ├── esencia/
-│   │   │   ├── historia/
-│   │   │   ├── mezcal/
-│   │   │   ├── portada/
-│   │   │   └── proceso/
-│   │   └── interfaz/
-│   │
-│   ├── configuracion/
-│   ├── datos/
-│   ├── tipos/
-│   └── utilidades/
-│
-├── package.json
-├── tsconfig.json
-└── README.md
-```
-
----
-
-## ✦ Instalación
+## Iniciar
 
 ```bash
-git clone https://github.com/eduard165/campo-negro-web.git
-cd campo-negro-web
 npm install
 npm run dev
 ```
 
-Después abre:
+Abrir http://localhost:3000. Para comprobar producción:
 
-```text
-http://localhost:3000
+```bash
+npm run build
+npm start
 ```
 
----
+## Secciones
 
-## ✦ Scripts disponibles
+1. Inicio — Una historia que permanece
+2. Legado — Homenaje a Eloy Ponce
+3. Identidad — Oaxaca y Veracruz
+4. Origen — El mezcal
+5. Ritual — Compartir en la mesa
+6. Manifiesto — Mensaje de marca
+7. Proceso — Cocimiento, molienda y destilación
+8. Producto — Ficha del mezcal
+9. Autor — Iván Betancourt
+10. Pie de página — Contacto (pendiente de datos oficiales)
 
-| Comando | Función |
-|---|---|
-| `npm run dev` | Inicia el entorno de desarrollo. |
-| `npm run build` | Genera la versión de producción. |
-| `npm run start` | Ejecuta la aplicación compilada. |
-| `npm run lint` | Analiza el código con ESLint. |
+## Archivos importantes
 
----
+- `src/app/page.tsx`: orden de las secciones.
+- `src/componentes/secciones/nuevo/Secciones.tsx`: contenido de cada bloque.
+- `src/componentes/estructura/encabezado/Encabezado.tsx`: menú responsive.
+- `src/app/globals.css`: estilos y ajustes móviles.
+- `public/imagenes/nuevo/`: material visual del cliente y recortes de referencia.
 
-## ✦ Navegación
+## Material pendiente del cliente
 
-El sitio funciona como una **landing page de una sola página**.
+**Importante:** `CN_Web.pdf` contiene las nueve láminas como imágenes aplanadas; no se entregaron los fondos fotográficos originales por separado. Para que el proyecto se pueda visualizar desde ahora, las fotografías en `hero-botella.webp`, `identidad-paisaje.webp`, `origen-agave.webp`, `ritual-mesa.webp`, `producto-botella.webp` y `autor-fotos.webp` son **recortes de las imágenes del propio PDF**, no fotografías originales independientes. Algunas pueden contener detalles gráficos integrados del mockup y su resolución es limitada. Reemplazarlas por los fondos originales en cuanto los comparta el cliente, conservando los nombres.
 
-```text
-#inicio
-#historia
-#mezcal
-#proceso
-#contacto
-```
+Los logotipos, ilustraciones, sellos e imágenes originales recibidos en el ZIP están en el mismo directorio. No se reconstruyeron ni alteraron las etiquetas del producto.
 
-La configuración del menú se encuentra en:
+La ficha del nuevo PDF indica **37% Alc. Vol.**; el material previo del proyecto decía **45%**. Se respetó el nuevo PDF, pero se recomienda confirmar este dato con el cliente antes de publicar.
 
-```text
-src/datos/navegacion.ts
-```
-
----
-
-## ✦ Identidad visual
-
-La interfaz toma como base los lineamientos gráficos de Campo Negro 1430, manteniendo una estética sobria, artesanal y editorial.
-
-### Tipografías
-
-| Tipografía | Uso |
-|---|---|
-| **Gill Sans MT Condensed** | Titulares y encabezados principales. |
-| **Myriad Pro** | Bloques de texto, párrafos y contenido informativo. |
-| **Luxurious Script Regular** | Frases destacadas, palabras de acento y textos breves. |
-
-La combinación tipográfica busca mantener contraste entre titulares de carácter editorial, bloques de lectura limpios y acentos caligráficos de uso puntual.
-
-### Paleta de color
-
-| Color | Hex | RGB | Uso sugerido |
-|---|---|---|---|
-| **Tierra Oaxaqueña** | `#938a7f` | `147, 138, 127` | Tonos secundarios, iconografía y detalles suaves. |
-| **Cal** | `#f4f1e8` | `244, 241, 232` | Fondos claros y áreas de descanso visual. |
-| **Oro de Maguey** | `#c69c45` | `198, 156, 69` | Acentos, líneas decorativas y elementos destacados. |
-| **Brasa** | `#79170e` | `121, 23, 14` | Acentos cálidos y elementos de identidad. |
-| **Ceniza** | `#2e2d2c` | `46, 45, 44` | Texto oscuro, fondos profundos y contraste. |
-
-```css
-:root {
-  --color-tierra-oaxaquena: #938a7f;
-  --color-cal: #f4f1e8;
-  --color-oro-maguey: #c69c45;
-  --color-brasa: #79170e;
-  --color-ceniza: #2e2d2c;
-}
-```
-
----
-
-## ✦ Sistema visual
-
-El diseño combina:
-
-- tonos crema y tierra;
-- marrones profundos;
-- blanco y negro;
-- acentos dorados;
-- tipografía condensada para titulares;
-- tipografía sans serif para lectura;
-- caligrafía para frases cortas y momentos de énfasis.
-
-Los recursos oficiales de marca se almacenan dentro de:
-
-```text
-public/imagenes/
-```
-
-## ✦ Repositorio
-
-<div align="center">
-
-### [github.com/eduard165/campo-negro-web](https://github.com/eduard165/campo-negro-web)
-
-</div>
-
----
-
-## ✦ Créditos
-
-**Desarrollo web**  
-Eduardo Rodríguez
-
-**Identidad visual y material gráfico**  
-Campo Negro 1430
-
-**Diseño / colaboración visual**  
-Iván Betancourt
-
----
-
-<div align="center">
-
-### Campo Negro 1430
-
-**Tradición · Tierra · Mezcal · Oaxaca**
-
-<sub>Hecho con atención al detalle y respeto por la identidad de la marca.</sub>
-
-</div>
+No se inventaron correos, teléfonos ni redes sociales: solicitar datos oficiales para activar el contacto. La fuente del diseño es una tipografía condensada y una manuscrita; actualmente se utilizan alternativas web (Barlow Condensed y Luxurious Script) mientras no se disponga de los archivos tipográficos licenciados del cliente.

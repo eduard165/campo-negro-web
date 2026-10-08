@@ -1,26 +1,11 @@
-export const enlacesNavegacion = [
-  {
-    etiqueta: "Inicio",
-    destino: "#inicio",
-  },
-  {
-    etiqueta: "Nuestra Esencia",
-    destino: "#esencia",
-  },
-  {
-    etiqueta: "Nuestra Historia",
-    destino: "#historia",
-  },
-  {
-    etiqueta: "Nuestro Mezcal",
-    destino: "#mezcal",
-  },
-  {
-    etiqueta: "Proceso",
-    destino: "#proceso",
-  },
-  {
-    etiqueta: "Contacto",
-    destino: "#contacto",
-  },
+
+export const navegacion = [
+  { nombre: "INICIO", enlace: "#inicio" },
+  { nombre: "LEGADO", enlace: "#legado" },
+  { nombre: "IDENTIDAD", enlace: "#identidad" },
+  { nombre: "ORIGEN", enlace: "#origen" },
+  { nombre: "RITUAL", enlace: "#ritual" },
+  { nombre: "PROCESO", enlace: "#proceso" },
+  { nombre: "AUTOR", enlace: "#autor" },
+  { nombre: "CONTACTO", enlace: "#contacto" },
 ];

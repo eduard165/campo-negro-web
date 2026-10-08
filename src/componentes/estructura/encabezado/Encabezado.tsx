@@ -1,509 +1,459 @@
+
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
-import { enlacesNavegacion } from "@/datos/navegacion";
+const enlaces = [
+  { nombre: "INICIO", href: "#inicio" },
+  { nombre: "LEGADO", href: "#legado" },
+  { nombre: "IDENTIDAD", href: "#identidad" },
+  { nombre: "ORIGEN", href: "#origen" },
+  { nombre: "RITUAL", href: "#ritual" },
+  { nombre: "PROCESO", href: "#proceso" },
+  { nombre: "AUTOR", href: "#autor" },
+  { nombre: "CONTACTO", href: "#contacto" },
+];
 
 export function Encabezado() {
   const [menuAbierto, setMenuAbierto] = useState(false);
+  const [desplazado, setDesplazado] = useState(false);
+  const [enlaceActivo, setEnlaceActivo] = useState<string | null>(
+    null
+  );
 
-  const cerrarMenu = () => {
+  // Detectar cuando el usuario baja por la página.
+  useEffect(() => {
+    const detectarScroll = () => {
+      setDesplazado(window.scrollY > 30);
+    };
+
+    detectarScroll();
+
+    window.addEventListener("scroll", detectarScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", detectarScroll);
+    };
+  }, []);
+
+  // Cerrar el menú móvil si se cambia a escritorio.
+  useEffect(() => {
+    const cerrarEnEscritorio = () => {
+      if (window.innerWidth >= 1024) {
+        setMenuAbierto(false);
+      }
+    };
+
+    window.addEventListener("resize", cerrarEnEscritorio);
+
+    return () => {
+      window.removeEventListener("resize", cerrarEnEscritorio);
+    };
+  }, []);
+
+  const seleccionarEnlace = (href: string) => {
+    setEnlaceActivo(href);
     setMenuAbierto(false);
   };
 
   return (
-    <header className="absolute left-0 top-0 z-50 w-full">
+    <header
+      className={`
+        group
+        fixed
+        inset-x-0
+        top-0
+        z-50
+        w-full
+
+        transition-[background-color,box-shadow,backdrop-filter]
+        duration-500
+        ease-in-out
+
+        motion-reduce:transition-none
+
+        ${
+          desplazado || menuAbierto
+            ? `
+              bg-[#1c1511]/80
+              shadow-[0_8px_35px_rgba(0,0,0,0.12)]
+              backdrop-blur-md
+            `
+            : `
+              bg-transparent
+              shadow-none
+              backdrop-blur-none
+
+              lg:hover:bg-[#1c1511]/75
+              lg:hover:backdrop-blur-md
+
+              lg:focus-within:bg-[#1c1511]/75
+              lg:focus-within:backdrop-blur-md
+            `
+        }
+      `}
+    >
+      {/* =====================================
+          CONTENEDOR PRINCIPAL
+      ===================================== */}
       <div
         className="
           relative
           z-50
           mx-auto
           flex
-          w-[92%]
-          max-w-[1700px]
+          w-[calc(100%-24px)]
+          max-w-[1500px]
           items-center
           justify-between
-          py-4
+          gap-5
+          py-3
 
-          lg:py-5
+          transition-[padding]
+          duration-500
+
+          sm:w-[90%]
+          sm:py-4
+
+          md:w-[92%]
+          md:py-6
+
+          lg:justify-start
+          lg:gap-8
+          lg:py-7
         "
       >
-        {/* LOGO */}
+        {/* =====================================
+            LOGOTIPO
+        ===================================== */}
         <a
           href="#inicio"
-          aria-label="Ir al inicio de Campo Negro"
-          onClick={cerrarMenu}
-          className="flex shrink-0 items-center"
+          aria-label="Campo Negro - Inicio"
+          onClick={() => seleccionarEnlace("#inicio")}
+          className="
+            group/logo
+            relative
+            z-50
+            shrink-0
+
+            transition-transform
+            duration-500
+            ease-out
+
+            hover:-translate-y-0.5
+            hover:scale-[1.045]
+
+            active:scale-[0.97]
+
+            motion-reduce:transition-none
+          "
         >
           <Image
-            src="/imagenes/marca/logo-blanco.png"
-            alt="Campo Negro"
-            width={120}
-            height={90}
+            src="/imagenes/portada/logo-blanco.png"
+            alt="Campo Negro 1430"
+            width={180}
+            height={150}
             priority
             className="
               h-auto
-              w-[72px]
+              w-[52px]
 
-              sm:w-[78px]
+              transition-[filter,opacity]
+              duration-500
 
-              md:w-[84px]
+              group-hover/logo:drop-shadow-[0_0_12px_rgba(198,156,69,0.45)]
 
-              lg:w-[90px]
+              sm:w-[70px]
+
+              md:w-[105px]
+
+              lg:w-[145px]
             "
           />
         </a>
 
-        {/* NAVEGACIÓN DESKTOP */}
+        {/* =====================================
+            NAVEGACIÓN ESCRITORIO
+        ===================================== */}
         <nav
           aria-label="Navegación principal"
           className="
             hidden
             items-center
-            gap-8
+            justify-start
+            gap-5
 
             lg:flex
 
-            xl:gap-10
+            xl:gap-8
           "
         >
-          {enlacesNavegacion.map((enlace) => (
-            <a
-              key={enlace.destino}
-              href={enlace.destino}
-              className="
-                relative
-                text-[11px]
-                font-medium
-                uppercase
-                tracking-[0.18em]
-                text-white/85
-                transition-colors
-                duration-300
+          {enlaces.map((enlace) => {
+            const activo = enlaceActivo === enlace.href;
 
-                after:absolute
-                after:-bottom-2
-                after:left-0
-                after:h-px
-                after:w-0
-                after:bg-white
-                after:transition-all
-                after:duration-300
+            return (
+              <a
+                key={enlace.nombre}
+                href={enlace.href}
+                onClick={() =>
+                  seleccionarEnlace(enlace.href)
+                }
+                aria-current={activo ? "location" : undefined}
+                className={`
+                  group/enlace
+                  relative
+                  inline-flex
+                  items-center
+                  whitespace-nowrap
+                  pb-1
 
-                hover:text-white
-                hover:after:w-full
-              "
-            >
-              {enlace.etiqueta}
-            </a>
-          ))}
+                  text-[13px]
+                  font-medium
+
+                  transition-[color,transform]
+                  duration-300
+                  ease-out
+
+                  hover:-translate-y-[2px]
+                  hover:text-[#e3bd70]
+
+                  focus-visible:text-[#e3bd70]
+                  focus-visible:outline-none
+
+                  motion-reduce:transition-none
+
+                  xl:text-[15px]
+
+                  ${
+                    activo
+                      ? "text-[#e3bd70]"
+                      : "text-white"
+                  }
+                `}
+              >
+                {enlace.nombre}
+
+                {/* LÍNEA DORADA ANIMADA */}
+                <span
+                  aria-hidden="true"
+                  className={`
+                    absolute
+                    bottom-0
+                    left-0
+                    h-[1px]
+                    w-full
+                    origin-left
+                    bg-[#c69c45]
+
+                    transition-transform
+                    duration-300
+                    ease-out
+
+                    group-hover/enlace:scale-x-100
+                    group-focus-visible/enlace:scale-x-100
+
+                    ${
+                      activo
+                        ? "scale-x-100"
+                        : "scale-x-0"
+                    }
+                  `}
+                />
+              </a>
+            );
+          })}
         </nav>
 
-        {/* DERECHA DESKTOP */}
-        <div
-          className="
-            hidden
-            items-center
-            gap-4
-
-            lg:flex
-            lg:gap-5
-          "
-        >
-          <a
-            href="#"
-            aria-label="Instagram de Campo Negro"
-            className="
-              flex
-              h-5
-              w-5
-              items-center
-              justify-center
-              text-white/90
-              transition
-              duration-300
-
-              hover:-translate-y-0.5
-              hover:text-white
-            "
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <rect
-                x="3"
-                y="3"
-                width="18"
-                height="18"
-                rx="5"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-              />
-
-              <circle
-                cx="12"
-                cy="12"
-                r="4"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-              />
-
-              <circle
-                cx="17.5"
-                cy="6.5"
-                r="1.1"
-                fill="currentColor"
-              />
-            </svg>
-          </a>
-
-          <a
-            href="#"
-            aria-label="Facebook de Campo Negro"
-            className="
-              flex
-              h-5
-              w-5
-              items-center
-              justify-center
-              text-white/90
-              transition
-              duration-300
-
-              hover:-translate-y-0.5
-              hover:text-white
-            "
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                fill="currentColor"
-                d="M13.7 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5H17V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.4V10H7.5v3h2.8v8h3.4Z"
-              />
-            </svg>
-          </a>
-
-          <a
-            href="#contacto"
-            className="
-              group
-              flex
-              h-[46px]
-              min-w-[160px]
-              items-center
-              justify-center
-              gap-3
-              bg-[var(--color-oro-maguey)]
-              px-5
-              text-[10px]
-              font-medium
-              uppercase
-              tracking-[0.18em]
-              text-white
-              transition
-              duration-300
-
-              hover:bg-[#b58b3d]
-            "
-          >
-            CONTÁCTANOS
-
-            <span
-              className="
-                transition-transform
-                duration-300
-
-                group-hover:translate-x-1
-              "
-            >
-              →
-            </span>
-          </a>
-        </div>
-
-        {/* BOTÓN HAMBURGUESA MÓVIL */}
+        {/* =====================================
+            BOTÓN HAMBURGUESA
+        ===================================== */}
         <button
           type="button"
-          aria-label={menuAbierto ? "Cerrar menú" : "Abrir menú"}
+          aria-label={
+            menuAbierto ? "Cerrar menú" : "Abrir menú"
+          }
           aria-expanded={menuAbierto}
-          onClick={() => setMenuAbierto((estado) => !estado)}
+          aria-controls="menu-movil-campo-negro"
+          onClick={() =>
+            setMenuAbierto((anterior) => !anterior)
+          }
           className="
+            group/boton
             relative
+            z-50
             flex
             h-11
             w-11
+            shrink-0
+            flex-col
             items-center
             justify-center
-            border
-            border-white/40
-            text-white
-            transition
+            gap-[6px]
+
+            transition-transform
             duration-300
 
-            hover:border-white
+            hover:scale-110
+            active:scale-95
 
             lg:hidden
           "
         >
           <span
             className={`
-              absolute
-              h-px
-              w-5
+              h-[2px]
+              w-7
+              rounded-full
               bg-white
-              transition-all
+
+              transition-[transform,background-color]
               duration-300
+
+              group-hover/boton:bg-[#e3bd70]
 
               ${
                 menuAbierto
-                  ? "translate-y-0 rotate-45"
-                  : "-translate-y-[6px]"
+                  ? "translate-y-[8px] rotate-45"
+                  : ""
               }
             `}
           />
 
           <span
             className={`
-              absolute
-              h-px
-              w-5
+              h-[2px]
+              w-7
+              rounded-full
               bg-white
-              transition-all
+
+              transition-[opacity,background-color]
               duration-300
 
-              ${
-                menuAbierto
-                  ? "opacity-0"
-                  : "opacity-100"
-              }
+              group-hover/boton:bg-[#e3bd70]
+
+              ${menuAbierto ? "opacity-0" : ""}
             `}
           />
 
           <span
             className={`
-              absolute
-              h-px
-              w-5
+              h-[2px]
+              w-7
+              rounded-full
               bg-white
-              transition-all
+
+              transition-[transform,background-color]
               duration-300
+
+              group-hover/boton:bg-[#e3bd70]
 
               ${
                 menuAbierto
-                  ? "translate-y-0 -rotate-45"
-                  : "translate-y-[6px]"
+                  ? "-translate-y-[8px] -rotate-45"
+                  : ""
               }
             `}
           />
         </button>
       </div>
 
-      {/* MENÚ MÓVIL */}
-      <div
+      {/* =====================================
+          MENÚ DESPLEGABLE MÓVIL
+      ===================================== */}
+      <nav
+        id="menu-movil-campo-negro"
+        aria-label="Navegación móvil"
+        aria-hidden={!menuAbierto}
         className={`
-          absolute
-          left-0
-          top-0
+          fixed
+          inset-0
           z-40
-          w-full
-          overflow-hidden
-          bg-[#0c0806]/96
-          backdrop-blur-md
-          transition-all
+          flex
+          flex-col
+          items-center
+          justify-center
+          gap-6
+          bg-[#211b17]/96
+          px-6
+          backdrop-blur-xl
+
+          transition-[opacity,visibility]
           duration-500
+          ease-in-out
+
+          motion-reduce:transition-none
+
+          lg:hidden
 
           ${
             menuAbierto
-              ? "max-h-[100svh] opacity-100"
-              : "pointer-events-none max-h-0 opacity-0"
+              ? `
+                visible
+                pointer-events-auto
+                opacity-100
+              `
+              : `
+                invisible
+                pointer-events-none
+                opacity-0
+              `
           }
-
-          lg:hidden
         `}
       >
-        <div
-          className="
-            mx-auto
-            flex
-            min-h-[100svh]
-            w-[88%]
-            flex-col
-            justify-center
-            pt-24
-          "
-        >
-          {/* ENLACES */}
-          <nav
-            aria-label="Navegación móvil"
-            className="
-              flex
-              flex-col
-              items-start
-            "
-          >
-            {enlacesNavegacion.map((enlace, indice) => (
-              <a
-                key={enlace.destino}
-                href={enlace.destino}
-                onClick={cerrarMenu}
-                className="
-                  flex
-                  w-full
-                  items-center
-                  justify-between
-                  border-b
-                  border-white/15
-                  py-5
-                  text-[18px]
-                  font-medium
-                  uppercase
-                  tracking-[0.12em]
-                  text-white
-                  transition
-                  duration-300
+        {enlaces.map((enlace, indice) => {
+          const activo = enlaceActivo === enlace.href;
 
-                  hover:pl-2
-                  hover:text-[var(--color-oro-maguey)]
-                "
-              >
-                <span>{enlace.etiqueta}</span>
-
-                <span
-                  className="
-                    text-[11px]
-                    font-normal
-                    tracking-normal
-                    text-white/35
-                  "
-                >
-                  {String(indice + 1).padStart(2, "0")}
-                </span>
-              </a>
-            ))}
-          </nav>
-
-          {/* CONTACTO */}
-          <a
-            href="#contacto"
-            onClick={cerrarMenu}
-            className="
-              group
-              mt-8
-              flex
-              w-full
-              items-center
-              justify-between
-              bg-[var(--color-oro-maguey)]
-              px-6
-              py-5
-              text-[11px]
-              font-medium
-              uppercase
-              tracking-[0.2em]
-              text-white
-              transition
-              duration-300
-
-              hover:bg-[#b58b3d]
-            "
-          >
-            CONTÁCTANOS
-
-            <span
-              className="
-                text-lg
-                transition-transform
-                duration-300
-
-                group-hover:translate-x-1
-              "
-            >
-              →
-            </span>
-          </a>
-
-          {/* REDES */}
-          <div
-            className="
-              mt-8
-              flex
-              items-center
-              justify-center
-              gap-7
-            "
-          >
+          return (
             <a
-              href="#"
-              aria-label="Instagram de Campo Negro"
-              className="
-                flex
-                h-8
-                w-8
-                items-center
-                justify-center
-                text-white/80
-                transition
-                duration-300
+              key={enlace.nombre}
+              href={enlace.href}
+              onClick={() =>
+                seleccionarEnlace(enlace.href)
+              }
+              tabIndex={menuAbierto ? 0 : -1}
+              style={{
+                transitionDelay: menuAbierto
+                  ? `${80 + indice * 45}ms`
+                  : "0ms",
+              }}
+              className={`
+                relative
+                text-[22px]
+                font-medium
+                tracking-[0.08em]
 
-                hover:text-[var(--color-oro-maguey)]
-              "
+                transition-[opacity,transform,color]
+                duration-500
+                ease-out
+
+                hover:scale-105
+                hover:text-[#e3bd70]
+
+                active:scale-95
+
+                motion-reduce:transition-none
+
+                ${
+                  activo
+                    ? "text-[#e3bd70]"
+                    : "text-white"
+                }
+
+                ${
+                  menuAbierto
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-4 opacity-0"
+                }
+              `}
             >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <rect
-                  x="3"
-                  y="3"
-                  width="18"
-                  height="18"
-                  rx="5"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                />
-
-                <circle
-                  cx="12"
-                  cy="12"
-                  r="4"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                />
-
-                <circle
-                  cx="17.5"
-                  cy="6.5"
-                  r="1.1"
-                  fill="currentColor"
-                />
-              </svg>
+              {enlace.nombre}
             </a>
-
-            <a
-              href="#"
-              aria-label="Facebook de Campo Negro"
-              className="
-                flex
-                h-8
-                w-8
-                items-center
-                justify-center
-                text-white/80
-                transition
-                duration-300
-
-                hover:text-[var(--color-oro-maguey)]
-              "
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  fill="currentColor"
-                  d="M13.7 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5H17V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.4V10H7.5v3h2.8v8h3.4Z"
-                />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
+          );
+        })}
+      </nav>
     </header>
   );
 }

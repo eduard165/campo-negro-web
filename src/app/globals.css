@@ -1,173 +1,35 @@
+
 @import "tailwindcss";
 
 :root {
-  /* ========================================
-     IDENTIDAD CAMPO NEGRO
-  ======================================== */
-
   --color-tierra-oaxaquena: #938a7f;
   --color-cal: #f4f1e8;
   --color-oro-maguey: #c69c45;
   --color-brasa: #79170e;
   --color-ceniza: #2e2d2c;
-
-
-  /* ========================================
-     COLORES AUXILIARES
-  ======================================== */
-
-  --color-negro: #0c0806;
-  --color-blanco: #ffffff;
-  --color-cafe: #3b2d24;
-  --color-cafe-texto: #55463c;
-
-
-  /* ========================================
-     TIPOGRAFÍAS CAMPO NEGRO
-
-     Las fuentes reales se cargan
-     desde layout.tsx
-  ======================================== */
-
-  /*
-    Myriad Pro
-    Uso:
-    - Párrafos
-    - Navegación
-    - Botones
-    - Textos generales
-  */
-  --tipografia-principal: var(--fuente-principal);
-  --fuente-texto: var(--fuente-principal);
-
-
-  /*
-    Gill Sans MT Condensed
-    Uso:
-    - Títulos
-    - Encabezados
-    - Frases principales
-  */
-  --tipografia-condensada: var(--fuente-condensada);
-
-
-  /*
-    Luxurious Script
-    Uso:
-    - Palabras destacadas
-    - Frases manuscritas
-    - "recordados"
-    - "Oaxaca vive en cada sorbo"
-  */
-  --tipografia-manuscrita: var(--fuente-manuscrita);
 }
 
-
-/* ========================================
-   RESET GENERAL
-======================================== */
-
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
 }
-
-
-/* ========================================
-   HTML
-======================================== */
 
 html {
   scroll-behavior: smooth;
 }
 
-
-/* ========================================
-   BODY
-======================================== */
-
 body {
   margin: 0;
-  padding: 0;
-
   min-height: 100vh;
-
-  background: var(--color-negro);
-  color: var(--color-blanco);
-
-  font-family:
-    var(--fuente-principal),
-    Arial,
-    Helvetica,
-    sans-serif;
-
-  overflow-x: hidden;
+  background: var(--color-cal);
+  color: var(--color-ceniza);
+  font-family: Arial, Helvetica, sans-serif;
 }
-
-
-/* ========================================
-   FORMULARIOS
-======================================== */
-
-button,
-input,
-textarea,
-select {
-  font: inherit;
-}
-
-
-/* ========================================
-   INTERACCIONES
-======================================== */
 
 button,
 a {
   -webkit-tap-highlight-color: transparent;
 }
 
-
-/* ========================================
-   ENLACES
-======================================== */
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-
-/* ========================================
-   MULTIMEDIA
-======================================== */
-
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
-
-
-/* ========================================
-   BOTONES
-======================================== */
-
 button {
-  border: 0;
-  background: none;
   cursor: pointer;
-}
-
-
-/* ========================================
-   SELECCIÓN DE TEXTO
-======================================== */
-
-::selection {
-  background: var(--color-oro-maguey);
-  color: var(--color-negro);
 }

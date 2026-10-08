@@ -1,40 +1,27 @@
-import type { Metadata } from "next";
-import {
-  Luxurious_Script,
-  Montserrat,
-} from "next/font/google";
 
+import type { Metadata } from "next";
+import { Barlow_Condensed } from "next/font/google";
 import "./globals.css";
 
-const montserrat = Montserrat({
+const fuenteMenu = Barlow_Condensed({
   subsets: ["latin"],
-  variable: "--fuente-principal",
-});
-
-const luxuriousScript = Luxurious_Script({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--fuente-manuscrita",
+  weight: ["400", "500"],
+  variable: "--fuente-menu",
 });
 
 export const metadata: Metadata = {
-  title: "Campo Negro",
-  description: "Mezcal artesanal Campo Negro",
+  title: "Campo Negro | Mezcal Artesanal",
+  description:
+    "Campo Negro, mezcal artesanal de Ejutla de Crespo, Oaxaca.",
 };
 
-export default function DisenoRaiz({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="es"
-      className={`
-        ${montserrat.variable}
-        ${luxuriousScript.variable}
-      `}
-    >
+    <html lang="es" className={fuenteMenu.variable}>
       <body>{children}</body>
     </html>
   );
