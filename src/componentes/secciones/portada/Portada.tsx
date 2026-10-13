@@ -69,6 +69,7 @@ export function Portada() {
             tracking-[0.03em]
             [word-spacing:0.12em]
             text-[4.75vw]
+            [-webkit-text-stroke:0.012em_currentColor]
 
             md:text-[2.38vw]
           "
