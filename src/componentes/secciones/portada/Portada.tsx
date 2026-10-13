@@ -1,5 +1,17 @@
 import Image from "next/image";
 
+/*
+  AJUSTADO AL DISEÑO ORIGINAL (v2)
+  ---------------------------------------------------------
+  Artboards del diseño:
+    - Escritorio: 2576 x 1288 px  (2:1)
+    - Móvil:      1288 x 2576 px  (1:2)
+
+  Tamaños en vw para que el texto escale igual que el fondo.
+  Posición vertical móvil en vw (no en %), para no depender
+  de la proporción real de la imagen de fondo.
+*/
+
 export function Portada() {
   return (
     <section
@@ -41,15 +53,13 @@ export function Portada() {
           text-[#292827]
 
           left-[17.3%]
-          top-[23.9vw]
+          top-[25.8vw]
 
           md:left-[8.66%]
           md:top-[23.9%]
         "
       >
-        {/* TÍTULO - Gill Sans Condensed
-            El diseño se ve más "medium" que regular: el text-stroke
-            engrosa un poco el trazo sin llegar a bold. */}
+        {/* TÍTULO - Gill Sans Condensed (peso regular, sin stroke) */}
         <h1
           className="
             font-gill
@@ -58,7 +68,6 @@ export function Portada() {
             leading-[1.05]
             tracking-[0.03em]
             [word-spacing:0.12em]
-            [-webkit-text-stroke:0.035em_currentColor]
             text-[4.75vw]
 
             md:text-[2.38vw]
@@ -93,13 +102,14 @@ export function Portada() {
           a nosotros
         </p>
 
-        {/* SUBTÍTULO - Myriad Pro regular */}
+        {/* SUBTÍTULO - Myriad Pro regular + stroke fino para igualar el peso del diseño */}
         <h2
           className="
             font-myriad
             font-normal
             uppercase
             leading-[1.2]
+            [-webkit-text-stroke:0.01em_currentColor]
             text-[2.7vw]
             mt-[4.4vw]
 
