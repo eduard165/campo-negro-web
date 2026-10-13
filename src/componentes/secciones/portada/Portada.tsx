@@ -1,257 +1,148 @@
-
 import Image from "next/image";
-import { Encabezado } from "@/componentes/estructura/encabezado/Encabezado";
 
 export function Portada() {
   return (
     <section
       id="inicio"
-      className="
-        relative
-        w-full
-        overflow-hidden
-        bg-[#f4f1e8]
-      "
+      className="relative w-full overflow-hidden bg-[#f4f1e8]"
     >
-      {/* =========================
-          ENCABEZADO
-      ========================= */}
-      <Encabezado />
-
-      {/* =========================
-          PORTADA MÓVIL
-      ========================= */}
-      <div
-        className="
-          relative
-          w-full
-          md:hidden
-        "
-      >
-        {/* IMAGEN ORIGINAL MÓVIL */}
+      {/* FONDO MÓVIL */}
+      <div className="relative w-full md:hidden">
         <Image
-          src="/imagenes/portada/fondo-portada-movil.png"
-          alt="Campo Negro: una historia que permanece"
-          width={4500}
-          height={8190}
+          src="/imagenes/portada/fondo-portada-movil3.png"
+          alt="Botella de mezcal Campo Negro"
+          width={1288}
+          height={2576}
           priority
           sizes="100vw"
-          className="
-            block
-            h-auto
-            w-full
-          "
+          className="block h-auto w-full"
         />
-
-        {/* BOTÓN DORADO MÓVIL */}
-        <a
-          href="#legado"
-          className="
-            absolute
-            left-[18%]
-            top-[38%]
-            z-10
-
-            inline-flex
-            min-h-[44px]
-            items-center
-            justify-between
-            gap-5
-
-            bg-[#c69c45]
-            px-3
-            py-2
-            text-white
-
-            transition-colors
-            duration-300
-
-            hover:bg-[#ae8737]
-
-            sm:min-h-[52px]
-            sm:gap-7
-            sm:px-4
-          "
-        >
-          <span
-            className="
-              text-left
-              text-[11px]
-              font-medium
-              uppercase
-              leading-[1.15]
-
-              sm:text-[13px]
-            "
-          >
-            DESCUBRE LA
-            <br />
-            HISTORIA...
-          </span>
-
-          <svg
-            width="25"
-            height="25"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.8"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden="true"
-          >
-            <path d="M12 3v17" />
-            <path d="m5 13 7 7 7-7" />
-          </svg>
-        </a>
       </div>
 
-      {/* =========================
-          PORTADA ESCRITORIO
-      ========================= */}
+      {/* FONDO ESCRITORIO */}
+      <div className="relative hidden w-full md:block">
+        <Image
+          src="/imagenes/portada/fondo-portada.jpg"
+          alt="Botella de mezcal Campo Negro"
+          width={2576}
+          height={1288}
+          priority
+          sizes="100vw"
+          className="block h-auto w-full"
+        />
+      </div>
+
+      {/* CONTENIDO */}
       <div
         className="
-          relative
-          hidden
-          min-h-[100svh]
-          w-full
+          absolute
+          z-10
+          whitespace-nowrap
+          text-[#292827]
 
-          md:block
+          left-[17.3%]
+          top-[23.9vw]
+
+          md:left-[8.66%]
+          md:top-[23.9%]
         "
       >
-        {/* FONDO ESCRITORIO */}
-        <div
+        {/* TÍTULO - Gill Sans Condensed
+            El diseño se ve más "medium" que regular: el text-stroke
+            engrosa un poco el trazo sin llegar a bold. */}
+        <h1
           className="
-            absolute
-            inset-0
+            font-gill
+            font-normal
+            uppercase
+            leading-[1.05]
+            tracking-[0.03em]
+            [word-spacing:0.12em]
+            [-webkit-text-stroke:0.035em_currentColor]
+            text-[4.75vw]
+
+            md:text-[2.38vw]
           "
         >
-          <Image
-            src="/imagenes/portada/fondo-portada.jpg"
-            alt="Botella de mezcal Campo Negro"
-            fill
-            priority
-            sizes="100vw"
-            className="
-              object-cover
-              object-center
-            "
-          />
-        </div>
+          Una historia que
+          <br />
+          permanece...
+        </h1>
 
-        {/* =========================
-            CONTENIDO ESCRITORIO
-        ========================= */}
-        <div
+        {/* SCRIPT */}
+        <p
           className="
-            relative
-            z-10
-            mx-auto
-            flex
-            min-h-[100svh]
-            w-[92%]
-            max-w-[1500px]
-            items-center
+            font-luxurious
+            block
+            w-max
+            origin-bottom-left
+            -rotate-[5deg]
+            font-normal
+            leading-[0.62]
+            text-[5.5vw]
+            ml-[14.1vw]
+            mt-[2.4vw]
 
-            pb-12
-            pt-[110px]
-
-            lg:pt-[120px]
+            md:text-[2.75vw]
+            md:ml-[7.07vw]
+            md:mt-[1.4vw]
           "
         >
-          {/* COLUMNA DE TEXTO */}
-          <div
-            className="
-              flex
-              w-[43%]
-              max-w-[430px]
-              flex-col
-              items-start
+          Descúbrela junto
+          <br />
+          a nosotros
+        </p>
 
-              lg:w-[40%]
-              lg:max-w-[460px]
+        {/* SUBTÍTULO - Myriad Pro regular */}
+        <h2
+          className="
+            font-myriad
+            font-normal
+            uppercase
+            leading-[1.2]
+            text-[2.7vw]
+            mt-[4.4vw]
 
-              xl:w-[42%]
-              xl:max-w-[500px]
-            "
-          >
-            {/* =========================
-                IMAGEN ORIGINAL DE TEXTO
-                SIN RECORTES
-            ========================= */}
-            <Image
-              src="/imagenes/portada/Texto-portada.png"
-              alt="Una historia que permanece. Descúbrela junto a nosotros. Campo Negro."
-              width={900}
-              height={1100}
-              priority
-              sizes="(max-width: 1023px) 43vw,(max-width: 1279px) 40vw,500px"
-              className="
-                block
-                h-auto
-                w-full
-                object-contain
-                object-left
-              "
-            />
+            md:text-[1.33vw]
+            md:mt-[1.55vw]
+          "
+        >
+          Campo Negro
+        </h2>
 
-            {/* =========================
-                BOTÓN DORADO ESCRITORIO
-            ========================= */}
-            <a
-              href="#legado"
-              className="
-                relative
-                z-20
-                mt-6
-                inline-flex
-                min-h-[52px]
-                shrink-0
-                items-center
-                justify-between
-                gap-7
+        {/* PÁRRAFOS */}
+        <div
+          className="
+            font-myriad
+            font-normal
+            leading-[1.16]
+            text-[2.75vw]
+            mt-[1.1vw]
 
-                bg-[#c69c45]
-                px-4
-                py-2
-                text-white
+            md:text-[1.34vw]
+            md:leading-[1.19]
+            md:mt-[0.55vw]
+          "
+        >
+          <p>
+            Nacido en el corazón de Oaxaca y llevado por
+            <br />
+            una historia que cruza generaciones, esta
+            <br />
+            bebida ancestral no es solo un mezcal más.
+          </p>
 
-                transition-colors
-                duration-300
-
-                hover:bg-[#ae8737]
-              "
-            >
-              <span
-                className="
-                  text-left
-                  text-[13px]
-                  font-medium
-                  uppercase
-                  leading-[1.15]
-                "
-              >
-                DESCUBRE LA
-                <br />
-                HISTORIA...
-              </span>
-
-              <svg
-                width="29"
-                height="29"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M12 3v17" />
-                <path d="m5 13 7 7 7-7" />
-              </svg>
-            </a>
-          </div>
+          <p className="mt-[1.16em] md:mt-[1.19em]">
+            Este proyecto nace con la intención de
+            <br />
+            acompañarte en la mesa o simplemente estar
+            <br />
+            dentro de una conversación, pero sobre todo,
+            <br />
+            para estar presente en esos momentos que
+            <br />
+            merecen ser recordados.
+          </p>
         </div>
       </div>
     </section>
