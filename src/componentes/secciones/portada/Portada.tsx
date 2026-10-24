@@ -1,159 +1,447 @@
 import Image from "next/image";
 
-/*
-  AJUSTADO AL DISEÑO ORIGINAL (v2)
-  ---------------------------------------------------------
-  Artboards del diseño:
-    - Escritorio: 2576 x 1288 px  (2:1)
-    - Móvil:      1288 x 2576 px  (1:2)
-
-  Tamaños en vw para que el texto escale igual que el fondo.
-  Posición vertical móvil en vw (no en %), para no depender
-  de la proporción real de la imagen de fondo.
-*/
+import { Encabezado } from "@/componentes/estructura/encabezado/Encabezado";
 
 export function Portada() {
   return (
     <section
       id="inicio"
-      className="relative w-full overflow-hidden bg-[#f4f1e8]"
+      className="
+        relative
+        min-h-[100svh]
+        w-full
+        overflow-hidden
+
+        bg-[url('/imagenes/portada/fondo-portada-movil-sin-botella.png')]
+        bg-cover
+        bg-center
+        bg-no-repeat
+
+        md:bg-[url('/imagenes/portada/fondo-portada2.png')]
+        md:bg-[62%_center]
+
+        lg:bg-center
+      "
     >
-      {/* FONDO MÓVIL */}
-      <div className="relative w-full md:hidden">
-        <Image
-          src="/imagenes/portada/fondo-portada-movil3.png"
-          alt="Botella de mezcal Campo Negro"
-          width={1288}
-          height={2576}
-          priority
-          sizes="100vw"
-          className="block h-auto w-full"
-        />
-      </div>
-
-      {/* FONDO ESCRITORIO */}
-      <div className="relative hidden w-full md:block">
-        <Image
-          src="/imagenes/portada/fondo-portada.jpg"
-          alt="Botella de mezcal Campo Negro"
-          width={2576}
-          height={1288}
-          priority
-          sizes="100vw"
-          className="block h-auto w-full"
-        />
-      </div>
-
-      {/* CONTENIDO */}
+      {/* OVERLAY */}
       <div
         className="
           absolute
+          inset-0
+          z-[1]
+
+          bg-[linear-gradient(
+            90deg,
+            rgba(8,5,3,0.50)_0%,
+            rgba(8,5,3,0.34)_30%,
+            rgba(8,5,3,0.16)_50%,
+            rgba(8,5,3,0.04)_68%,
+            rgba(8,5,3,0)_82%
+          )]
+
+          md:bg-[linear-gradient(
+            90deg,
+            rgba(8,5,3,0.48)_0%,
+            rgba(8,5,3,0.28)_38%,
+            rgba(8,5,3,0.08)_62%,
+            rgba(8,5,3,0)_78%
+          )]
+
+          lg:bg-transparent
+        "
+      />
+
+      <Encabezado />
+
+      {/* =========================
+          MÓVIL
+      ========================= */}
+      <div
+        className="
+          relative
           z-10
-          whitespace-nowrap
-          text-[#292827]
+          mx-auto
+          grid
+          min-h-[100svh]
+          w-[94%]
+          grid-cols-[0.9fr_1.1fr]
+          items-end
+          gap-1
+          pb-8
+          pt-28
 
-          left-[17.3%]
-          top-[25.8vw]
+          sm:w-[92%]
+          sm:grid-cols-[0.95fr_1.05fr]
 
-          md:left-[8.66%]
-          md:top-[23.9%]
+          md:hidden
         "
       >
-        {/* TÍTULO - Gill Sans Condensed (peso regular, sin stroke) */}
-        <h1
-          className="
-            font-gill
-            font-normal
-            uppercase
-            leading-[1.05]
-            tracking-[0.03em]
-            [word-spacing:0.12em]
-            text-[4.75vw]
-            [-webkit-text-stroke:0.012em_currentColor]
-
-            md:text-[2.38vw]
-          "
-        >
-          Una historia que
-          <br />
-          permanece...
-        </h1>
-
-        {/* SCRIPT */}
-        <p
-          className="
-            font-luxurious
-            block
-            w-max
-            origin-bottom-left
-            -rotate-[5deg]
-            font-normal
-            leading-[0.62]
-            text-[5.5vw]
-            ml-[14.1vw]
-            mt-[2.4vw]
-
-            md:text-[2.75vw]
-            md:ml-[7.07vw]
-            md:mt-[1.4vw]
-          "
-        >
-          Descúbrela junto
-          <br />
-          a nosotros
-        </p>
-
-        {/* SUBTÍTULO - Myriad Pro regular + stroke fino para igualar el peso del diseño */}
-        <h2
-          className="
-            font-myriad
-            font-normal
-            uppercase
-            leading-[1.2]
-            [-webkit-text-stroke:0.01em_currentColor]
-            text-[2.7vw]
-            mt-[4.4vw]
-
-            md:text-[1.33vw]
-            md:mt-[1.55vw]
-          "
-        >
-          Campo Negro
-        </h2>
-
-        {/* PÁRRAFOS */}
+        {/* COLUMNA IZQUIERDA */}
         <div
           className="
-            font-myriad
-            font-normal
-            leading-[1.16]
-            text-[2.75vw]
-            mt-[1.1vw]
-
-            md:text-[1.34vw]
-            md:leading-[1.19]
-            md:mt-[0.55vw]
+            flex
+            flex-col
+            items-center
+            justify-center
+            pb-10
+            text-center
           "
         >
-          <p>
-            Nacido en el corazón de Oaxaca y llevado por
-            <br />
-            una historia que cruza generaciones, esta
-            <br />
-            bebida ancestral no es solo un mezcal más.
+          {/* LOGO PRINCIPAL */}
+          <div
+            className="
+              mb-5
+              w-[155px]
+
+              sm:w-[175px]
+            "
+          >
+            <Image
+              src="/imagenes/marca/logo-vertical-blanco.png"
+              alt="Campo Negro 1430"
+              width={500}
+              height={500}
+              priority
+              className="
+                h-auto
+                w-full
+                object-contain
+
+                drop-shadow-[0_3px_3px_rgba(0,0,0,0.95)]
+                drop-shadow-[0_8px_14px_rgba(0,0,0,0.75)]
+              "
+            />
+          </div>
+
+          {/* MEZCAL ARTESANAL */}
+          <p
+            className="
+              m-0
+              [font-family:var(--fuente-texto)]
+              text-[9px]
+              font-medium
+              uppercase
+              tracking-[0.32em]
+              text-white
+
+              [text-shadow:0_2px_4px_rgba(0,0,0,1),0_5px_12px_rgba(0,0,0,0.9)]
+
+              sm:text-[10px]
+            "
+          >
+            MEZCAL ARTESANAL
           </p>
 
-          <p className="mt-[1.16em] md:mt-[1.19em]">
-            Este proyecto nace con la intención de
-            <br />
-            acompañarte en la mesa o simplemente estar
-            <br />
-            dentro de una conversación, pero sobre todo,
-            <br />
-            para estar presente en esos momentos que
-            <br />
-            merecen ser recordados.
+          {/* LÍNEA */}
+          <div
+            className="
+              my-4
+              h-px
+              w-[48px]
+              bg-white
+
+              shadow-[0_2px_6px_rgba(0,0,0,0.9)]
+            "
+          />
+
+          {/* MOMENTOS */}
+          <div
+            className="
+              w-full
+              max-w-[220px]
+
+              sm:max-w-[250px]
+            "
+          >
+            <Image
+              src="/imagenes/portada/Momentos.png"
+              alt="Momentos que merecen ser recordados"
+              width={1600}
+              height={1000}
+              className="
+                h-auto
+                w-full
+                object-contain
+
+                drop-shadow-[0_3px_3px_rgba(0,0,0,1)]
+                drop-shadow-[0_8px_16px_rgba(0,0,0,0.9)]
+              "
+            />
+          </div>
+
+          {/* BOTÓN */}
+          <a
+            href="#mezcal"
+            className="
+              group
+              mt-7
+              flex
+              w-full
+              max-w-[220px]
+              items-center
+              justify-between
+
+              bg-[var(--color-oro-maguey)]
+
+              px-4
+              py-4
+
+              [font-family:var(--fuente-texto)]
+              text-[8px]
+              font-semibold
+              uppercase
+              tracking-[0.11em]
+              text-white
+
+              shadow-[0_6px_18px_rgba(0,0,0,0.35)]
+
+              transition
+              duration-300
+
+              hover:brightness-105
+
+              sm:max-w-[250px]
+              sm:px-5
+              sm:text-[9px]
+            "
+          >
+            CONOCE NUESTRA VARIEDAD
+
+            <span
+              className="
+                ml-3
+                text-base
+                transition-transform
+                duration-300
+
+                group-hover:translate-x-1
+              "
+            >
+              →
+            </span>
+          </a>
+        </div>
+
+        {/* COLUMNA DERECHA - BOTELLA */}
+        <div
+          className="
+            flex
+            h-full
+            items-end
+            justify-end
+          "
+        >
+          <div
+            className="
+              w-[250%]
+              max-w-none
+
+              sm:w-[350%]
+            "
+          >
+            <Image
+              src="/imagenes/portada/botella-portada2.png"
+              alt="Botella de Mezcal Campo Negro"
+              width={900}
+              height={1600}
+              priority
+              className="
+                h-auto
+                w-full
+                origin-bottom-right
+                translate-x-12
+                scale-[1.45]
+                object-contain
+                object-bottom
+
+                sm:translate-x-6
+                sm:scale-[1.30]
+
+                drop-shadow-[-8px_4px_18px_rgba(0,0,0,0.24)]
+              "
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* =========================
+          TABLET / DESKTOP
+      ========================= */}
+      <div
+        className="
+          relative
+          z-10
+          mx-auto
+          hidden
+          min-h-[100svh]
+          w-[90%]
+          max-w-[1700px]
+          items-center
+          justify-start
+          pb-16
+          pt-36
+
+          md:flex
+
+          lg:w-[92%]
+          lg:pb-20
+          lg:pt-40
+        "
+      >
+        <div
+          className="
+            flex
+            w-full
+            max-w-[340px]
+            flex-col
+            items-center
+            text-center
+
+            lg:ml-[2%]
+            lg:max-w-[500px]
+
+            xl:ml-[4%]
+          "
+        >
+          {/* LOGO */}
+          <div
+            className="
+              mb-5
+              w-[205px]
+
+              lg:w-[220px]
+            "
+          >
+            <Image
+              src="/imagenes/marca/logo-vertical-blanco.png"
+              alt="Campo Negro 1430"
+              width={500}
+              height={500}
+              priority
+              className="
+                h-auto
+                w-full
+                object-contain
+
+                drop-shadow-[0_3px_3px_rgba(0,0,0,0.95)]
+                drop-shadow-[0_8px_14px_rgba(0,0,0,0.75)]
+              "
+            />
+          </div>
+
+          {/* MEZCAL ARTESANAL */}
+          <p
+            className="
+              m-0
+              [font-family:var(--fuente-texto)]
+              text-[12px]
+              font-medium
+              uppercase
+              tracking-[0.38em]
+              text-white
+
+              [text-shadow:0_2px_4px_rgba(0,0,0,1),0_5px_12px_rgba(0,0,0,0.9)]
+
+              lg:text-[13px]
+              lg:tracking-[0.48em]
+            "
+          >
+            MEZCAL ARTESANAL
           </p>
+
+          {/* LÍNEA */}
+          <div
+            className="
+              my-5
+              h-px
+              w-[58px]
+              bg-white
+
+              shadow-[0_2px_6px_rgba(0,0,0,0.9)]
+
+              lg:my-6
+              lg:w-[60px]
+            "
+          />
+
+          {/* MOMENTOS */}
+          <div
+            className="
+              w-full
+              max-w-[330px]
+
+              lg:max-w-[430px]
+            "
+          >
+            <Image
+              src="/imagenes/portada/Momentos.png"
+              alt="Momentos que merecen ser recordados"
+              width={1600}
+              height={1000}
+              className="
+                h-auto
+                w-full
+                object-contain
+
+                drop-shadow-[0_3px_3px_rgba(0,0,0,1)]
+                drop-shadow-[0_8px_16px_rgba(0,0,0,0.9)]
+              "
+            />
+          </div>
+
+          {/* BOTÓN */}
+          <a
+            href="#mezcal"
+            className="
+              group
+              mt-8
+              flex
+              w-full
+              max-w-[330px]
+              items-center
+              justify-between
+
+              bg-[var(--color-oro-maguey)]
+
+              px-6
+              py-4
+
+              [font-family:var(--fuente-texto)]
+              text-[10px]
+              font-semibold
+              uppercase
+              tracking-[0.13em]
+              text-white
+
+              shadow-[0_6px_18px_rgba(0,0,0,0.35)]
+
+              transition
+              duration-300
+
+              hover:brightness-105
+
+              lg:mt-9
+              lg:max-w-[390px]
+              lg:px-7
+              lg:py-[18px]
+              lg:text-[11px]
+            "
+          >
+            CONOCE NUESTRA VARIEDAD
+
+            <span
+              className="
+                ml-4
+                text-base
+                transition-transform
+                duration-300
+
+                group-hover:translate-x-1
+              "
+            >
+              →
+            </span>
+          </a>
         </div>
       </div>
     </section>
