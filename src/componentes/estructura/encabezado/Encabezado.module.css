@@ -1,0 +1,164 @@
+
+/* ==========================================
+   CAMPO NEGRO - ENCABEZADO
+========================================== */
+
+.encabezado {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(24px, 2.5vw, 42px);
+
+  padding:
+    clamp(18px, 2vw, 32px)
+    clamp(24px, 5.2vw, 95px);
+
+  transform: translateY(0);
+  transition: transform 0.35s ease-in-out;
+  will-change: transform;
+}
+
+/* ==========================================
+   COMPORTAMIENTO DEL SCROLL
+========================================== */
+
+.visible {
+  transform: translateY(0);
+}
+
+.oculto {
+  transform: translateY(-100%);
+}
+
+/* ==========================================
+   LOGO
+========================================== */
+
+.enlaceLogo {
+  display: block;
+  flex-shrink: 0;
+}
+
+.logo {
+  display: block;
+  width: clamp(90px, 8vw, 140px);
+  height: auto;
+}
+
+/* ==========================================
+   NAVEGACIÓN ESCRITORIO
+========================================== */
+
+.navegacion {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(18px, 2.3vw, 38px);
+  padding-top: 18px;
+}
+
+.navegacion a {
+  font-family: var(--font-gill), sans-serif;
+  font-size: clamp(14px, 1.05vw, 18px);
+  font-weight: 600;
+  line-height: 1.2;
+
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 1px 6px #3338;
+
+  transition: color 0.2s ease;
+}
+
+.navegacion a:hover {
+  color: #f3d58c;
+}
+
+/* ==========================================
+   MENÚ HAMBURGUESA
+========================================== */
+
+.menu {
+  display: none;
+}
+
+/* ==========================================
+   VERSIÓN MÓVIL
+========================================== */
+
+@media (max-width: 767px) {
+  .encabezado {
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 17px 7%;
+  }
+
+  .logo {
+    width: 85px;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    width: 38px;
+    height: 34px;
+    padding: 5px;
+
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .menu span {
+    display: block;
+    width: 100%;
+    height: 2px;
+
+    background: #fff;
+    box-shadow: 0 1px 4px #3337;
+  }
+
+  .navegacion {
+    display: none;
+    position: absolute;
+
+    top: 90px;
+    right: 5%;
+
+    width: min(250px, 90vw);
+    padding: 20px;
+
+    background: rgba(35, 32, 28, 0.94);
+    border-radius: 3px;
+
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .navegacion.abierta {
+    display: flex;
+  }
+
+  .navegacion a {
+    font-size: 17px;
+  }
+}
+
+/* ==========================================
+   ACCESIBILIDAD
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .encabezado {
+    transition: none;
+  }
+}

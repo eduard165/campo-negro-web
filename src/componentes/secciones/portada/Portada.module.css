@@ -1,0 +1,172 @@
+
+/* ==========================================
+   CAMPO NEGRO - PORTADA
+========================================== */
+
+.portada {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #f4f1e8;
+}
+
+/* ==========================================
+   IMÁGENES DE FONDO
+========================================== */
+
+.fondoMovil {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+
+.fondoEscritorio {
+  position: relative;
+  width: 100%;
+  display: none;
+}
+
+.imagen {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ==========================================
+   CONTENIDO
+========================================== */
+
+.contenido {
+  position: absolute;
+  z-index: 10;
+
+  left: 17.3%;
+  top: 25.8vw;
+
+  color: #292827;
+  white-space: nowrap;
+}
+
+/* ==========================================
+   TÍTULO - GILL SANS CONDENSED
+========================================== */
+
+.titulo {
+  margin: 0;
+
+  font-family: var(--font-gill), sans-serif;
+  font-size: 4.75vw;
+  font-weight: 400;
+  line-height: 1.05;
+
+  letter-spacing: 0.03em;
+  word-spacing: 0.12em;
+  text-transform: uppercase;
+
+  -webkit-text-stroke: 0.01em currentColor;
+}
+
+/* ==========================================
+   FRASE - LUXURIOUS SCRIPT
+========================================== */
+
+.frase {
+  display: block;
+  width: max-content;
+
+  margin-top: 2.4vw;
+  margin-left: 14.1vw;
+  margin-bottom: 0;
+
+  font-family: var(--font-luxurious), cursive;
+  font-size: 5.5vw;
+  font-weight: 400;
+  line-height: 0.62;
+
+  transform: rotate(-5deg);
+  transform-origin: bottom left;
+}
+
+/* ==========================================
+   SUBTÍTULO - MYRIAD PRO
+========================================== */
+
+.subtitulo {
+  margin-top: 4.4vw;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+
+  font-family: var(--font-myriad), Arial, sans-serif;
+  font-size: 2.7vw;
+  font-weight: 400;
+  line-height: 1.2;
+  text-transform: uppercase;
+
+  -webkit-text-stroke: 0.01em currentColor;
+}
+
+/* ==========================================
+   PÁRRAFOS - MYRIAD PRO
+========================================== */
+
+.parrafos {
+  margin-top: 1.1vw;
+
+  font-family: var(--font-myriad), Arial, sans-serif;
+  font-size: 2.75vw;
+  font-weight: 400;
+  line-height: 1.16;
+}
+
+.parrafos p {
+  margin: 0;
+}
+
+.parrafos .segundoParrafo {
+  margin-top: 1.16em;
+}
+
+/* ==========================================
+   ESCRITORIO - DESDE 768 PX
+========================================== */
+
+@media (min-width: 768px) {
+  .fondoMovil {
+    display: none;
+  }
+
+  .fondoEscritorio {
+    display: block;
+  }
+
+  .contenido {
+    left: 8.66%;
+    top: 23.9%;
+  }
+
+  .titulo {
+    font-size: 2.38vw;
+  }
+
+  .frase {
+    font-size: 2.75vw;
+    margin-left: 7.07vw;
+    margin-top: 1.4vw;
+  }
+
+  .subtitulo {
+    font-size: 1.33vw;
+    margin-top: 1.55vw;
+  }
+
+  .parrafos {
+    font-size: 1.34vw;
+    line-height: 1.19;
+    margin-top: 0.55vw;
+  }
+
+  .parrafos .segundoParrafo {
+    margin-top: 1.19em;
+  }
+}
