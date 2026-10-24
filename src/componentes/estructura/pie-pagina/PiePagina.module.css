@@ -1,0 +1,93 @@
+
+/* ==========================================
+   CAMPO NEGRO - PIE DE PÁGINA
+========================================== */
+
+.piePagina {
+  position: relative;
+  width: 100%;
+  height: 32cqw;
+  overflow: hidden;
+  background: var(--color-ceniza);
+  container-type: inline-size;
+}
+
+/* ==========================================
+   FONDOS
+========================================== */
+
+.fondoMovil,
+.fondoEscritorio {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.fondoMovil {
+  display: block;
+}
+
+.fondoEscritorio {
+  display: none;
+}
+
+.imagen {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ==========================================
+   CONTENIDO
+========================================== */
+
+.contenido {
+  position: absolute;
+  z-index: 10;
+
+  top: 50%;
+  left: 8%;
+  transform: translateY(-50%);
+
+  color: #ffffff;
+}
+
+.contacto {
+  display: inline-block;
+  font-family: var(--font-gill), sans-serif;
+  font-size: 2.3cqw;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ==========================================
+   ESCRITORIO
+========================================== */
+
+@media (min-width: 768px) {
+  .piePagina {
+    height: 16cqw;
+  }
+
+  .fondoMovil {
+    display: none;
+  }
+
+  .fondoEscritorio {
+    display: block;
+  }
+
+  .contenido {
+    left: 9.5%;
+  }
+
+  .contacto {
+    font-size: 1.1cqw;
+  }
+}

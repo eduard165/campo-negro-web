@@ -1,0 +1,127 @@
+
+/* ==========================================
+   CAMPO NEGRO - PRODUCTO
+========================================== */
+
+.producto {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--color-cal);
+
+  container-type: inline-size;
+}
+
+/* ==========================================
+   IMÁGENES DE FONDO
+========================================== */
+
+.fondoMovil {
+  display: block;
+  width: 100%;
+}
+
+.fondoEscritorio {
+  display: none;
+  width: 100%;
+}
+
+.imagen {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ==========================================
+   CARACTERÍSTICAS - MÓVIL
+========================================== */
+
+.caracteristicas {
+  position: absolute;
+  z-index: 10;
+
+  top: 10%;
+  left: 8%;
+  width: 84%;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  color: var(--color-ceniza);
+}
+
+/* ==========================================
+   COLUMNAS
+========================================== */
+
+.columna {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  gap: 5cqw;
+  padding: 0 1.5cqw;
+
+  text-align: center;
+}
+
+/* Separadores dorados */
+.columna + .columna {
+  border-left: 1px solid var(--color-oro);
+}
+
+/* ==========================================
+   TEXTOS - GILL SANS CONDENSED
+========================================== */
+
+.columna p {
+  margin: 0;
+
+  font-family: var(--font-gill), sans-serif;
+  font-size: var(--tamano-titulo);
+  font-weight: 400;
+  line-height: 1.05;
+
+  text-transform: uppercase;
+}
+
+.columna p span {
+  text-transform: none;
+}
+
+/* ==========================================
+   ESCRITORIO - DESDE 768 PX
+========================================== */
+
+@media (min-width: 768px) {
+  .fondoMovil {
+    display: none;
+  }
+
+  .fondoEscritorio {
+    display: block;
+  }
+
+  /* CARACTERÍSTICAS A LA DERECHA */
+  .caracteristicas {
+    top: 35%;
+    left: 43%;
+    width: 54%;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .columna {
+    gap: 3cqw;
+    padding: 0 1.2cqw;
+  }
+
+  .columna p {
+    font-size: var(--tamano-titulo);
+    line-height: 1.05;
+  }
+
+  .columna + .columna {
+    border-left-width: 2px;
+  }
+}

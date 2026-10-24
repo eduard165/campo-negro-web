@@ -1,3 +1,4 @@
+
 /* ==========================================
    CAMPO NEGRO - LEGADO
 ========================================== */
@@ -8,12 +9,12 @@
   overflow: hidden;
   background: var(--color-cal);
 
-  /* Todo el contenido escala respecto a la sección, no al viewport */
+  /* Escalar respecto al ancho de la sección */
   container-type: inline-size;
 }
 
 /* ==========================================
-   IMÁGENES
+   IMÁGENES DE FONDO
 ========================================== */
 
 .fondoMovil {
@@ -40,38 +41,59 @@
   position: absolute;
   z-index: 10;
 
-  top: 15%;
-  left: 9%;
+  top: 10%;
+  left: 50%;
   width: 82%;
+
+  transform: translateX(-50%);
 
   color: var(--color-ceniza);
 }
+
+/* ==========================================
+   TÍTULO - GILL SANS CONDENSED
+========================================== */
 
 .titulo {
   margin: 0;
 
   font-family: var(--font-gill), sans-serif;
-  font-size: 6cqw;
+  font-size: var(--tamano-titulo);
   font-weight: 400;
   line-height: 1.1;
   text-transform: uppercase;
+
+  letter-spacing: 0.03em;
+  word-spacing: 0.12em;
+
+  -webkit-text-stroke: 0.01em currentColor;
 }
+
+/* ==========================================
+   FRASE - LUXURIOUS SCRIPT
+========================================== */
 
 .frase {
   margin: 4cqw 0 0;
 
   font-family: var(--font-luxurious), cursive;
-  font-size: 7cqw;
+  font-size: var(--tamano-frase);
   font-weight: 400;
   line-height: 0.95;
 }
+
+/* ==========================================
+   PÁRRAFOS - MYRIAD PRO
+========================================== */
 
 .parrafos {
   margin-top: 6cqw;
 
   font-family: var(--font-myriad), Arial, sans-serif;
-  font-size: 3cqw;
+  font-size: var(--tamano-parrafo);
+  font-weight: 400;
   line-height: 1.3;
+  overflow-wrap: break-word;
 }
 
 .parrafos p {
@@ -81,8 +103,9 @@
 .parrafos p:last-child {
   margin-bottom: 0;
 }
+
 /* ==========================================
-   ESCRITORIO
+   ESCRITORIO - DESDE 768 PX
 ========================================== */
 
 @media (min-width: 768px) {
@@ -94,37 +117,38 @@
     display: block;
   }
 
-  .salto {
-    display: inline;
-  }
-
+  /* COLUMNA DERECHA */
   .contenido {
     top: 8cqw;
     left: 61.7%;
     width: 30cqw;
+    transform: none;
   }
 
+  /* TÍTULO */
   .titulo {
-    font-size: 2.7cqw;
-    line-height: 0.97;
-    white-space: nowrap;
+    line-height: 1.05;
+    white-space: normal;
   }
 
+  /* FRASE DECORATIVA */
   .frase {
     margin: 0.35cqw 0 0 2.2cqw;
-    font-size: 3cqw;
+
     letter-spacing: 0.04em;
-    line-height: 0.75;
-    white-space: nowrap;
+    line-height: 0.9;
+    white-space: normal;
+
     transform: rotate(-4deg);
     transform-origin: left center;
   }
 
+  /* PÁRRAFOS */
   .parrafos {
     margin-top: 1.3cqw;
-    font-size: 1.3cqw;
-    line-height: 1.23;
-    white-space: nowrap;
+
+    line-height: 1.19;
+    white-space: normal;
   }
 
   .parrafos p {

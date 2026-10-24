@@ -101,7 +101,7 @@ export function Encabezado() {
       >
         <Image
           className={styles.logo}
-          src="/imagenes/Encabezado/logo-vertical-blanco.png"
+          src="/imagenes/Encabezado/00-encabezado-logo-vertical-blanco.png"
           alt="Campo Negro"
           width={180}
           height={180}

@@ -16,6 +16,29 @@
   --fuente-texto: var(--font-myriad);
   --fuente-decorativa: var(--font-luxurious);
   --fuente-menu: var(--font-gill);
+
+  /* ========================================
+     ESCALA TIPOGRÁFICA - MÓVIL
+     Referencia: Portada
+  ======================================== */
+
+  --tamano-titulo: 4.75vw;
+  --tamano-frase: 5.5vw;
+  --tamano-subtitulo: 2.7vw;
+  --tamano-parrafo: 2.75vw;
+}
+
+/* ==========================================
+   ESCALA TIPOGRÁFICA - ESCRITORIO
+========================================== */
+
+@media (min-width: 768px) {
+  :root {
+    --tamano-titulo: 2.38vw;
+    --tamano-frase: 2.75vw;
+    --tamano-subtitulo: 1.33vw;
+    --tamano-parrafo: 1.34vw;
+  }
 }
 
 /* ==========================================

@@ -1,0 +1,207 @@
+
+/* ==========================================
+   CAMPO NEGRO - GENERACIONES
+========================================== */
+
+.generaciones {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--color-cal);
+
+  container-type: inline-size;
+}
+
+/* ==========================================
+   IMÁGENES DE FONDO
+========================================== */
+
+.fondoMovil {
+  display: block;
+  width: 100%;
+}
+
+.fondoEscritorio {
+  display: none;
+  width: 100%;
+}
+
+.imagen {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ==========================================
+   TÍTULO SOBRE EL AGAVE - MÓVIL
+========================================== */
+
+.encabezado {
+  position: absolute;
+  z-index: 10;
+
+  top: 12%;
+  left: 10%;
+  width: 80%;
+
+  color: #ffffff;
+}
+
+.titulo {
+  margin: 0;
+
+  font-family: var(--font-gill), sans-serif;
+  font-size: var(--tamano-titulo);
+  font-weight: 400;
+  line-height: 1.05;
+
+  letter-spacing: 0.03em;
+  word-spacing: 0.12em;
+  text-transform: uppercase;
+
+  -webkit-text-stroke: 0.01em currentColor;
+}
+
+/* ==========================================
+   FRASE MANUSCRITA
+========================================== */
+
+.frase {
+  width: max-content;
+  max-width: 100%;
+
+  margin: 1.5cqw 0 0 12cqw;
+
+  font-family: var(--font-luxurious), cursive;
+  font-size: var(--tamano-frase);
+  font-weight: 400;
+  line-height: 0.62;
+
+  transform: rotate(-5deg);
+  transform-origin: bottom left;
+}
+
+/* ==========================================
+   CONTENIDO - MÓVIL
+========================================== */
+
+.contenido {
+  position: absolute;
+  z-index: 10;
+
+  top: 70%;
+  left: 10%;
+  width: 80%;
+
+  color: var(--color-ceniza);
+}
+
+/* ==========================================
+   SUBTÍTULO - MYRIAD PRO
+========================================== */
+
+.subtitulo {
+  margin: 0;
+
+  font-family: var(--font-myriad), Arial, sans-serif;
+  font-size: var(--tamano-subtitulo);
+  font-weight: 400;
+  line-height: 1.2;
+  text-transform: uppercase;
+
+  -webkit-text-stroke: 0.01em currentColor;
+
+  overflow-wrap: normal;
+}
+
+/* ==========================================
+   PÁRRAFOS - MYRIAD PRO
+========================================== */
+
+.parrafos {
+  margin-top: 3cqw;
+
+  font-family: var(--font-myriad), Arial, sans-serif;
+  font-size: var(--tamano-parrafo);
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.parrafos p {
+  margin: 0 0 1em;
+}
+
+.parrafos p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================
+   SALTO DE LÍNEA
+========================================== */
+
+.saltoEscritorio {
+  display: none;
+}
+
+/* ==========================================
+   ESCRITORIO - DESDE 768 PX
+========================================== */
+
+@media (min-width: 768px) {
+  .fondoMovil {
+    display: none;
+  }
+
+  .fondoEscritorio {
+    display: block;
+  }
+
+  /* TÍTULO IZQUIERDO */
+  .encabezado {
+    top: 16%;
+    left: 11.8%;
+    width: 34%;
+  }
+
+  .titulo {
+    line-height: 1.05;
+  }
+
+  /* FRASE MANUSCRITA */
+  .frase {
+    margin: 0.35cqw 0 0 7.5cqw;
+
+    line-height: 0.62;
+
+    transform: rotate(-8deg);
+    transform-origin: bottom left;
+  }
+
+  /* COLUMNA DERECHA */
+  .contenido {
+    top: 32%;
+    left: 63%;
+    width: 25%;
+  }
+
+  .subtitulo {
+    line-height: 1.2;
+  }
+
+  .saltoEscritorio {
+    display: inline;
+  }
+
+  .parrafos {
+    margin-top: 0.8cqw;
+    line-height: 1.19;
+  }
+
+  .parrafos p {
+    margin-bottom: 0.7em;
+  }
+
+  .parrafos p:last-child {
+    margin-bottom: 0;
+  }
+}

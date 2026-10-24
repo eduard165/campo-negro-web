@@ -1,0 +1,94 @@
+
+/* ==========================================
+   CAMPO NEGRO - MANIFIESTO
+========================================== */
+
+.manifiesto {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--color-cal);
+
+  container-type: inline-size;
+}
+
+/* ==========================================
+   IMÁGENES DE FONDO
+========================================== */
+
+.fondoMovil {
+  display: block;
+  width: 100%;
+}
+
+.fondoEscritorio {
+  display: none;
+  width: 100%;
+}
+
+.imagen {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ==========================================
+   MENSAJE CENTRAL - MÓVIL
+========================================== */
+
+.contenido {
+  position: absolute;
+  z-index: 10;
+
+  top: 50%;
+  left: 50%;
+  width: 82%;
+
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+  color: var(--color-oro);
+}
+
+/* ==========================================
+   TÍTULO - GILL SANS CONDENSED
+========================================== */
+
+.titulo {
+  margin: 0;
+
+  font-family: var(--font-gill), sans-serif;
+  font-size: var(--tamano-titulo);
+  font-weight: 400;
+  line-height: 1.12;
+
+  letter-spacing: 0.03em;
+  word-spacing: 0.12em;
+  text-transform: uppercase;
+
+  -webkit-text-stroke: 0.01em currentColor;
+}
+
+/* ==========================================
+   ESCRITORIO - DESDE 768 PX
+========================================== */
+
+@media (min-width: 768px) {
+  .fondoMovil {
+    display: none;
+  }
+
+  .fondoEscritorio {
+    display: block;
+  }
+
+  .contenido {
+    top: 50%;
+    left: 50%;
+    width: 84%;
+  }
+
+  .titulo {
+    line-height: 1.08;
+  }
+}

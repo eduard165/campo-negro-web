@@ -12,11 +12,9 @@
 
   display: flex;
   align-items: flex-start;
-  gap: clamp(24px, 2.5vw, 42px);
+  gap: clamp(20px, 2.5vw, 42px);
 
-  padding:
-    clamp(18px, 2vw, 32px)
-    clamp(24px, 5.2vw, 95px);
+  padding: clamp(12px, 1.4vw, 24px) 4.2%;
 
   transform: translateY(0);
   transition: transform 0.35s ease-in-out;
@@ -46,7 +44,7 @@
 
 .logo {
   display: block;
-  width: clamp(90px, 8vw, 140px);
+  width: clamp(70px, 5.5vw, 100px);
   height: auto;
 }
 
@@ -58,6 +56,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+
   gap: clamp(18px, 2.3vw, 38px);
   padding-top: 18px;
 }
@@ -100,7 +99,7 @@
   }
 
   .logo {
-    width: 85px;
+    width: 75px;
   }
 
   .menu {
@@ -130,7 +129,7 @@
     display: none;
     position: absolute;
 
-    top: 90px;
+    top: 80px;
     right: 5%;
 
     width: min(250px, 90vw);
@@ -149,7 +148,7 @@
   }
 
   .navegacion a {
-    font-size: 17px;
+    font-size: 15px;
   }
 }
 

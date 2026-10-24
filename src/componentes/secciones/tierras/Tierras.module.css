@@ -1,0 +1,154 @@
+
+/* ==========================================
+   CAMPO NEGRO - TIERRAS
+========================================== */
+
+.tierras {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--color-cal);
+
+  container-type: inline-size;
+}
+
+/* ==========================================
+   IMÁGENES
+========================================== */
+
+.fondoMovil {
+  display: block;
+  width: 100%;
+}
+
+.fondoEscritorio {
+  display: none;
+  width: 100%;
+}
+
+.imagen {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ==========================================
+   CONTENIDO MÓVIL
+========================================== */
+
+.contenido {
+  position: absolute;
+  z-index: 10;
+
+  top: 17%;
+  left: 11%;
+  width: 72%;
+
+  color: #292827;
+}
+
+/* ==========================================
+   TÍTULO - GILL SANS CONDENSED
+========================================== */
+
+.titulo {
+  margin: 0;
+
+  font-family: var(--font-gill), sans-serif;
+  font-size: var(--tamano-titulo);
+  font-weight: 400;
+  line-height: 1.02;
+
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+/* ==========================================
+   FRASE - LUXURIOUS SCRIPT
+========================================== */
+
+.frase {
+  width: max-content;
+  max-width: 100%;
+
+  margin: 1cqw 0 0 7cqw;
+
+  font-family: var(--font-luxurious), cursive;
+  font-size: var(--tamano-frase);
+  font-weight: 400;
+  line-height: 0.8;
+
+  transform: rotate(-5deg);
+  transform-origin: left center;
+}
+
+/* ==========================================
+   PÁRRAFOS - MYRIAD PRO
+========================================== */
+
+.parrafos {
+  margin-top: 4cqw;
+
+  font-family: var(--font-myriad), Arial, sans-serif;
+  font-size: var(--tamano-parrafo);
+  font-weight: 400;
+  line-height: 1.23;
+}
+
+.parrafos p {
+  margin: 0 0 0.7em;
+}
+
+.parrafos p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================
+   ESCRITORIO
+========================================== */
+
+@media (min-width: 768px) {
+  .fondoMovil {
+    display: none;
+  }
+
+  .fondoEscritorio {
+    display: block;
+  }
+
+  /* COLUMNA IZQUIERDA */
+  .contenido {
+    top: 17%;
+    left: 11.8%;
+    width: 27%;
+  }
+
+  /* TÍTULO */
+  .titulo {
+    line-height: 0.98;
+  }
+
+  /* FRASE DECORATIVA */
+  .frase {
+    margin: 0.4cqw 0 0 6cqw;
+
+    line-height: 0.75;
+
+    transform: rotate(-5deg);
+    transform-origin: left center;
+  }
+
+  /* PÁRRAFOS */
+  .parrafos {
+    margin-top: 2cqw;
+    line-height: 1.2;
+  }
+
+  .parrafos p {
+    margin-bottom: 0.55em;
+  }
+
+  .parrafos p:last-child {
+    margin-bottom: 0;
+  }
+}
