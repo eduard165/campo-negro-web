@@ -2,6 +2,21 @@
 import Image from "next/image";
 import styles from "./Proceso.module.css";
 
+const etapas = [
+  {
+    nombre: "Cocimiento",
+    imagen: "/imagenes/Proceso/06-proceso-cocimiento.png",
+  },
+  {
+    nombre: "Molienda",
+    imagen: "/imagenes/Proceso/06-proceso-molienda.png",
+  },
+  {
+    nombre: "Destilación",
+    imagen: "/imagenes/Proceso/06-proceso-destilacion.png",
+  },
+] as const;
+
 export function Proceso() {
   return (
     <section
@@ -9,31 +24,7 @@ export function Proceso() {
       className={styles.proceso}
       aria-labelledby="titulo-proceso"
     >
-      {/* FONDO MÓVIL */}
-      <div className={styles.fondoMovil}>
-        <Image
-          src="/imagenes/Proceso/Movil/06-proceso-movil.webp"
-          alt=""
-          width={4500}
-          height={9000}
-          sizes="(max-width: 767px) 100vw, 1px"
-          className={styles.imagen}
-        />
-      </div>
-
-      {/* FONDO ESCRITORIO */}
-      <div className={styles.fondoEscritorio}>
-        <Image
-          src="/imagenes/Proceso/Web/06-proceso-desktop.webp"
-          alt=""
-          width={9000}
-          height={4500}
-          sizes="(min-width: 768px) 100vw, 1px"
-          className={styles.imagen}
-        />
-      </div>
-
-      {/* ENCABEZADO CENTRAL */}
+      {/* ENCABEZADO */}
       <div className={styles.encabezado}>
         <h2 id="titulo-proceso" className={styles.titulo}>
           El proceso
@@ -44,11 +35,26 @@ export function Proceso() {
         </p>
       </div>
 
-      {/* NOMBRES DE LAS ETAPAS */}
+      {/* ILUSTRACIONES Y NOMBRES */}
       <div className={styles.etapas}>
-        <p className={styles.etapa}>Cocimiento</p>
-        <p className={styles.etapa}>Molienda</p>
-        <p className={styles.etapa}>Destilación</p>
+        {etapas.map((etapa) => (
+          <figure key={etapa.nombre} className={styles.etapa}>
+            <div className={styles.contenedorImagen}>
+              <Image
+                src={etapa.imagen}
+                alt={`Ilustración de ${etapa.nombre.toLowerCase()}`}
+                width={900}
+                height={650}
+                className={styles.imagenEtapa}
+                sizes="(max-width: 767px) 84vw, 28vw"
+              />
+            </div>
+
+            <figcaption className={styles.nombreEtapa}>
+              {etapa.nombre}
+            </figcaption>
+          </figure>
+        ))}
       </div>
     </section>
   );

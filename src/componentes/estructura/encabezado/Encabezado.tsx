@@ -14,12 +14,19 @@ const enlaces = [
   ["CONTACTO", "contacto"],
 ] as const;
 
+const LOGO =
+  "/imagenes/Encabezado/00-encabezado-logo-vertical-blanco.png";
+
 export function Encabezado() {
   const [abierto, setAbierto] = useState(false);
   const [visible, setVisible] = useState(true);
 
   const ultimaPosicion = useRef(0);
   const acumulado = useRef(0);
+
+  /* ========================================
+     MOSTRAR / OCULTAR ENCABEZADO
+  ======================================== */
 
   useEffect(() => {
     ultimaPosicion.current = window.scrollY;
@@ -30,24 +37,14 @@ export function Encabezado() {
 
       ultimaPosicion.current = posicionActual;
 
-      // Siempre mostrar el encabezado cerca del inicio.
-      if (posicionActual <= 80) {
+      if (posicionActual <= 80 || abierto) {
         acumulado.current = 0;
         setVisible(true);
         return;
       }
 
-      // No ocultar el encabezado si el menú está abierto.
-      if (abierto) {
-        acumulado.current = 0;
-        setVisible(true);
-        return;
-      }
-
-      // Ignorar movimientos demasiado pequeños.
       if (Math.abs(diferencia) < 1) return;
 
-      // Reiniciar el acumulador al cambiar de dirección.
       if (
         Math.sign(diferencia) !==
         Math.sign(acumulado.current)
@@ -57,14 +54,10 @@ export function Encabezado() {
 
       acumulado.current += diferencia;
 
-      // Ocultar al bajar.
       if (acumulado.current > 12) {
         setVisible(false);
         acumulado.current = 0;
-      }
-
-      // Mostrar al subir.
-      else if (acumulado.current < -12) {
+      } else if (acumulado.current < -12) {
         setVisible(true);
         acumulado.current = 0;
       }
@@ -79,6 +72,30 @@ export function Encabezado() {
     };
   }, [abierto]);
 
+  /* ========================================
+     BLOQUEAR SCROLL CON MENÚ ABIERTO
+  ======================================== */
+
+  useEffect(() => {
+    if (!abierto) return;
+
+    const overflowAnterior = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const cerrarConEscape = (evento: KeyboardEvent) => {
+      if (evento.key === "Escape") {
+        setAbierto(false);
+      }
+    };
+
+    window.addEventListener("keydown", cerrarConEscape);
+
+    return () => {
+      document.body.style.overflow = overflowAnterior;
+      window.removeEventListener("keydown", cerrarConEscape);
+    };
+  }, [abierto]);
+
   const cerrarMenu = () => {
     setAbierto(false);
     setVisible(true);
@@ -87,21 +104,21 @@ export function Encabezado() {
   return (
     <header
       className={`${styles.encabezado} ${
-        visible || abierto
-          ? styles.visible
-          : styles.oculto
+        visible || abierto ? styles.visible : styles.oculto
       }`}
     >
-      {/* LOGO */}
+      {/* LOGOTIPO EXTERIOR */}
       <a
         href="#inicio"
-        className={styles.enlaceLogo}
+        className={`${styles.enlaceLogo} ${
+          abierto ? styles.logoOculto : ""
+        }`}
         aria-label="Campo Negro, inicio"
         onClick={cerrarMenu}
       >
         <Image
           className={styles.logo}
-          src="/imagenes/Encabezado/00-encabezado-logo-vertical-blanco.png"
+          src={LOGO}
           alt="Campo Negro"
           width={180}
           height={180}
@@ -109,9 +126,11 @@ export function Encabezado() {
         />
       </a>
 
-      {/* MENÚ HAMBURGUESA */}
+      {/* BOTÓN HAMBURGUESA / CERRAR */}
       <button
-        className={styles.menu}
+        className={`${styles.menu} ${
+          abierto ? styles.menuAbierto : ""
+        }`}
         type="button"
         aria-label={abierto ? "Cerrar menú" : "Abrir menú"}
         aria-expanded={abierto}
@@ -134,15 +153,34 @@ export function Encabezado() {
         }`}
         aria-label="Navegación principal"
       >
-        {enlaces.map(([texto, destino]) => (
-          <a
-            key={destino}
-            href={`#${destino}`}
-            onClick={cerrarMenu}
-          >
-            {texto}
-          </a>
-        ))}
+        {/* LOGO DENTRO DEL MENÚ MÓVIL */}
+        <div className={styles.cabeceraMovil}>
+          <Image
+            className={styles.logoInterior}
+            src={LOGO}
+            alt="Campo Negro"
+            width={180}
+            height={180}
+          />
+        </div>
+
+        {/* ENLACES */}
+        <div className={styles.listaEnlaces}>
+          {enlaces.map(([texto, destino]) => (
+            <a
+              key={destino}
+              href={`#${destino}`}
+              onClick={cerrarMenu}
+            >
+              {texto}
+            </a>
+          ))}
+        </div>
+
+        {/* PIE DEL MENÚ MÓVIL */}
+        <div className={styles.pieMenu}>
+          MEZCAL ARTESANAL · OAXACA, MÉXICO
+        </div>
       </nav>
     </header>
   );
