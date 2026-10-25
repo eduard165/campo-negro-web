@@ -13,7 +13,7 @@
 }
 
 /* ==========================================
-   FONDOS
+   FONDOS ORIGINALES
 ========================================== */
 
 .fondoMovil,
@@ -41,7 +41,7 @@
 }
 
 /* ==========================================
-   CONTENIDO
+   CONTENIDO ORIGINAL
 ========================================== */
 
 .contenido {
@@ -67,6 +67,37 @@
 }
 
 /* ==========================================
+   REDES SOCIALES - NUEVO
+========================================== */
+
+.redesSociales {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2.8cqw;
+
+  margin-top: 2.2cqw;
+}
+
+.iconoRed {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 5.5cqw;
+  height: 5.5cqw;
+
+  color: var(--color-oro);
+}
+
+.iconoRed svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  stroke-width: 1.8;
+}
+
+/* ==========================================
    ESCRITORIO
 ========================================== */
 
@@ -89,5 +120,26 @@
 
   .contacto {
     font-size: 1.1cqw;
+  }
+
+  /* REDES SOCIALES EN ESCRITORIO */
+  .redesSociales {
+    gap: 1.2cqw;
+    margin-top: 0.9cqw;
+  }
+
+  .iconoRed {
+    width: 1.7cqw;
+    height: 1.7cqw;
+  }
+}
+
+/* ==========================================
+   ACCESIBILIDAD
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .iconoRed {
+    transition: none;
   }
 }

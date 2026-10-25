@@ -1,11 +1,18 @@
 
 import Image from "next/image";
+import {
+  FaInstagram,
+  FaFacebookF,
+  FaWhatsapp,
+} from "react-icons/fa";
 import styles from "./PiePagina.module.css";
 
 export function PiePagina() {
   return (
     <footer id="contacto" className={styles.piePagina}>
-      {/* FONDO MÓVIL */}
+      {/* ==========================================
+          FONDO MÓVIL - ORIGINAL
+      ========================================== */}
       <div className={styles.fondoMovil}>
         <Image
           src="/imagenes/PiePagina/Movil/10-piepagina-movil.webp"
@@ -17,7 +24,9 @@ export function PiePagina() {
         />
       </div>
 
-      {/* FONDO ESCRITORIO */}
+      {/* ==========================================
+          FONDO ESCRITORIO - ORIGINAL
+      ========================================== */}
       <div className={styles.fondoEscritorio}>
         <Image
           src="/imagenes/PiePagina/Web/10-piepagina-desktop.webp"
@@ -29,11 +38,49 @@ export function PiePagina() {
         />
       </div>
 
-      {/* TEXTO DE CONTACTO */}
+      {/* ==========================================
+          TEXTO ORIGINAL + REDES SOCIALES
+      ========================================== */}
       <div className={styles.contenido}>
         <span className={styles.contacto}>
           CONTÁCTANOS
         </span>
+
+        {/* REDES SOCIALES */}
+        <div
+          className={styles.redesSociales}
+          aria-label="Redes sociales de Campo Negro"
+        >
+          {/* INSTAGRAM */}
+          <span
+            className={styles.iconoRed}
+            role="img"
+            aria-label="Instagram"
+            title="Instagram"
+          >
+            <FaInstagram aria-hidden="true" />
+          </span>
+
+          {/* FACEBOOK */}
+          <span
+            className={styles.iconoRed}
+            role="img"
+            aria-label="Facebook"
+            title="Facebook"
+          >
+            <FaFacebookF aria-hidden="true" />
+          </span>
+
+          {/* WHATSAPP */}
+          <span
+            className={styles.iconoRed}
+            role="img"
+            aria-label="WhatsApp"
+            title="WhatsApp"
+          >
+            <FaWhatsapp aria-hidden="true" />
+          </span>
+        </div>
       </div>
     </footer>
   );
