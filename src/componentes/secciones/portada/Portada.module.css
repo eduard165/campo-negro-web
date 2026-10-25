@@ -41,7 +41,14 @@
   z-index: 10;
 
   left: 17.3%;
-  top: 25.8vw;
+
+  /*
+   * Posición responsiva:
+   * - Mantiene el texto debajo del área del logo.
+   * - Evita que suba demasiado en móviles pequeños.
+   * - Se adapta al ancho de la pantalla.
+   */
+  top: max(30vw, 145px);
 
   color: #292827;
   white-space: nowrap;
