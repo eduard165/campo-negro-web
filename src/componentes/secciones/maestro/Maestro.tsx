@@ -9,7 +9,6 @@ export function Maestro() {
       className={styles.maestro}
       aria-labelledby="titulo-maestro"
     >
-      {/* FONDO MÓVIL */}
       <div className={styles.fondoMovil}>
         <Image
           src="/imagenes/Maestro/Movil/08-maestro-movil.webp"
@@ -20,8 +19,6 @@ export function Maestro() {
           className={styles.imagen}
         />
       </div>
-
-      {/* FONDO ESCRITORIO */}
       <div className={styles.fondoEscritorio}>
         <Image
           src="/imagenes/Maestro/Web/08-maestro-desktop.webp"
@@ -32,8 +29,6 @@ export function Maestro() {
           className={styles.imagen}
         />
       </div>
-
-      {/* CONTENIDO */}
       <div className={styles.contenido}>
         <div className={styles.encabezado}>
           <h2 id="titulo-maestro" className={styles.titulo}>
@@ -43,32 +38,31 @@ export function Maestro() {
               width={1200}
               height={300}
               className={styles.imagenTitulo}
+              unoptimized
             />
           </h2>
-
           <Image
             src="/imagenes/Maestro/08-maestro-ivan-betancourt.png"
             alt="Iván Betancourt"
             width={1500}
             height={400}
             className={styles.imagenNombre}
+            unoptimized
           />
-
           <Image
             src="/imagenes/Maestro/08-maestro-sello-oaxaca.png"
             alt="Sello de Oaxaca, México"
             width={400}
             height={400}
             className={styles.imagenSello}
+            unoptimized
           />
         </div>
-
         <div className={styles.parrafos}>
           <p>
             Una larga trayectoria es la que llevó a Iván Betancourt
             del cultivo del agave al corazón del mezcal.
           </p>
-
           <p>
             Sin una tradición mezcalera heredada, emprendió su
             formación de la mano de distintos maestros Mezcaleros,
@@ -76,7 +70,6 @@ export function Maestro() {
             ancestrales, así como los fundamentos para desarrollar
             una identidad propia.
           </p>
-
           <p>
             De este encuentro, entre experiencias y tradiciones,
             nació una visión particular del mezcal, en la que

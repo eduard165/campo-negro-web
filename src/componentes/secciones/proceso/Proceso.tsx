@@ -1,11 +1,11 @@
-
 import Image from "next/image";
 import styles from "./Proceso.module.css";
+
 
 const etapas = [
   {
     nombre: "Cocimiento",
-    imagen: "/imagenes/Proceso/06-proceso-cocimiento.png",
+    imagen: "/imagenes/Proceso/06-proceso-cocimiento1.png",
   },
   {
     nombre: "Molienda",
@@ -13,7 +13,7 @@ const etapas = [
   },
   {
     nombre: "Destilación",
-    imagen: "/imagenes/Proceso/06-proceso-destilacion.png",
+    imagen: "/imagenes/Proceso/06-proceso-destilacion1.png",
   },
 ] as const;
 
@@ -24,7 +24,6 @@ export function Proceso() {
       className={styles.proceso}
       aria-labelledby="titulo-proceso"
     >
-      {/* ENCABEZADO */}
       <div className={styles.encabezado}>
         <h2 id="titulo-proceso" className={styles.titulo}>
           El proceso
@@ -34,8 +33,6 @@ export function Proceso() {
           Tradición en cada etapa
         </p>
       </div>
-
-      {/* ILUSTRACIONES Y NOMBRES */}
       <div className={styles.etapas}>
         {etapas.map((etapa) => (
           <figure key={etapa.nombre} className={styles.etapa}>
@@ -46,7 +43,8 @@ export function Proceso() {
                 width={900}
                 height={650}
                 className={styles.imagenEtapa}
-                sizes="(max-width: 767px) 84vw, 28vw"
+                sizes="(max-width: 767px) 90vw, 28vw"
+                unoptimized
               />
             </div>
 

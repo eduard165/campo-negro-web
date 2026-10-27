@@ -1,18 +1,9 @@
-
-/* ==========================================
-   CAMPO NEGRO - PORTADA
-========================================== */
-
 .portada {
   position: relative;
   width: 100%;
   overflow: hidden;
   background: #f4f1e8;
 }
-
-/* ==========================================
-   IMÁGENES DE FONDO
-========================================== */
 
 .fondoMovil {
   position: relative;
@@ -32,96 +23,62 @@
   height: auto;
 }
 
-/* ==========================================
-   CONTENIDO MÓVIL
-========================================== */
-
 .contenido {
   position: absolute;
   z-index: 10;
-
   left: 17.3%;
-
-  /*
-   * Posición responsiva:
-   * - Mantiene el texto debajo del área del logo.
-   * - Evita que suba demasiado en móviles pequeños.
-   * - Se adapta al ancho de la pantalla.
-   */
-  top: max(30vw, 145px);
-
+  top: max(27vw, 120px);
+  width: 56%;
+  max-width: 100%;
   color: #292827;
-  white-space: nowrap;
+  white-space: normal;
 }
-
-/* ==========================================
-   TÍTULO - GILL SANS CONDENSED
-========================================== */
 
 .titulo {
   margin: 0;
-
   font-family: var(--font-gill), sans-serif;
-  font-size: var(--tamano-titulo);
+  font-size: clamp(20px, 5.6vw, 30px);
   font-weight: 400;
   line-height: 1.05;
-
-  letter-spacing: 0.03em;
-  word-spacing: 0.12em;
+  letter-spacing: 0.01em;
+  word-spacing: 0.05em;
   text-transform: uppercase;
-
   -webkit-text-stroke: 0.01em currentColor;
 }
-
-/* ==========================================
-   FRASE - LUXURIOUS SCRIPT
-========================================== */
 
 .frase {
   display: block;
   width: max-content;
-
+  max-width: 100%;
   margin-top: 2.4vw;
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 14.1vw;
-
   font-family: var(--font-luxurious), cursive;
-  font-size: var(--tamano-frase);
+  font-size: clamp(21px, 5.8vw, 32px);
   font-weight: 400;
-  line-height: 0.62;
-
+  line-height: 0.75;
   transform: rotate(-5deg);
   transform-origin: bottom left;
 }
 
-/* ==========================================
-   SUBTÍTULO - MYRIAD PRO
-========================================== */
-
 .subtitulo {
-  margin: 4.4vw 0 0;
-
+  margin: 7vw 0 0;
   font-family: var(--font-myriad), Arial, sans-serif;
-  font-size: var(--tamano-subtitulo);
+  font-size: clamp(15px, 3.7vw, 19px);
   font-weight: 400;
   line-height: 1.2;
   text-transform: uppercase;
-
   -webkit-text-stroke: 0.01em currentColor;
 }
 
-/* ==========================================
-   PÁRRAFOS - MYRIAD PRO
-========================================== */
-
 .parrafos {
-  margin-top: 1.1vw;
-
+  margin-top: 2vw;
   font-family: var(--font-myriad), Arial, sans-serif;
-  font-size: var(--tamano-parrafo);
+  font-size: clamp(14px, 3.7vw, 19px);
   font-weight: 400;
-  line-height: 1.16;
+  line-height: 1.22;
+  overflow-wrap: normal;
 }
 
 .parrafos p {
@@ -129,12 +86,35 @@
 }
 
 .parrafos .segundoParrafo {
-  margin-top: 1.16em;
+  margin-top: 0.9em;
 }
 
-/* ==========================================
-   ESCRITORIO - DESDE 768 PX
-========================================== */
+.saltoEscritorio {
+  display: none;
+}
+
+@media (max-width: 374px) {
+  .contenido {
+    top: 112px;
+    width: 60%;
+  }
+
+  .titulo {
+    font-size: 19px;
+  }
+
+  .frase {
+    font-size: 20px;
+  }
+
+  .subtitulo {
+    font-size: 13px;
+  }
+
+  .parrafos {
+    font-size: 12.5px;
+  }
+}
 
 @media (min-width: 768px) {
   .fondoMovil {
@@ -148,23 +128,42 @@
   .contenido {
     left: 8.66%;
     top: 23.9%;
+    width: auto;
+    max-width: none;
+    white-space: nowrap;
+  }
+
+  .titulo {
+    font-size: var(--tamano-titulo);
+    line-height: 1.05;
+    letter-spacing: 0.03em;
+    word-spacing: 0.12em;
   }
 
   .frase {
     margin-left: 7.07vw;
     margin-top: 1.4vw;
+    max-width: none;
+    font-size: var(--tamano-frase);
+    line-height: 0.62;
   }
 
   .subtitulo {
     margin-top: 1.55vw;
+    font-size: var(--tamano-subtitulo);
   }
 
   .parrafos {
+    font-size: var(--tamano-parrafo);
     line-height: 1.19;
     margin-top: 0.55vw;
   }
 
   .parrafos .segundoParrafo {
     margin-top: 1.19em;
+  }
+
+  .saltoEscritorio {
+    display: initial;
   }
 }

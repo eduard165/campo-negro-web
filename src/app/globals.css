@@ -1,36 +1,21 @@
 
 @import "tailwindcss";
 
-/* ==========================================
-   CAMPO NEGRO - VARIABLES GLOBALES
-========================================== */
-
 :root {
-  /* Colores */
   --color-cal: #f4f1e8;
   --color-oro: #c69c45;
   --color-ceniza: #2e2d2c;
 
-  /* Tipografías */
   --fuente-condensada: var(--font-gill);
   --fuente-texto: var(--font-myriad);
   --fuente-decorativa: var(--font-luxurious);
   --fuente-menu: var(--font-gill);
-
-  /* ========================================
-     ESCALA TIPOGRÁFICA - MÓVIL
-     Referencia: Portada
-  ======================================== */
 
   --tamano-titulo: 4.75vw;
   --tamano-frase: 5.5vw;
   --tamano-subtitulo: 2.7vw;
   --tamano-parrafo: 2.75vw;
 }
-
-/* ==========================================
-   ESCALA TIPOGRÁFICA - ESCRITORIO
-========================================== */
 
 @media (min-width: 768px) {
   :root {
@@ -40,10 +25,6 @@
     --tamano-parrafo: 1.34vw;
   }
 }
-
-/* ==========================================
-   TIPOGRAFÍAS LOCALES
-========================================== */
 
 .font-gill {
   font-family: var(--font-gill), sans-serif;
@@ -56,10 +37,6 @@
 .font-luxurious {
   font-family: var(--font-luxurious), cursive;
 }
-
-/* ==========================================
-   ESTILOS GENERALES
-========================================== */
 
 * {
   box-sizing: border-box;
@@ -76,10 +53,6 @@ body {
   font-family: var(--font-myriad), Arial, sans-serif;
 }
 
-/* ==========================================
-   LÁMINAS DEL DISEÑO
-========================================== */
-
 .lamina {
   position: relative;
   width: 100%;
@@ -95,10 +68,6 @@ body {
 .lamina-imagen {
   height: auto;
 }
-
-/* ==========================================
-   ACCESIBILIDAD
-========================================== */
 
 @media (prefers-reduced-motion: reduce) {
   html {

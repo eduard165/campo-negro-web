@@ -15,7 +15,7 @@ const enlaces = [
 ] as const;
 
 const LOGO =
-  "/imagenes/Encabezado/00-encabezado-logo-vertical-blanco.png";
+  "/imagenes/Encabezado/00-encabezado-logo-blanco.png";
 
 export function Encabezado() {
   const [abierto, setAbierto] = useState(false);
@@ -24,9 +24,6 @@ export function Encabezado() {
   const ultimaPosicion = useRef(0);
   const acumulado = useRef(0);
 
-  /* ========================================
-     MOSTRAR / OCULTAR ENCABEZADO
-  ======================================== */
 
   useEffect(() => {
     ultimaPosicion.current = window.scrollY;
@@ -72,9 +69,6 @@ export function Encabezado() {
     };
   }, [abierto]);
 
-  /* ========================================
-     BLOQUEAR SCROLL CON MENÚ ABIERTO
-  ======================================== */
 
   useEffect(() => {
     if (!abierto) return;
@@ -107,7 +101,6 @@ export function Encabezado() {
         visible || abierto ? styles.visible : styles.oculto
       }`}
     >
-      {/* LOGOTIPO EXTERIOR */}
       <a
         href="#inicio"
         className={`${styles.enlaceLogo} ${
@@ -126,7 +119,6 @@ export function Encabezado() {
         />
       </a>
 
-      {/* BOTÓN HAMBURGUESA / CERRAR */}
       <button
         className={`${styles.menu} ${
           abierto ? styles.menuAbierto : ""
@@ -145,7 +137,6 @@ export function Encabezado() {
         <span />
       </button>
 
-      {/* NAVEGACIÓN */}
       <nav
         id="navegacion-principal"
         className={`${styles.navegacion} ${
@@ -153,7 +144,6 @@ export function Encabezado() {
         }`}
         aria-label="Navegación principal"
       >
-        {/* LOGO DENTRO DEL MENÚ MÓVIL */}
         <div className={styles.cabeceraMovil}>
           <Image
             className={styles.logoInterior}
@@ -164,7 +154,6 @@ export function Encabezado() {
           />
         </div>
 
-        {/* ENLACES */}
         <div className={styles.listaEnlaces}>
           {enlaces.map(([texto, destino]) => (
             <a
@@ -177,7 +166,6 @@ export function Encabezado() {
           ))}
         </div>
 
-        {/* PIE DEL MENÚ MÓVIL */}
         <div className={styles.pieMenu}>
           MEZCAL ARTESANAL · OAXACA, MÉXICO
         </div>

@@ -3,8 +3,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-// GILL SANS CONDENSED
-// Títulos principales
 const gill = localFont({
   src: [
     {
@@ -22,8 +20,6 @@ const gill = localFont({
   display: "swap",
 });
 
-// MYRIAD PRO
-// Subtítulos, párrafos y botones
 const myriad = localFont({
   src: [
     {
@@ -45,8 +41,6 @@ const myriad = localFont({
   display: "swap",
 });
 
-// LUXURIOUS SCRIPT
-// Frases decorativas
 const luxurious = localFont({
   src: "../fuentes/LuxuriousScript-Regular.ttf",
   variable: "--font-luxurious",

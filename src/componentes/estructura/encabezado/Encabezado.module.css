@@ -1,21 +1,14 @@
 
-/* ==========================================
-   CAMPO NEGRO - ENCABEZADO
-========================================== */
-
 .encabezado {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-
   display: flex;
   align-items: flex-start;
   gap: clamp(20px, 2.5vw, 42px);
-
   padding: clamp(12px, 1.4vw, 24px) 4.2%;
-
   transform: translateY(0);
   transition: transform 0.35s ease-in-out;
 }
@@ -28,10 +21,6 @@
   transform: translateY(-100%);
 }
 
-/* ==========================================
-   LOGOTIPO EXTERIOR
-========================================== */
-
 .enlaceLogo {
   display: block;
   flex-shrink: 0;
@@ -42,10 +31,6 @@
   width: 58px;
   height: auto;
 }
-
-/* ==========================================
-   NAVEGACIÓN ESCRITORIO
-========================================== */
 
 .navegacion {
   display: flex;
@@ -67,15 +52,12 @@
   font-size: clamp(14px, 1.05vw, 18px);
   font-weight: 600;
   line-height: 1.2;
-
   color: #ffffff;
   text-decoration: none;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
-
   transition: color 0.25s ease;
 }
 
-/* ORO MAGUEY SOLO AL PASAR EL CURSOR */
 @media (hover: hover) {
   .listaEnlaces a:hover {
     color: var(--color-oro);
@@ -95,10 +77,6 @@
   display: none;
 }
 
-/* ==========================================
-   VERSIÓN MÓVIL
-========================================== */
-
 @media (max-width: 767px) {
   .encabezado {
     justify-content: space-between;
@@ -107,7 +85,6 @@
     padding: 17px 7%;
   }
 
-  /* LOGO EXTERIOR */
   .logo {
     width: 52px;
     height: auto;
@@ -118,24 +95,17 @@
     pointer-events: none;
   }
 
-  /* ========================================
-     BOTÓN HAMBURGUESA / X
-  ======================================== */
-
   .menu {
     position: relative;
     z-index: 1004;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 6px;
-
     width: 42px;
     height: 42px;
     padding: 8px;
-
     border: 0;
     background: transparent;
     cursor: pointer;
@@ -147,7 +117,6 @@
     height: 2px;
     border-radius: 2px;
     background: #f4f1e8;
-
     transition:
       transform 0.3s ease,
       opacity 0.3s ease;
@@ -165,29 +134,21 @@
     transform: translateY(-8px) rotate(-45deg);
   }
 
-  /* ========================================
-     PANEL MÓVIL
-  ======================================== */
-
   .navegacion {
     position: fixed;
     inset: 0;
     z-index: 1002;
-
     display: flex;
     flex-direction: column;
     align-items: stretch;
     flex-wrap: nowrap;
-
     width: 100%;
     height: 100dvh;
     min-height: 0;
-
     padding:
       calc(26px + env(safe-area-inset-top))
       9%
       calc(26px + env(safe-area-inset-bottom));
-
     background:
       radial-gradient(
         circle at 80% 15%,
@@ -200,15 +161,12 @@
         #211f1b 55%,
         #171614 100%
       );
-
     overflow-y: auto;
     overscroll-behavior: contain;
-
     opacity: 0;
     visibility: hidden;
     transform: translateY(-20px);
     pointer-events: none;
-
     transition:
       opacity 0.35s ease,
       transform 0.35s ease,
@@ -222,18 +180,12 @@
     pointer-events: auto;
   }
 
-  /* ========================================
-     LOGOTIPO INTERIOR Y LÍNEA DORADA
-  ======================================== */
-
   .cabeceraMovil {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-
     width: 100%;
     padding: 0 0 20px;
-
     border-bottom: 1px solid rgba(198, 156, 69, 0.45);
   }
 
@@ -244,16 +196,11 @@
     object-fit: contain;
   }
 
-  /* ========================================
-     OPCIONES MÓVILES
-  ======================================== */
-
   .listaEnlaces {
     display: flex;
     flex-direction: column;
     align-items: stretch;
     justify-content: center;
-
     flex: 1;
     gap: 0;
     padding: 24px 0;
@@ -263,24 +210,19 @@
     display: block;
     width: 100%;
     padding: 13px 0;
-
     font-family: var(--font-gill), sans-serif;
     font-size: clamp(34px, 10vw, 48px);
     font-weight: 400;
     line-height: 1.08;
-
     text-align: left;
     letter-spacing: 0.025em;
     text-transform: uppercase;
-
     color: #f4f1e8;
     text-decoration: none;
     text-shadow: none;
-
     transition: color 0.2s ease;
   }
 
-  /* SIN SELECCIÓN PERMANENTE */
   .listaEnlaces a:active,
   .listaEnlaces a:focus-visible {
     color: var(--color-oro);
@@ -291,30 +233,19 @@
     outline-offset: 4px;
   }
 
-  /* ========================================
-     PIE DEL MENÚ
-  ======================================== */
-
   .pieMenu {
     display: block;
     margin-top: auto;
     padding-top: 22px;
-
     border-top: 1px solid rgba(198, 156, 69, 0.45);
-
     font-family: var(--font-myriad), Arial, sans-serif;
     font-size: 10px;
     line-height: 1.4;
     letter-spacing: 0.14em;
     text-align: center;
-
     color: var(--color-oro);
   }
 }
-
-/* ==========================================
-   PANTALLAS PEQUEÑAS
-========================================== */
 
 @media (max-width: 380px) {
   .logoInterior {
@@ -337,10 +268,6 @@
     width: 60px;
   }
 }
-
-/* ==========================================
-   ACCESIBILIDAD
-========================================== */
 
 @media (prefers-reduced-motion: reduce) {
   .encabezado,

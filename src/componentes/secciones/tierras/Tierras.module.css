@@ -1,8 +1,3 @@
-
-/* ==========================================
-   CAMPO NEGRO - TIERRAS
-========================================== */
-
 .tierras {
   position: relative;
   width: 100%;
@@ -11,10 +6,6 @@
 
   container-type: inline-size;
 }
-
-/* ==========================================
-   IMÁGENES
-========================================== */
 
 .fondoMovil {
   display: block;
@@ -32,80 +23,83 @@
   height: auto;
 }
 
-/* ==========================================
-   CONTENIDO MÓVIL
-========================================== */
-
 .contenido {
   position: absolute;
   z-index: 10;
 
-  top: 17%;
-  left: 11%;
-  width: 72%;
+  top: 12.6cqw;
+  left: 17.1%;
+  width: 70%;
 
   color: #292827;
 }
 
-/* ==========================================
-   TÍTULO - GILL SANS CONDENSED
-========================================== */
-
 .titulo {
-  margin: 0;
+  margin: 0 0 0 7.2cqw;
 
   font-family: var(--font-gill), sans-serif;
-  font-size: var(--tamano-titulo);
+  font-size: 5.15cqw;
+  font-weight: 400;
+  line-height: 1;
+
+  letter-spacing: 0.015em;
+  word-spacing: 0.06em;
+  text-transform: uppercase;
+
+  -webkit-text-stroke: 0.01em currentColor;
+}
+
+.frase {
+  display: block;
+  width: max-content;
+
+  margin: 0.5cqw 0 0 22cqw;
+
+  font-family: var(--font-luxurious), cursive;
+  font-size: 5.6cqw;
+  font-weight: 400;
+  line-height: 0.65;
+
+  transform: rotate(-5deg);
+  transform-origin: left bottom;
+}
+
+.subtitulo {
+  margin: 2cqw 0 0;
+
+  font-family: var(--font-myriad), Arial, sans-serif;
+  font-size: 3.5cqw;
+  font-weight: 400;
+  line-height: 1.1;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  -webkit-text-stroke: 0.01em currentColor;
+}
+
+.parrafos {
+  margin-top: 0.7cqw;
+
+  font-family: var(--font-myriad), Arial, sans-serif;
+  font-size: 3.65cqw;
   font-weight: 400;
   line-height: 1.02;
 
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
-
-/* ==========================================
-   FRASE - LUXURIOUS SCRIPT
-========================================== */
-
-.frase {
-  width: max-content;
-  max-width: 100%;
-
-  margin: 1cqw 0 0 7cqw;
-
-  font-family: var(--font-luxurious), cursive;
-  font-size: var(--tamano-frase);
-  font-weight: 400;
-  line-height: 0.8;
-
-  transform: rotate(-5deg);
-  transform-origin: left center;
-}
-
-/* ==========================================
-   PÁRRAFOS - MYRIAD PRO
-========================================== */
-
-.parrafos {
-  margin-top: 4cqw;
-
-  font-family: var(--font-myriad), Arial, sans-serif;
-  font-size: var(--tamano-parrafo);
-  font-weight: 400;
-  line-height: 1.23;
+  white-space: nowrap;
 }
 
 .parrafos p {
-  margin: 0 0 0.7em;
+  margin: 0 0 0.25em;
 }
 
 .parrafos p:last-child {
   margin-bottom: 0;
 }
 
-/* ==========================================
-   ESCRITORIO
-========================================== */
+.saltoMovil {
+  display: initial;
+}
+
 
 @media (min-width: 768px) {
   .fondoMovil {
@@ -116,32 +110,42 @@
     display: block;
   }
 
-  /* COLUMNA IZQUIERDA */
   .contenido {
     top: 17%;
     left: 11.8%;
     width: 27%;
   }
 
-  /* TÍTULO */
   .titulo {
+    margin: 0;
+    font-size: var(--tamano-titulo);
     line-height: 0.98;
+    letter-spacing: 0.03em;
+    word-spacing: normal;
   }
 
-  /* FRASE DECORATIVA */
   .frase {
     margin: 0.4cqw 0 0 6cqw;
 
+    font-size: var(--tamano-frase);
     line-height: 0.75;
 
     transform: rotate(-5deg);
     transform-origin: left center;
   }
 
-  /* PÁRRAFOS */
-  .parrafos {
-    margin-top: 2cqw;
+  .subtitulo {
+    margin-top: 1.6cqw;
+    font-size: var(--tamano-subtitulo, var(--tamano-parrafo));
     line-height: 1.2;
+    white-space: normal;
+  }
+
+  .parrafos {
+    margin-top: 0.6cqw;
+    font-size: var(--tamano-parrafo);
+    line-height: 1.2;
+    white-space: normal;
   }
 
   .parrafos p {
@@ -150,5 +154,9 @@
 
   .parrafos p:last-child {
     margin-bottom: 0;
+  }
+
+  .saltoMovil {
+    display: none;
   }
 }

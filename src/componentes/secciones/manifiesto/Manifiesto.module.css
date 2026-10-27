@@ -1,20 +1,11 @@
 
-/* ==========================================
-   CAMPO NEGRO - MANIFIESTO
-========================================== */
-
 .manifiesto {
   position: relative;
   width: 100%;
   overflow: hidden;
   background: var(--color-cal);
-
   container-type: inline-size;
 }
-
-/* ==========================================
-   IMÁGENES DE FONDO
-========================================== */
 
 .fondoMovil {
   display: block;
@@ -32,49 +23,37 @@
   height: auto;
 }
 
-/* ==========================================
-   MENSAJE CENTRAL - MÓVIL
-========================================== */
-
 .contenido {
   position: absolute;
   z-index: 10;
-
-  top: 50%;
+  top: 48%;
   left: 50%;
-  width: 88%;
-
+  width: 100%;
   transform: translate(-50%, -50%);
-
   text-align: center;
   color: var(--color-oro);
 }
 
-/* ==========================================
-   TÍTULO - GILL SANS CONDENSED
-========================================== */
-
 .titulo {
   margin: 0;
-
   font-family: var(--font-gill), sans-serif;
-
-  /* Tamaño exclusivo para Manifiesto en móvil */
-  font-size: 5.6vw;
-
+  font-size: 9.5cqw;
   font-weight: 400;
   line-height: 1.12;
-
-  letter-spacing: 0.03em;
-  word-spacing: 0.12em;
+  letter-spacing: 0;
+  word-spacing: 0;
   text-transform: uppercase;
-
-  -webkit-text-stroke: 0.01em currentColor;
+  webkit-text-stroke: 0;
 }
 
-/* ==========================================
-   ESCRITORIO - DESDE 768 PX
-========================================== */
+.textoMovil {
+  display: block;
+  white-space: nowrap;
+}
+
+.textoEscritorio {
+  display: none;
+}
 
 @media (min-width: 768px) {
   .fondoMovil {
@@ -92,8 +71,18 @@
   }
 
   .titulo {
-    /* Tamaño exclusivo para Manifiesto en escritorio */
     font-size: 3.3vw;
     line-height: 1.12;
+    letter-spacing: 0.03em;
+    word-spacing: 0.12em;
+  }
+
+  .textoMovil {
+    display: none;
+  }
+
+  .textoEscritorio {
+    display: block;
+    white-space: normal;
   }
 }

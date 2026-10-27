@@ -9,9 +9,6 @@ export function Producto() {
       className={styles.producto}
       aria-label="Características del mezcal Campo Negro"
     >
-      {/* ======================================
-          FONDO MÓVIL
-      ====================================== */}
       <div className={styles.fondoMovil}>
         <Image
           src="/imagenes/Producto/Movil/09-producto-movil.webp"
@@ -20,12 +17,9 @@ export function Producto() {
           height={9000}
           sizes="(max-width: 767px) 100vw, 1px"
           className={styles.imagen}
+          unoptimized
         />
       </div>
-
-      {/* ======================================
-          FONDO ESCRITORIO
-      ====================================== */}
       <div className={styles.fondoEscritorio}>
         <Image
           src="/imagenes/Producto/Web/09-producto-desktop.webp"
@@ -34,12 +28,9 @@ export function Producto() {
           height={4500}
           sizes="(min-width: 768px) 100vw, 1px"
           className={styles.imagen}
+          unoptimized
         />
       </div>
-
-      {/* ======================================
-          CARACTERÍSTICAS DEL PRODUCTO
-      ====================================== */}
       <div className={styles.caracteristicas}>
         <div className={styles.columna}>
           <p>

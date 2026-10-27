@@ -1,20 +1,11 @@
 
-/* ==========================================
-   CAMPO NEGRO - GENERACIONES
-========================================== */
-
 .generaciones {
   position: relative;
   width: 100%;
   overflow: hidden;
   background: var(--color-cal);
-
   container-type: inline-size;
 }
-
-/* ==========================================
-   IMÁGENES DE FONDO
-========================================== */
 
 .fondoMovil {
   display: block;
@@ -32,95 +23,60 @@
   height: auto;
 }
 
-/* ==========================================
-   TÍTULO SOBRE EL AGAVE - MÓVIL
-========================================== */
-
 .encabezado {
   position: absolute;
   z-index: 10;
-
   top: 12%;
   left: 10%;
   width: 80%;
-
   color: #ffffff;
 }
 
 .titulo {
   margin: 0;
-
   font-family: var(--font-gill), sans-serif;
   font-size: var(--tamano-titulo);
   font-weight: 400;
   line-height: 1.05;
-
   letter-spacing: 0.03em;
   word-spacing: 0.12em;
   text-transform: uppercase;
-
   -webkit-text-stroke: 0.01em currentColor;
 }
-
-/* ==========================================
-   FRASE MANUSCRITA
-========================================== */
 
 .frase {
   width: max-content;
   max-width: 100%;
-
   margin: 1.5cqw 0 0 12cqw;
-
   font-family: var(--font-luxurious), cursive;
   font-size: var(--tamano-frase);
   font-weight: 400;
   line-height: 0.62;
-
   transform: rotate(-5deg);
   transform-origin: bottom left;
 }
 
-/* ==========================================
-   CONTENIDO - MÓVIL
-========================================== */
-
 .contenido {
   position: absolute;
   z-index: 10;
-
   top: 70%;
   left: 10%;
   width: 80%;
-
   color: var(--color-ceniza);
 }
 
-/* ==========================================
-   SUBTÍTULO - MYRIAD PRO
-========================================== */
-
 .subtitulo {
   margin: 0;
-
   font-family: var(--font-myriad), Arial, sans-serif;
   font-size: var(--tamano-subtitulo);
   font-weight: 400;
   line-height: 1.2;
   text-transform: uppercase;
-
   -webkit-text-stroke: 0.01em currentColor;
-
-  overflow-wrap: normal;
 }
-
-/* ==========================================
-   PÁRRAFOS - MYRIAD PRO
-========================================== */
 
 .parrafos {
   margin-top: 3cqw;
-
   font-family: var(--font-myriad), Arial, sans-serif;
   font-size: var(--tamano-parrafo);
   font-weight: 400;
@@ -135,17 +91,66 @@
   margin-bottom: 0;
 }
 
-/* ==========================================
-   SALTO DE LÍNEA
-========================================== */
+.saltoMovil {
+  display: initial;
+}
 
-.saltoEscritorio {
+.alacran {
   display: none;
 }
 
-/* ==========================================
-   ESCRITORIO - DESDE 768 PX
-========================================== */
+.imagenAlacran {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 767px) {
+  .encabezado {
+    display: none;
+  }
+
+  .contenido {
+    top: 127.5cqw;
+    left: 16.9%;
+    width: 70%;
+  }
+
+  .subtitulo {
+    font-size: 3.7cqw;
+    line-height: 1.1;
+    white-space: nowrap;
+  }
+
+  .parrafos {
+    margin-top: 2.2cqw;
+    font-size: 3.9cqw;
+    line-height: 1.04;
+    white-space: nowrap;
+  }
+
+  .parrafos p {
+    margin-bottom: 2cqw;
+  }
+
+  .parrafos p:last-child {
+    margin-bottom: 0;
+  }
+
+  .alacran {
+    display: block;
+    width: 11cqw;
+    max-width: 48px;
+    margin-top: 1.2cqw;
+    margin-left: 60.3%;
+  }
+
+  .imagenAlacran {
+    width: 100%;
+    height: auto;
+  }
+}
 
 @media (min-width: 768px) {
   .fondoMovil {
@@ -156,8 +161,8 @@
     display: block;
   }
 
-  /* TÍTULO IZQUIERDO */
   .encabezado {
+    display: block;
     top: 16%;
     left: 11.8%;
     width: 34%;
@@ -167,17 +172,13 @@
     line-height: 1.05;
   }
 
-  /* FRASE MANUSCRITA */
   .frase {
     margin: 0.35cqw 0 0 7.5cqw;
-
     line-height: 0.62;
-
     transform: rotate(-8deg);
     transform-origin: bottom left;
   }
 
-  /* COLUMNA DERECHA */
   .contenido {
     top: 32%;
     left: 63%;
@@ -185,15 +186,17 @@
   }
 
   .subtitulo {
+    font-size: var(--tamano-subtitulo);
     line-height: 1.2;
   }
 
-  .saltoEscritorio {
-    display: inline;
+  .saltoMovil {
+    display: none;
   }
 
   .parrafos {
     margin-top: 0.8cqw;
+    font-size: var(--tamano-parrafo);
     line-height: 1.19;
   }
 
@@ -203,5 +206,9 @@
 
   .parrafos p:last-child {
     margin-bottom: 0;
+  }
+
+  .alacran {
+    display: none;
   }
 }

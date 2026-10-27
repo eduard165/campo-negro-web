@@ -1,20 +1,11 @@
 
-/* ==========================================
-   CAMPO NEGRO - MAESTRO MEZCALERO
-========================================== */
-
 .maestro {
   position: relative;
   width: 100%;
   overflow: hidden;
   background: var(--color-cal);
-
   container-type: inline-size;
 }
-
-/* ==========================================
-   IMÁGENES DE FONDO
-========================================== */
 
 .fondoMovil {
   display: block;
@@ -32,24 +23,14 @@
   height: auto;
 }
 
-/* ==========================================
-   CONTENIDO MÓVIL
-========================================== */
-
 .contenido {
   position: absolute;
   z-index: 10;
-
   top: 8%;
   left: 10%;
   width: 80%;
-
   color: var(--color-ceniza);
 }
-
-/* ==========================================
-   ENCABEZADO
-========================================== */
 
 .encabezado {
   position: relative;
@@ -82,13 +63,8 @@
   margin: 1cqw 9% 0 auto;
 }
 
-/* ==========================================
-   PÁRRAFOS - MYRIAD PRO
-========================================== */
-
 .parrafos {
   margin-top: 6cqw;
-
   font-family: var(--font-myriad), Arial, sans-serif;
   font-size: var(--tamano-parrafo);
   font-weight: 400;
@@ -104,10 +80,6 @@
   margin-bottom: 0;
 }
 
-/* ==========================================
-   ESCRITORIO - DESDE 768 PX
-========================================== */
-
 @media (min-width: 768px) {
   .fondoMovil {
     display: none;
@@ -117,7 +89,6 @@
     display: block;
   }
 
-  /* COLUMNA IZQUIERDA */
   .contenido {
     top: 9%;
     left: 14%;

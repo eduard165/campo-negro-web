@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import styles from "./Ritual.module.css";
 
@@ -9,7 +8,6 @@ export function Ritual() {
       className={styles.ritual}
       aria-labelledby="titulo-ritual"
     >
-      {/* FONDO MÓVIL */}
       <div className={styles.fondoMovil}>
         <Image
           src="/imagenes/Ritual/Movil/05-ritual-movil.webp"
@@ -18,10 +16,10 @@ export function Ritual() {
           height={9000}
           sizes="(max-width: 767px) 100vw, 1px"
           className={styles.imagen}
+          unoptimized
         />
       </div>
 
-      {/* FONDO ESCRITORIO */}
       <div className={styles.fondoEscritorio}>
         <Image
           src="/imagenes/Ritual/Web/05-ritual-desktop.webp"
@@ -30,44 +28,51 @@ export function Ritual() {
           height={4500}
           sizes="(min-width: 768px) 100vw, 1px"
           className={styles.imagen}
+          unoptimized
         />
       </div>
 
-      {/* CONTENIDO HTML */}
       <div className={styles.contenido}>
-        {/* TÍTULO */}
         <h2 id="titulo-ritual" className={styles.titulo}>
           El
           <br />
           ritual
         </h2>
-
-        {/* FRASE MANUSCRITA */}
         <p className={styles.frase}>
           También sucede
           <br />
           alrededor de la mesa
         </p>
-
-        {/* PÁRRAFOS */}
+        <h3 className={styles.subtitulo}>Más que una bebida</h3>
         <div className={styles.parrafos}>
           <p>
-            El mezcal es una bebida que nace de la tierra,
-            del agave y del conocimiento transmitido de
-            generación en generación.
+            El mezcal es una bebida que nace de la{" "}
+            <br className={styles.saltoMovil} />
+            tierra, del agave y del conocimiento{" "}
+            <br className={styles.saltoMovil} />
+            transmitido de generación en{" "}
+            <br className={styles.saltoMovil} />
+            generación.
           </p>
 
           <p>
-            Campo Negro honra ese origen a través de un
-            proceso que requiere tiempo, paciencia y
-            oficio. Desde el cocimiento del agave hasta su
-            molienda y destilación, cada etapa forma
-            parte de una tradición que ha permanecido
-            viva durante siglos.
+            Campo Negro honra ese origen a{" "}
+            <br className={styles.saltoMovil} />
+            través de un proceso que requiere{" "}
+            <br className={styles.saltoMovil} />
+            tiempo, paciencia y oficio.
           </p>
 
           <p>
-            Porque el mezcal no solamente se bebe.
+            Desde el cocimiento del agave hasta{" "}
+            <br className={styles.saltoMovil} />
+            su molienda y destilación, cada etapa{" "}
+            <br className={styles.saltoMovil} />
+            forma parte de una tradición que ha{" "}
+            <br className={styles.saltoMovil} />
+            permanecido viva durante siglos.{" "}
+            <br className={styles.saltoMovil} />
+            Porque el mezcal no solo se bebe...{" "}
             <br />
             Se comparte, se conversa, se recuerda.
           </p>
