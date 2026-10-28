@@ -1,4 +1,3 @@
-
 .maestro {
   position: relative;
   width: 100%;
@@ -26,7 +25,7 @@
 .contenido {
   position: absolute;
   z-index: 10;
-  top: 8%;
+  top: 4%;
   left: 10%;
   width: 80%;
   color: var(--color-ceniza);
@@ -53,27 +52,27 @@
   display: block;
   width: 90%;
   height: auto;
-  margin: 5cqw auto 0;
+  margin: 2.5cqw auto 0;
 }
 
 .imagenSello {
   display: block;
-  width: 17%;
+  width: 15%;
   height: auto;
-  margin: 1cqw 9% 0 auto;
+  margin: 0 9% 0 auto;
 }
 
 .parrafos {
-  margin-top: 6cqw;
+  margin-top: 2cqw;
   font-family: var(--font-myriad), Arial, sans-serif;
-  font-size: var(--tamano-parrafo);
+  font-size: 3.7cqw;
   font-weight: 400;
-  line-height: 1.25;
+  line-height: 1.12;
   text-align: left;
 }
 
 .parrafos p {
-  margin: 0 0 0.8em;
+  margin: 0 0 1.6cqw;
 }
 
 .parrafos p:last-child {
@@ -111,12 +110,15 @@
 
   .parrafos {
     margin-top: 1.6cqw;
+    font-family: var(--font-myriad), Arial, sans-serif;
     font-size: var(--tamano-parrafo);
-    line-height: 1.2;
+    font-weight: 400;
+    line-height: 1.19;
+    text-align: left;
   }
 
   .parrafos p {
-    margin-bottom: 0.65em;
+    margin-bottom: 0.7em;
   }
 
   .parrafos p:last-child {
